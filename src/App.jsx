@@ -1,0 +1,26 @@
+import { Routes, Route } from "react-router-dom";
+import Inicio from "./pages/Inicio.jsx";
+import Coleccion from "./pages/Coleccion.jsx";
+import ProductoDetalle from "./pages/ProductoDetalle.jsx";
+
+function App() {
+  return (
+    <Routes>
+
+      <Route path="/" element={<Inicio />} />
+
+      <Route
+        path="/coleccion"
+        element={<Coleccion />}
+      />
+
+      <Route
+        path="/producto/:id"
+        element={<ProductoDetalle />}
+      />
+
+    </Routes>
+  );
+}
+
+export default App;
