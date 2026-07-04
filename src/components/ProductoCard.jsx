@@ -38,6 +38,8 @@ function ProductoCard({ producto }) {
   const [imagenActual, setImagenActual] = useState(0);
   const [hover, setHover] = useState(false);
   const [visible, setVisible] = useState(true);
+  const [animando, setAnimando] = useState(false);
+
   const { esFavorito, toggleFavorito } = useFavoritos();
 
   useEffect(() => {
@@ -48,17 +50,14 @@ function ProductoCard({ producto }) {
     }
 
     const intervalo = setInterval(() => {
-      // Fade de salida
       setVisible(false);
 
-      // Cuando termina el fade cambia la imagen
       requestAnimationFrame(() => {
         setTimeout(() => {
-          setImagenActual((actual) =>
-            (actual + 1) % producto.imagenes.length
+          setImagenActual(
+            (actual) => (actual + 1) % producto.imagenes.length
           );
 
-          // Fade de entrada
           setVisible(true);
         }, 180);
       });
@@ -71,11 +70,8 @@ function ProductoCard({ producto }) {
     <div className="group relative bg-[#102A2A] rounded-3xl overflow-hidden border border-[#2E4A47] hover:border-[#DCCDA4] hover:-translate-y-2 transition-all duration-500 shadow-xl">
 
       {/* Etiquetas */}
-
       <div className="absolute top-4 left-4 z-20 flex flex-col gap-2">
-
         {producto.etiquetas?.map((etiqueta) => {
-
           const estilo = estilosEtiquetas[etiqueta];
 
           if (!estilo) return null;
@@ -88,58 +84,64 @@ function ProductoCard({ producto }) {
               {estilo.texto}
             </span>
           );
-
         })}
-
       </div>
 
       {/* Favoritos */}
-
       <button
-  onClick={() => toggleFavorito(producto.id)}
-  className="
-    absolute
-    top-4
-    right-4
-    z-20
-    w-11
-    h-11
-    rounded-full
-    bg-white/80
-    backdrop-blur
-    flex
-    items-center
-    justify-center
-    hover:scale-110
-    active:scale-90
-    transition-all
-    duration-300
-    shadow-lg
-  "
->
+        onClick={() => {
+          setAnimando(true);
 
-  <span
-    className={`text-2xl transition-all duration-300 ${
-      esFavorito(producto.id)
-        ? "scale-110"
-        : "scale-100"
-    }`}
-  >
+          toggleFavorito(producto.id);
 
-    {esFavorito(producto.id) ? "❤️" : "🤍"}
-
-  </span>
-
-    </button>
+          setTimeout(() => {
+            setAnimando(false);
+          }, 300);
+        }}
+        className="
+          absolute
+          top-4
+          right-4
+          z-20
+          w-11
+          h-11
+          rounded-full
+          bg-white/80
+          backdrop-blur
+          flex
+          items-center
+          justify-center
+          hover:scale-110
+          active:scale-90
+          transition-all
+          duration-300
+          shadow-lg
+        "
+      >
+        <span
+          className={`
+            text-2xl
+            transition-all
+            duration-300
+            ${
+              animando
+                ? "scale-150 rotate-12"
+                : esFavorito(producto.id)
+                ? "scale-110"
+                : "scale-100"
+            }
+          `}
+        >
+          {esFavorito(producto.id) ? "❤️" : "🤍"}
+        </span>
+      </button>
 
       {/* Imagen */}
-
       <div
         className="overflow-hidden"
         onMouseEnter={() => setHover(true)}
         onMouseLeave={() => setHover(false)}
       >
-
         <img
           src={producto.imagenes[imagenActual]}
           alt={producto.nombre}
@@ -155,13 +157,10 @@ function ProductoCard({ producto }) {
             ${visible ? "opacity-100" : "opacity-0"}
           `}
         />
-
       </div>
 
       {/* Información */}
-
       <div className="p-6">
-
         <h3 className="text-2xl font-light mb-3 text-white">
           {producto.nombre}
         </h3>
@@ -171,17 +170,11 @@ function ProductoCard({ producto }) {
         </p>
 
         <Link to={`/producto/${producto.id}`}>
-
           <button className="w-full bg-[#DCCDA4] text-slate-900 py-3 rounded-full font-medium hover:opacity-90 hover:scale-[1.02] transition-all duration-300">
-
             Ver detalles
-
           </button>
-
         </Link>
-
       </div>
-
     </div>
   );
 }
