@@ -2,6 +2,7 @@ import { useState } from "react";
 import productos from "../data/productos";
 import ProductoCard from "../components/ProductoCard";
 import { useNavigate } from "react-router-dom";
+import Navbar from "../components/Navbar";
 
 function Coleccion() {
   const navigate = useNavigate();
@@ -59,6 +60,7 @@ function Coleccion() {
 
   return (
     <main className="min-h-screen bg-slate-950 text-white">
+      <Navbar />
 
       <section className="max-w-7xl mx-auto px-6 py-20">
 

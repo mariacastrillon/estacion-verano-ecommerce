@@ -1,17 +1,27 @@
 import { Routes, Route } from "react-router-dom";
+
 import Inicio from "./pages/Inicio.jsx";
 import Coleccion from "./pages/Coleccion.jsx";
 import ProductoDetalle from "./pages/ProductoDetalle.jsx";
+import Favoritos from "./pages/Favoritos.jsx";
 
 function App() {
   return (
     <Routes>
 
-      <Route path="/" element={<Inicio />} />
+      <Route
+        path="/"
+        element={<Inicio />}
+      />
 
       <Route
         path="/coleccion"
         element={<Coleccion />}
+      />
+
+      <Route
+        path="/favoritos"
+        element={<Favoritos />}
       />
 
       <Route

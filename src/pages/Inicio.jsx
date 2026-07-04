@@ -3,6 +3,7 @@ import productos from "../data/productos";
 import ProductoCard from "../components/ProductoCard";
 import { Link } from "react-router-dom";
 import PromocionSemana from "../components/PromocionSemana";
+import Navbar from "../components/Navbar";
 
 function Inicio() {
   const [menuAbierto, setMenuAbierto] = useState(false);
@@ -13,55 +14,7 @@ function Inicio() {
     <main className="min-h-screen bg-slate-950 text-white">
 
       {/* NAVBAR */}
-      <nav className="border-b border-slate-800">
-        <div className="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
-
-          <h1 className="text-lg md:text-2xl tracking-[0.20em] font-light">
-            ESTACIÓN VERANO
-          </h1>
-
-          <div className="hidden md:flex gap-10 text-sm uppercase tracking-widest text-slate-300">
-            <Link to="/">Inicio</Link>
-            <Link to="/coleccion">Colección</Link>
-            <a href="#contacto">Contacto</a>
-          </div>
-
-          <button
-            className="md:hidden text-3xl"
-            onClick={() => setMenuAbierto(!menuAbierto)}
-          >
-            ☰
-          </button>
-
-        </div>
-
-        {menuAbierto && (
-          <div className="md:hidden flex flex-col items-center gap-4 py-4 border-t border-slate-800">
-
-            <Link
-              to="/"
-              onClick={() => setMenuAbierto(false)}
-            >
-              Inicio
-            </Link>
-
-            <Link
-              to="/coleccion"
-              onClick={() => setMenuAbierto(false)}
-            >
-              Colección
-            </Link>
-
-            <a
-              href="#contacto"
-              onClick={() => setMenuAbierto(false)}
-            >
-              Contacto
-            </a>
-
-          </div>
-        )}
-      </nav>
+      <Navbar />
 
       {/* HERO */}
       <section className="max-w-7xl mx-auto px-4 md:px-6 pt-4 pb-4">

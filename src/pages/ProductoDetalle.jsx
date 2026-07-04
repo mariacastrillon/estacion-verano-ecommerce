@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import productos from "../data/productos";
 import ImagenModal from "../components/ImagenModal";
+import Navbar from "../components/Navbar";
 
 function ProductoDetalle() {
   const { id } = useParams();
@@ -71,6 +72,7 @@ const handleMouseLeave = () => {
 
   return (
     <main className="min-h-screen bg-slate-950 text-white">
+      <Navbar />
 
       <div className="max-w-7xl mx-auto px-6 py-16">
 
