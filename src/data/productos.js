@@ -90,6 +90,7 @@ const productos = [
       "/productos/palma-real.jpg",
     ],
   },
+  
 
   {
     id: "costa-verde",
@@ -264,6 +265,248 @@ const productos = [
       "/productos/luna-negra-trasera.jpg",
       "/productos/luna-negra-detalle.jpg",
       
+    ],
+  },
+
+  {
+    id: "concha-rosa",
+
+    activo: true,
+    favorito: false,
+
+    nombre: "Set Concha Rosa",
+    precio: "80.000",
+
+    tallas: ["S"],
+    color: ["rosado" , "dorado", "difuminado" , "degradado" , "desvanecido"],
+
+    etiquetas: [
+      "nuevo",
+      "detalles dorados"
+    ],
+
+      descripcion:
+        "Set de 3 piezas con pareo incluido. Un diseño elegante en tonos rosa degradado con detalles dorados que realzan tu estilo en cada destino. ☀️💕",
+      imagenes: [
+
+      "/productos/concha-rosa-frontal.jpg",
+      "/productos/concha-rosa-lateral.jpg",
+      "/productos/concha-rosa-trasera.jpg",
+      "/productos/concha-rosa-detalle.jpg",
+      "/productos/concha-rosa-detalle1.jpg",
+      
+    ],
+  },
+
+  {
+    id: "arena-dorada",
+
+    activo: true,
+    favorito: false,
+
+    nombre: "Arena Dorada",
+    precio: "40.000",
+
+    tallas: ["M"],
+    color: ["dorado"],
+
+    etiquetas: [
+      "nuevo"
+    ],
+
+    descripcion:
+      "Bikini de acabado metálico con cadenas doradas para un look exclusivo y sofisticado",
+
+    imagenes: [
+      "/productos/arena-dorada-frontal.jpg",
+      "/productos/arena-dorada-trasera.jpg",
+      "/productos/arena-dorada-lateral.jpg",
+      "/productos/arena-dorada-detalle.jpg",
+    ],
+  },
+  
+  {
+    id: "oro-del-mar",
+
+    activo: true,
+    favorito: false,
+
+    nombre: "Oro Del Mar",
+    precio: "60.000",
+
+    tallas: ["M" , "L"],
+    color: ["dorado"],
+
+    etiquetas: [
+      "nuevo"
+    ],
+
+    descripcion:
+      "Inspirado en la luz del atardecer, este enterizo combina lujo, comodidad y un brillo sutil para hacerte sentir única. ✨",
+
+    imagenes: [
+      "/productos/oro-del-mar-frontal.jpg",
+      "/productos/oro-del-mar-trasera.jpg",
+      "/productos/oro-del-mar-detalle.jpg",
+    ],
+  },
+
+  {
+    id: "alba",
+
+    activo: true,
+    favorito: false,
+
+    nombre: "Alba",
+    precio: "40.000",
+
+    tallas: ["M"],
+    color: ["blanco"],
+
+    etiquetas: [
+      "nuevo" , "lentejuelas"
+    ],
+
+    descripcion:
+      "Un bikini blanco con delicados detalles plateados que refleja frescura, elegancia y un brillo sutil para destacar en cada verano. ✨",
+
+    imagenes: [
+      "/productos/alba-frontal.jpg",
+      "/productos/alba-trasera.jpg",
+      "/productos/alba-detalle.jpg",
+    ],
+  },
+
+  {
+    id: "flamenco",
+
+    activo: true,
+    favorito: false,
+
+    nombre: "Flamenco",
+    precio: "40.000",
+
+    tallas: ["L"],
+    color: ["rosado"],
+
+    etiquetas: [
+      "nuevo" ,
+    ],
+
+    descripcion:
+      "Un diseño vibrante con volantes delicados y cintura alta que combina frescura, comodidad y elegancia para brillar bajo el sol. 🌺",
+
+    imagenes: [
+      "/productos/flamenco-frontal.jpg",
+      "/productos/flamenco-trasera.jpg",
+      "/productos/flamenco-detalle.jpg",
+    ],
+  },
+
+  {
+    id: "cielo",
+
+    activo: true,
+    favorito: false,
+
+    nombre: "Cielo",
+    precio: "40.000",
+
+    tallas: ["L"],
+    color: ["azul"],
+
+    etiquetas: [
+      "nuevo" ,
+    ],
+
+    descripcion:
+      "Un diseño de líneas elegantes y tono azul cielo que combina frescura, sofisticación y comodidad para brillar en cada día de verano. 💙",
+
+    imagenes: [
+      "/productos/cielo-frontal.jpg",
+      "/productos/cielo-producto.jpg",
+      "/productos/cielo-detalle.jpg",
+    ],
+  },
+
+  {
+    id: "flor-de-fuego",
+
+    activo: true,
+    favorito: false,
+
+    nombre: "Flor de Fuego",
+    precio: "60.000",
+
+    tallas: ["M" , "L"],
+    color: ["negro" , "naranja"],
+
+    etiquetas: [
+      "nuevo" ,
+    ],
+
+    descripcion:
+      "Enterizo con escote profundo y estampado floral vibrante, diseñado para resaltar tu estilo con elegancia y frescura tropical. ✨",
+
+    imagenes: [
+      "/productos/flor-de-fuego-frontal.jpg",
+      "/productos/flor-de-fuego-producto.jpg",
+      "/productos/flor-de-fuego-trasera.jpg",
+      "/productos/flor-de-fuego-detalle.jpg",
+    ],
+  },
+
+  {
+    id: "mar-celeste",
+
+    activo: true,
+    favorito: false,
+
+    nombre: "Mar Celeste",
+    precio: "60.000",
+
+    tallas: ["XS" , "S"],
+    color: ["azul"],
+
+    etiquetas: [
+      "nuevo" ,
+    ],
+
+    descripcion:
+      "Bikini en tono azul celeste con delicados detalles de perlas, inspirado en la calma y belleza del mar. 🩵🌊",
+
+    imagenes: [
+      "/productos/mar-celeste-frontal.jpg",
+      "/productos/mar-celeste-trasera.jpg",
+      "/productos/mar-celeste-producto.jpg",
+      "/productos/mar-celeste-detalle.jpg",
+    ],
+  },
+
+  {
+    id: "mar-de-cristal",
+
+    activo: true,
+    favorito: false,
+
+    nombre: "Mar de Cristal",
+    precio: "40.000",
+
+    tallas: ["XS" , "S"],
+    color: ["azul"],
+
+    etiquetas: [
+      "nuevo" ,
+    ],
+
+    descripcion:
+      "Bikini con acabado brillante y cordones trenzados, inspirado en el brillo del mar cristalino. ✨🌊🩵🌊",
+
+    imagenes: [
+      "/productos/mar-de-cristal-frontal.jpg",
+      "/productos/mar-de-cristal-trasera.jpg",
+      "/productos/mar-de-cristal-producto.jpg",
+      "/productos/mar-de-cristal-detalle.jpg",
     ],
   },
 

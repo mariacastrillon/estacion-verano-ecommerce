@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { useFavoritos } from "../context/FavoritosContext";
 
 const estilosEtiquetas = {
   nuevo: {
@@ -37,6 +38,7 @@ function ProductoCard({ producto }) {
   const [imagenActual, setImagenActual] = useState(0);
   const [hover, setHover] = useState(false);
   const [visible, setVisible] = useState(true);
+  const { esFavorito, toggleFavorito } = useFavoritos();
 
   useEffect(() => {
     if (!hover || producto.imagenes.length <= 1) {
@@ -94,10 +96,41 @@ function ProductoCard({ producto }) {
       {/* Favoritos */}
 
       <button
-        className="absolute top-4 right-4 z-20 w-10 h-10 rounded-full bg-white/80 backdrop-blur flex items-center justify-center hover:scale-110 transition duration-300"
-      >
-        🤍
-      </button>
+  onClick={() => toggleFavorito(producto.id)}
+  className="
+    absolute
+    top-4
+    right-4
+    z-20
+    w-11
+    h-11
+    rounded-full
+    bg-white/80
+    backdrop-blur
+    flex
+    items-center
+    justify-center
+    hover:scale-110
+    active:scale-90
+    transition-all
+    duration-300
+    shadow-lg
+  "
+>
+
+  <span
+    className={`text-2xl transition-all duration-300 ${
+      esFavorito(producto.id)
+        ? "scale-110"
+        : "scale-100"
+    }`}
+  >
+
+    {esFavorito(producto.id) ? "❤️" : "🤍"}
+
+  </span>
+
+    </button>
 
       {/* Imagen */}
 
