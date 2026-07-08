@@ -14,8 +14,17 @@ function App() {
         element={<Inicio />}
       />
 
+      {/* Colección completa */}
+
       <Route
         path="/coleccion"
+        element={<Coleccion />}
+      />
+
+      {/* Categorías */}
+
+      <Route
+        path="/coleccion/:categoria"
         element={<Coleccion />}
       />
 

@@ -1,11 +1,13 @@
 import { useState } from "react";
+import { useNavigate, useParams } from "react-router-dom";
 import productos from "../data/productos";
 import ProductoCard from "../components/ProductoCard";
-import { useNavigate } from "react-router-dom";
 import Navbar from "../components/Navbar";
 
 function Coleccion() {
   const navigate = useNavigate();
+
+  const { categoria } = useParams();
 
   const [busqueda, setBusqueda] = useState("");
   const [orden, setOrden] = useState("recientes");
@@ -13,8 +15,14 @@ function Coleccion() {
 
   const productosFiltrados = [...productos]
     .filter((producto) => {
-      // ✅ Solo mostrar productos activos
+
+      // Solo productos activos
       if (!producto.activo) return false;
+
+      // Filtrar por categoría si existe
+      if (categoria && producto.categoria !== categoria) {
+        return false;
+      }
 
       const texto = busqueda.toLowerCase().trim();
 
@@ -31,7 +39,8 @@ function Coleccion() {
         ${precioNormalizado}
       `.toLowerCase();
 
-      const coincideBusqueda = contenido.includes(texto);
+      const coincideBusqueda =
+        contenido.includes(texto);
 
       const coincideTalla =
         filtroTalla === "todas" ||
@@ -42,11 +51,19 @@ function Coleccion() {
         coincideTalla
       );
     })
+
     .sort((a, b) => {
-      const precioA = Number(a.precio.replace(/\./g, ""));
-      const precioB = Number(b.precio.replace(/\./g, ""));
+
+      const precioA = Number(
+        a.precio.replace(/\./g, "")
+      );
+
+      const precioB = Number(
+        b.precio.replace(/\./g, "")
+      );
 
       switch (orden) {
+
         case "menor-precio":
           return precioA - precioB;
 
@@ -59,10 +76,19 @@ function Coleccion() {
         default:
           return 0;
       }
+
     });
+
+  const titulos = {
+    trajes: "🌊 Trajes de baño",
+    salidas: "🌴 Salidas de baño",
+    bolsos: "👜 Bolsos",
+    accesorios: "🕶️ Accesorios",
+  };
 
   return (
     <main className="min-h-screen bg-slate-950 text-white">
+
       <Navbar />
 
       <section className="max-w-7xl mx-auto px-6 py-20">
@@ -75,14 +101,18 @@ function Coleccion() {
         </button>
 
         <h1 className="text-4xl font-light text-center mb-4">
-          Colección Completa
+
+          {categoria
+            ? titulos[categoria]
+            : "Colección Completa"}
+
         </h1>
 
         <p className="text-center text-slate-400 mb-12">
           Encuentra el diseño perfecto para ti
         </p>
 
-        {/* BUSCADOR Y ORDEN */}
+        {/* Buscador */}
 
         <div className="flex flex-col md:flex-row gap-4 mb-10">
 
@@ -107,7 +137,7 @@ function Coleccion() {
 
         </div>
 
-        {/* FILTRO TALLAS */}
+        {/* Tallas */}
 
         <div className="flex flex-wrap gap-3 mb-8">
 
@@ -122,7 +152,8 @@ function Coleccion() {
             Todas
           </button>
 
-          {["S", "M", "L"].map((talla) => (
+          {["XS", "S", "M", "L", "XL"].map((talla) => (
+
             <button
               key={talla}
               onClick={() => setFiltroTalla(talla)}
@@ -134,31 +165,35 @@ function Coleccion() {
             >
               {talla}
             </button>
+
           ))}
 
         </div>
 
-        {/* CONTADOR */}
-
         <p className="text-slate-400 mb-8">
-          {productosFiltrados.length}{" "}
-          {productosFiltrados.length === 1
-            ? "diseño encontrado"
-            : "diseños encontrados"}
-        </p>
 
-        {/* MENSAJE SI NO HAY RESULTADOS */}
+          {productosFiltrados.length}{" "}
+
+          {productosFiltrados.length === 1
+            ? "producto encontrado"
+            : "productos encontrados"}
+
+        </p>
 
         {productosFiltrados.length === 0 ? (
 
           <div className="text-center py-20">
 
             <h2 className="text-3xl font-light mb-4">
-              No encontramos resultados
+
+              No encontramos productos
+
             </h2>
 
             <p className="text-slate-400">
-              Intenta buscar por nombre, talla o precio.
+
+              Muy pronto tendremos nuevos productos en esta categoría.
+
             </p>
 
           </div>

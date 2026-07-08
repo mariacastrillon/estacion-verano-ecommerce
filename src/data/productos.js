@@ -5,6 +5,8 @@ const productos = [
     activo: false,
     favorito: false,
 
+    categoria: "trajes",
+
     nombre: "Set OLIVA PREMIUM",
     precio: "80.000",
 
@@ -37,6 +39,8 @@ const productos = [
     activo: true,
     favorito: false,
 
+    categoria: "trajes",
+
     nombre: "Fleur Limón",
     precio: "60.000",
 
@@ -66,11 +70,15 @@ const productos = [
     activo: false,
     favorito: false,
 
+    categoria: "trajes",
+
     nombre: "Palma Real",
     precio: "60.000",
 
     activo: false,
     favorito: false,
+
+    categoria: "trajes",
 
     tallas: ["S", "M"],
     color: ["verde"],
@@ -97,6 +105,8 @@ const productos = [
 
     activo: true,
     favorito: false,
+
+    categoria: "trajes",
 
     nombre: "Enterizo Costa Verde",
     precio: "70.000",
@@ -125,6 +135,8 @@ const productos = [
 
     activo: true,
     favorito: false,
+
+    categoria: "trajes",
 
     nombre: "Set Jardín de Capri",
     precio: "60.000",
@@ -155,6 +167,8 @@ const productos = [
 
     activo: true,
     favorito: true,
+
+    categoria: "trajes",
 
     nombre: "Set Brisa de Orquídea",
     precio: "80.000",
@@ -188,6 +202,8 @@ const productos = [
     activo: true,
     favorito: false,
 
+    categoria: "trajes",
+
     nombre: "Concha de Nácar",
     precio: "60.000",
 
@@ -217,6 +233,8 @@ const productos = [
     activo: true,
     favorito: true,
 
+    categoria: "trajes",
+
     nombre: "Brisa Marina",
     precio: "80.000",
 
@@ -244,6 +262,8 @@ const productos = [
 
     activo: true,
     favorito: true,
+
+    categoria: "trajes",
 
     nombre: "Luna Negra",
     precio: "40.000",
@@ -273,6 +293,8 @@ const productos = [
 
     activo: true,
     favorito: false,
+
+    categoria: "trajes",
 
     nombre: "Set Concha Rosa",
     precio: "80.000",
@@ -304,6 +326,8 @@ const productos = [
     activo: true,
     favorito: false,
 
+    categoria: "trajes",
+
     nombre: "Arena Dorada",
     precio: "40.000",
 
@@ -331,6 +355,8 @@ const productos = [
     activo: true,
     favorito: false,
 
+    categoria: "trajes",
+
     nombre: "Oro Del Mar",
     precio: "60.000",
 
@@ -356,6 +382,8 @@ const productos = [
 
     activo: true,
     favorito: false,
+
+    categoria: "trajes",
 
     nombre: "Alba",
     precio: "40.000",
@@ -383,6 +411,8 @@ const productos = [
     activo: true,
     favorito: false,
 
+    categoria: "trajes",
+
     nombre: "Flamenco",
     precio: "40.000",
 
@@ -409,6 +439,8 @@ const productos = [
     activo: true,
     favorito: false,
 
+    categoria: "trajes",
+
     nombre: "Cielo",
     precio: "40.000",
 
@@ -434,6 +466,8 @@ const productos = [
 
     activo: true,
     favorito: false,
+
+    categoria: "trajes",
 
     nombre: "Flor de Fuego",
     precio: "60.000",
@@ -462,6 +496,8 @@ const productos = [
     activo: true,
     favorito: false,
 
+    categoria: "trajes",
+
     nombre: "Mar Celeste",
     precio: "60.000",
 
@@ -489,6 +525,8 @@ const productos = [
     activo: true,
     favorito: false,
 
+    categoria: "trajes",
+
     nombre: "Mar de Cristal",
     precio: "40.000",
 
@@ -507,6 +545,35 @@ const productos = [
       "/productos/mar-de-cristal-trasera.jpg",
       "/productos/mar-de-cristal-producto.jpg",
       "/productos/mar-de-cristal-detalle.jpg",
+    ],
+  },
+
+  {
+    id: "golden-hour",
+
+    activo: true,
+    favorito: false,
+
+    categoria: "salidas",
+
+    nombre: "Golden Hour",
+    precio: "80.000",
+
+    tallas: ["S" , "M" , "L", "XL"],
+    color: ["dorado"],
+
+    etiquetas: [
+      "nuevo" ,
+    ],
+
+    descripcion:
+      "✨ Salida de playa dorada en malla con lentejuelas. Ligera, sofisticada y perfecta para elevar cualquier look de verano.",
+
+    imagenes: [
+      "/productos/golden-hour-frontal.jpg",
+      "/productos/golden-hour-trasera.jpg",
+      "/productos/golden-hour-lateral.jpg",
+      "/productos/golden-hour-detalle.jpg",
     ],
   },
 
