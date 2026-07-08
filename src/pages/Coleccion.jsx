@@ -13,6 +13,9 @@ function Coleccion() {
 
   const productosFiltrados = [...productos]
     .filter((producto) => {
+      // ✅ Solo mostrar productos activos
+      if (!producto.activo) return false;
+
       const texto = busqueda.toLowerCase().trim();
 
       const precioNormalizado = producto.precio
@@ -164,16 +167,16 @@ function Coleccion() {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
 
-  {productosFiltrados.map((producto) => (
+            {productosFiltrados.map((producto) => (
 
-    <ProductoCard
-      key={producto.id}
-      producto={producto}
-    />
+              <ProductoCard
+                key={producto.id}
+                producto={producto}
+              />
 
-  ))}
+            ))}
 
-</div>
+          </div>
 
         )}
 

@@ -154,7 +154,7 @@ const productos = [
     id: "brisa-orquidea",
 
     activo: true,
-    favorito: false,
+    favorito: true,
 
     nombre: "Set Brisa de Orquídea",
     precio: "80.000",
