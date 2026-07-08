@@ -559,7 +559,7 @@ const productos = [
     nombre: "Golden Hour",
     precio: "80.000",
 
-    tallas: ["S" , "M" , "L", "XL"],
+    tallas: ["unica"],
     color: ["dorado"],
 
     etiquetas: [
@@ -574,6 +574,35 @@ const productos = [
       "/productos/golden-hour-trasera.jpg",
       "/productos/golden-hour-lateral.jpg",
       "/productos/golden-hour-detalle.jpg",
+    ],
+  },
+
+  {
+    id: "palma-blanca",
+
+    activo: true,
+    favorito: false,
+
+    categoria: "bolsos",
+
+    nombre: "Palma Blanca",
+    precio: "40.000",
+
+    color: ["blanco"],
+
+    medidas: "14 x 28 cm",
+
+    etiquetas: [
+      "nuevo" ,
+    ],
+
+    descripcion:
+      "🤍 Palma Blanca 🏝️ El bolso perfecto para acompañar tus días de sol. Amplio, elegante y fácil de combinar con cualquier look de playa. ✨🌴",
+
+    imagenes: [
+      "/productos/palma-blanca-frontal.jpg",
+      "/productos/palma-blanca-lateral.jpg",
+      "/productos/palma-blanca-detalle.jpg",
     ],
   },
 
