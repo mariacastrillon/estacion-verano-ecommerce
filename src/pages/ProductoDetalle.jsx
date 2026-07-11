@@ -163,17 +163,9 @@ function ProductoDetalle() {
 
 <div className="space-y-4 mb-10">
 
-  {producto.color && (
-    <div>
-      <h3 className="text-[#DCCDA4] font-medium">
-        🎨 Color
-      </h3>
-
-      <p className="text-slate-300">
-        {producto.color}
-      </p>
-    </div>
-  )}
+  {Array.isArray(producto.color)
+  ? producto.color.join(" • ")
+  : producto.color}
 
   {producto.material && (
     <div>

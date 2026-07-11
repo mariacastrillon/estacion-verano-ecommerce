@@ -31,20 +31,23 @@ function Coleccion() {
         .replace(/,/g, "");
 
       const contenido = `
-        ${producto.nombre}
-        ${producto.descripcion}
-        ${producto.tallas.join(" ")}
-        ${producto.precio}
-        ${producto.color}
-        ${precioNormalizado}
-      `.toLowerCase();
+  ${producto.nombre}
+  ${producto.descripcion}
+  ${producto.tallas?.join(" ") || ""}
+  ${producto.color || ""}
+  ${producto.palabrasClave?.join(" ") || ""}
+  ${producto.material || ""}
+  ${producto.medidas || ""}
+  ${producto.precio}
+  ${precioNormalizado}
+`.toLowerCase();
 
       const coincideBusqueda =
         contenido.includes(texto);
 
       const coincideTalla =
-        filtroTalla === "todas" ||
-        producto.tallas.includes(filtroTalla);
+  filtroTalla === "todas" ||
+  producto.tallas?.includes(filtroTalla);
 
       return (
         coincideBusqueda &&

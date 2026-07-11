@@ -122,11 +122,10 @@ const productos = [
       "Enterizo elegante que estiliza la figura y aporta comodidad durante todo el día.",
 
     imagenes: [
-      "/productos/costa-verde.jpg",
-      "/productos/costa-verde.jpg",
-      "/productos/costa-verde.jpg",
-      "/productos/costa-verde.jpg",
-      "/productos/costa-verde.jpg",
+      "/productos/costa-verde-frontal.jpg",
+      "/productos/costa-verde-detalle.jpg",
+      "/productos/costa-verde-trasera.jpg",
+      
     ],
   },
 
@@ -185,7 +184,7 @@ const productos = [
     ],
 
     descripcion:
-      "Set de 3 piezas con bikini, pareo y orquídeas removibles para un look versátil y sofisticado. 🌸",
+      "Set de 3 piezas con bikini, pareo y orquídeas removibles para un look versátil y sofisticado.",
 
     imagenes: [
       "/productos/brisa-orquidea-frontal.jpg",
@@ -300,7 +299,17 @@ const productos = [
     precio: "80.000",
 
     tallas: ["S"],
-    color: ["rosado" , "dorado", "difuminado" , "degradado" , "desvanecido"],
+    color: ["rosado"],
+
+    color: "Fucsia",
+
+    palabrasClave: [
+    "rosado",
+    "dorado",
+    "difuminado",
+    "degradado",
+    "desvanecido",
+    ],
 
     etiquetas: [
       "nuevo",
@@ -308,7 +317,7 @@ const productos = [
     ],
 
       descripcion:
-        "Set de 3 piezas con pareo incluido. Un diseño elegante en tonos rosa degradado con detalles dorados que realzan tu estilo en cada destino. ☀️💕",
+        "Set de 3 piezas con pareo incluido. Un diseño elegante en tonos rosa degradado con detalles dorados que realzan tu estilo en cada destino.",
       imagenes: [
 
       "/productos/concha-rosa-frontal.jpg",
@@ -368,7 +377,7 @@ const productos = [
     ],
 
     descripcion:
-      "Inspirado en la luz del atardecer, este enterizo combina lujo, comodidad y un brillo sutil para hacerte sentir única. ✨",
+      "Inspirado en la luz del atardecer, este enterizo combina lujo, comodidad y un brillo sutil para hacerte sentir única.",
 
     imagenes: [
       "/productos/oro-del-mar-frontal.jpg",
@@ -391,12 +400,16 @@ const productos = [
     tallas: ["M"],
     color: ["blanco"],
 
+    palabrasClave: [
+    "lentejuelas",
+    ],
+
     etiquetas: [
       "nuevo" , "lentejuelas"
     ],
 
     descripcion:
-      "Un bikini blanco con delicados detalles plateados que refleja frescura, elegancia y un brillo sutil para destacar en cada verano. ✨",
+      "Un bikini blanco con delicados detalles plateados que refleja frescura, elegancia y un brillo sutil para destacar en cada verano.",
 
     imagenes: [
       "/productos/alba-frontal.jpg",
@@ -419,12 +432,18 @@ const productos = [
     tallas: ["L"],
     color: ["rosado"],
 
+    palabrasClave: [
+    "alto",
+    "estampado",
+    "boleros",
+    ],
+
     etiquetas: [
       "nuevo" ,
     ],
 
     descripcion:
-      "Un diseño vibrante con volantes delicados y cintura alta que combina frescura, comodidad y elegancia para brillar bajo el sol. 🌺",
+      "Un diseño vibrante con volantes delicados y cintura alta que combina frescura, comodidad y elegancia para brillar bajo el sol.",
 
     imagenes: [
       "/productos/flamenco-frontal.jpg",
@@ -447,12 +466,17 @@ const productos = [
     tallas: ["L"],
     color: ["azul"],
 
+    palabrasClave: [
+    "flor",
+    "enterizo",
+    ],
+
     etiquetas: [
       "nuevo" ,
     ],
 
     descripcion:
-      "Un diseño de líneas elegantes y tono azul cielo que combina frescura, sofisticación y comodidad para brillar en cada día de verano. 💙",
+      "Un diseño de líneas elegantes y tono azul cielo que combina frescura, sofisticación y comodidad para brillar en cada día de verano.",
 
     imagenes: [
       "/productos/cielo-frontal.jpg",
@@ -475,12 +499,18 @@ const productos = [
     tallas: ["M" , "L"],
     color: ["negro" , "naranja"],
 
+    palabrasClave: [
+    "escote",
+    "naranja",
+    "lazo",
+    ],
+
     etiquetas: [
       "nuevo" ,
     ],
 
     descripcion:
-      "Enterizo con escote profundo y estampado floral vibrante, diseñado para resaltar tu estilo con elegancia y frescura tropical. ✨",
+      "Enterizo con escote profundo y estampado floral vibrante, diseñado para resaltar tu estilo con elegancia y frescura tropical.",
 
     imagenes: [
       "/productos/flor-de-fuego-frontal.jpg",
@@ -504,12 +534,18 @@ const productos = [
     tallas: ["XS" , "S"],
     color: ["azul"],
 
+    palabrasClave: [
+    "almeja",
+    "concha",
+    "perlas"
+    ],
+
     etiquetas: [
       "nuevo" ,
     ],
 
     descripcion:
-      "Bikini en tono azul celeste con delicados detalles de perlas, inspirado en la calma y belleza del mar. 🩵🌊",
+      "Bikini en tono azul celeste con delicados detalles de perlas, inspirado en la calma y belleza del mar.",
 
     imagenes: [
       "/productos/mar-celeste-frontal.jpg",
@@ -533,12 +569,18 @@ const productos = [
     tallas: ["XS" , "S"],
     color: ["azul"],
 
+    palabrasClave: [
+    "brillos",
+    "tornazol",
+    "trenzado",
+    ],
+
     etiquetas: [
       "nuevo" ,
     ],
 
     descripcion:
-      "Bikini con acabado brillante y cordones trenzados, inspirado en el brillo del mar cristalino. ✨🌊🩵🌊",
+      "Bikini con acabado brillante y cordones trenzados, inspirado en el brillo del mar cristalino. ",
 
     imagenes: [
       "/productos/mar-de-cristal-frontal.jpg",
@@ -561,6 +603,11 @@ const productos = [
 
     tallas: ["unica"],
     color: ["dorado"],
+
+    palabrasClave: [
+    "salida",
+    "malla",
+    ],
 
     etiquetas: [
       "nuevo" ,
@@ -590,14 +637,14 @@ const productos = [
 
     color: ["blanco"],
 
-    medidas: "14 x 28 cm",
+    medidas: "27 x 43 cm",
 
     etiquetas: [
       "nuevo" ,
     ],
 
     descripcion:
-      "🤍 Palma Blanca 🏝️ El bolso perfecto para acompañar tus días de sol. Amplio, elegante y fácil de combinar con cualquier look de playa. ✨🌴",
+      "🤍 Palma Blanca 🏝️ El bolso perfecto para acompañar tus días de sol. Amplio, elegante y fácil de combinar con cualquier look de playa.",
 
     imagenes: [
       "/productos/palma-blanca-frontal.jpg",
@@ -605,6 +652,291 @@ const productos = [
       "/productos/palma-blanca-detalle.jpg",
     ],
   },
+
+  {
+    id: "gafas-solea",
+
+    activo: true,
+    favorito: false,
+
+    categoria: "accesorios",
+
+    nombre: "Gafas Solea",
+    precio: "20.000",
+
+    color: ["negras , dorado"],
+
+    medidas: "14 x 28 cm",
+
+    etiquetas: [
+      "nuevo" ,
+    ],
+
+    descripcion:
+      "Ligeras, elegantes y versátiles. Las gafas Brisa combinan con cualquier outfit y son el complemento ideal para disfrutar del verano con estilo.",
+
+    imagenes: [
+      "/productos/gafas-solea-ambas.jpg",
+      "/productos/gafas-solea-doradas.jpg",
+      "/productos/gafas-solea-detalle.jpg",
+      "/productos/gafas-solea-negras.jpg",
+    ],
+  },
+
+  {
+    id: "bahia",
+
+    activo: true,
+    favorito: false,
+
+    categoria: "trajes",
+
+    nombre: "Set Bahía",
+    precio: "40.000",
+
+    tallas: ["L" , "XL"],
+    color: "azul" ,
+
+    palabrasClave: [
+    "marfil",
+    "detalles",
+    "dorado",
+    ],
+
+    etiquetas: [
+      "nuevo" ,
+    ],
+
+    descripcion:
+      "Femenino, delicado y atemporal. Un bikini diseñado para acompañarte en los mejores días de verano.",
+
+    imagenes: [
+      "/productos/bahia-azul-frontal.jpg",
+      "/productos/bahia-azul-trasera.jpg",
+      "/productos/bahia-azul-detalle.jpg",
+    ],
+  },
+
+  {
+    id: "fuccia-tropical",
+
+    activo: true,
+    favorito: false,
+
+    categoria: "trajes",
+
+    nombre: "Set Fuccia Tropical",
+    precio: "60.000",
+
+    tallas: ["M" , "L"],
+
+    color: "Fucsia",
+
+    palabrasClave: [
+    "rosado",
+    "malla"
+    ],
+
+    etiquetas: [
+      "nuevo" ,
+    ],
+
+    descripcion:
+      "Color, brillo y actitud en un solo conjunto. Ideal para disfrutar el verano con un estilo fresco y lleno de personalidad.",
+
+    imagenes: [
+      "/productos/fuccia-tropical-frontal.jpg",
+      "/productos/fuccia-tropical-trasera.jpg",
+      "/productos/fuccia-tropical-detalle.jpg",
+    ],
+  },
+
+   {
+    id: "terracota",
+
+    activo: true,
+    favorito: false,
+
+    categoria: "trajes",
+
+    nombre: "Enterizo Terracota 🤎",
+    precio: "40.000",
+
+    tallas: ["L"],
+    color: ["negro" , "terracota"],
+
+    color: ["Terracota con negro"],
+
+    palabrasClave: [
+    "textura",
+    "flor",
+    "enterizo",
+    ],
+
+    etiquetas: [
+      "nuevo" ,
+    ],
+
+    descripcion:
+      "Inspirado en los tonos cálidos del atardecer. Un diseño moderno que combina sofisticación y comodidad en cada detalle.",
+
+    imagenes: [
+      "/productos/terracota-frontal.jpg",
+      "/productos/terracota-trasera.jpg",
+      "/productos/terracota-lateral.jpg",
+      "/productos/terracota-detalle.jpg",
+      
+    ],
+  },
+
+  {
+    id: "selva",
+
+    activo: true,
+    favorito: false,
+
+    categoria: "trajes",
+
+    nombre: "Set Selva 🌿",
+    precio: "40.000",
+
+    tallas: ["L" , "XL"],
+    color: ["verde"],
+
+    palabrasClave: [
+    "estampado",
+    "combinado",
+    "tres piezas",
+    "3 piezas",
+    "salida"
+    ],
+
+    etiquetas: [
+      "nuevo" ,
+    ],
+
+    descripcion:
+      "Con estampados inspirados en la naturaleza, tonos oliva y un pareo a juego, este conjunto ofrece el equilibrio perfecto entre frescura, comodidad y elegancia.",
+
+    imagenes: [
+      "/productos/selva-frontal.jpg",
+      "/productos/selva-top.jpg",
+      "/productos/selva-pantye.jpg",
+      "/productos/selva-detalle.jpg",
+      
+    ],
+  },
+
+  {
+    id: "Amazona",
+
+    activo: true,
+    favorito: false,
+
+    categoria: "trajes",
+
+    nombre: "Set Amazona 🌿",
+    precio: "60.000",
+
+    tallas: ["L"],
+    color: ["verde con blanco"],
+
+    palabrasClave: [
+    "estampado",
+    "combinado",
+    "rayas",
+    "detlles dorados",
+    "entero",
+    "enterizo",
+    ],
+
+    etiquetas: [
+      "nuevo" ,
+    ],
+
+    descripcion:
+      "nspirado en la fuerza y belleza de la naturaleza. Un diseño exclusivo que combina elegancia y frescura. ",
+
+    imagenes: [
+      "/productos/amazona-frontal.jpg",
+      "/productos/amazona-top.jpg",
+      "/productos/amazona-pantye.jpg",
+      "/productos/amazona-trasera.jpg",
+      
+    ],
+  },
+
+  {
+    id: "jade",
+
+    activo: true,
+    favorito: false,
+
+    categoria: "trajes",
+
+    nombre: "💚 Set Jade",
+    precio: "40.000",
+
+    tallas: ["L" , "XL"],
+    color: ["verde"],
+
+    palabrasClave: [
+    "lentejuelas",
+    ],
+
+    etiquetas: [
+      "nuevo" ,
+    ],
+
+    descripcion:
+      "Un bikini que combina un vibrante tono verde con delicados destellos para crear un look fresco, elegante y lleno de luz.",
+
+    imagenes: [
+      "/productos/jade-frontal.jpg",
+      "/productos/jade-detalle.jpg",
+      "/productos/jade-trasera.jpg",
+      "/productos/jade-lateral.jpg",
+      
+    ],
+  },
+
+  {
+    id: "marfil",
+
+    activo: true,
+    favorito: false,
+
+    categoria: "trajes",
+
+    nombre: "🐚 Enterizo Marfil",
+    precio: "40.000",
+
+    tallas: ["L" , "XL"],
+    color: ["Marfil"],
+
+    palabrasClave: [
+    "textura",
+    "detalle dorado",
+    "entero",
+    "enterizo",
+    ],
+
+    etiquetas: [
+      "nuevo" ,
+    ],
+
+    descripcion:
+      "Un diseño moderno en tono marfil con acabado texturizado y herraje dorado que realza tu estilo con delicadeza",
+
+    imagenes: [
+      "/productos/marfil-frontal.jpg",
+      "/productos/marfil-detalle.jpg",
+      "/productos/marfil-trasera.jpg",
+      "/productos/marfil-lateral.jpg",
+      
+    ],
+  },
+
 
 ];
 
