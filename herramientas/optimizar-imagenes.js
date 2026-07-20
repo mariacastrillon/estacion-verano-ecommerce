@@ -7,6 +7,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const carpetaEntrada = path.join(__dirname, "../public/productos");
+const carpetaHero = path.join(__dirname, "../public/hero");
 
 const extensiones = [".jpg", ".jpeg", ".png"];
 
@@ -47,7 +48,20 @@ async function optimizar() {
         const ahorro = (
             (1 - despues / antes) * 100
         ).toFixed(1);
+        const heroEntrada = path.join(carpetaHero, "portada.jpg");
+const heroSalida = path.join(carpetaHero, "portada.webp");
 
+await sharp(heroEntrada)
+    .resize({
+        width: 1280,
+        withoutEnlargement: true,
+    })
+    .webp({
+        quality: 80,
+    })
+    .toFile(heroSalida);
+
+console.log("✓ portada.jpg optimizada");
         console.log(
             `✓ ${archivo}  (${ahorro}% menos)`
         );

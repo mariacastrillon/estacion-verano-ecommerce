@@ -56,7 +56,7 @@ function Inicio() {
       {/* PORTADA */}
       <section className="w-full">
         <img
-          src="/hero/portada.jpg"
+          src="/hero/portada.webp"
           alt="Portada Estación Verano"
           className="w-full h-[210px] md:h-auto object-cover"
         />
