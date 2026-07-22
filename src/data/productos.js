@@ -45,7 +45,7 @@ const productos = [
     precio: "60.000",
 
     tallas: ["M", "L"],
-    color: ["amarillo", "verde", "biche"],
+    color: ["amarillo biche"],
 
     etiquetas: [
       "nuevo",
@@ -103,7 +103,7 @@ const productos = [
   {
     id: "costa-verde",
 
-    activo: true,
+    activo: false,
     favorito: false,
 
     categoria: "trajes",
@@ -141,7 +141,7 @@ const productos = [
     precio: "60.000",
 
     tallas: ["M"],
-    color: ["floral", "rosa", "palo de rosa"],
+    color: ["rosa viejo"],
 
     etiquetas: [
       "nuevo",
@@ -207,7 +207,7 @@ const productos = [
     precio: "60.000",
 
     tallas: ["L"],
-    color: ["rosa" , "lila" , "morado" , "tornasol" , "blanco"],
+    color: ["tornasol"],
 
     etiquetas: [
       "nuevo",
@@ -229,8 +229,8 @@ const productos = [
   {
     id: "marina",
 
-    activo: true,
-    favorito: true,
+    activo: false,
+    favorito: false,
 
     categoria: "trajes",
 
@@ -268,7 +268,7 @@ const productos = [
     precio: "40.000",
 
     tallas: ["s"],
-    color: ["negro" , "dorado"],
+    color: ["negro"],
 
     etiquetas: [
       "nuevo",
@@ -299,9 +299,7 @@ const productos = [
     precio: "80.000",
 
     tallas: ["S"],
-    color: ["rosado"],
-
-    color: "Fucsia",
+    color: ["rosado degradado"],
 
     palabrasClave: [
     "rosado",
@@ -455,7 +453,7 @@ const productos = [
   {
     id: "cielo",
 
-    activo: true,
+    activo: false,
     favorito: false,
 
     categoria: "trajes",
@@ -497,7 +495,7 @@ const productos = [
     precio: "60.000",
 
     tallas: ["M" , "L"],
-    color: ["negro" , "naranja"],
+    color: ["negro"],
 
     palabrasClave: [
     "escote",
@@ -523,7 +521,7 @@ const productos = [
   {
     id: "mar-celeste",
 
-    activo: true,
+    activo: false,
     favorito: false,
 
     categoria: "trajes",
@@ -558,7 +556,7 @@ const productos = [
   {
     id: "mar-de-cristal",
 
-    activo: true,
+    activo: false,
     favorito: false,
 
     categoria: "trajes",
@@ -904,12 +902,12 @@ const productos = [
     id: "marfil",
 
     activo: true,
-    favorito: false,
+    favorito: true,
 
     categoria: "trajes",
 
     nombre: "🐚 Enterizo Marfil",
-    precio: "40.000",
+    precio: "80.000",
 
     tallas: ["L" , "XL"],
     color: ["Marfil"],
@@ -932,10 +930,418 @@ const productos = [
       "/productos/marfil-frontal.webp",
       "/productos/marfil-detalle.webp",
       "/productos/marfil-trasera.webp",
-      "/productos/marfil-lateral.webp",
       
     ],
   },
+
+  {
+    id: "orquidea-fuccia",
+
+    activo: true,
+    favorito: false,
+
+    categoria: "trajes",
+
+    nombre: "Set Orquídea Fuccia",
+    precio: "80.000",
+
+    tallas: ["M" , "L"],
+    color: ["fuccia"],
+
+    palabrasClave: [
+    "flores",
+    ],
+
+    etiquetas: [
+      "nuevo",
+      "3-piezas",
+      "pareo",
+      "edicion-limitada"
+    ],
+
+    descripcion:
+      "Un set de tres piezas diseñado para robar miradas. El bikini con flores 3D y la falda de malla crean una combinación elegante, femenina y perfecta para disfrutar del verano con un estilo único.",
+
+    imagenes: [
+      "/productos/orquidea-frontal.webp",
+      "/productos/orquidea-detalle.webp",
+      "/productos/orquidea-trasera.webp",
+      
+    ],
+  },
+
+  {
+    id: "serena",
+
+    activo: true,
+    favorito: false,
+
+    categoria: "trajes",
+
+    nombre: "Serena",
+    precio: "40.000",
+
+    tallas: ["XS" , "S"],
+    color: ["fuccia"],
+
+    palabrasClave: [
+    "textura",
+    ],
+
+    etiquetas: [
+      "nuevo",
+    ],
+
+    descripcion:
+      "Inspirado en el azul cristalino del Caribe. Un conjunto ligero, moderno y lleno de detalles que evocan la tranquilidad y el lujo de los días frente al mar.",
+
+    imagenes: [
+      "/productos/serena-frontal.webp",
+      "/productos/serena-detalle.webp",
+      "/productos/serena-trasera.webp",
+      
+    ],
+  },
+
+  {
+    id: "perla-rosa",
+
+    activo: true,
+    favorito: false,
+
+    categoria: "trajes",
+
+    nombre: "Perla Rosa",
+    precio: "60.000",
+
+    tallas: ["XS" , "S"],
+    color: ["rosado"],
+
+    palabrasClave: [
+    "perlado",
+    ],
+
+    etiquetas: [
+      "nuevo",
+    ],
+
+    descripcion:
+      "Conjunto de tres piezas en un delicado tono rosa perlado. Diseñado para realzar la silueta con un toque femenino y sofisticado.",
+
+    imagenes: [
+      "/productos/perla-frontal.webp",
+      "/productos/perla-detalle.webp",
+      "/productos/perla-trasera.webp",
+      
+    ],
+  },
+
+  {
+    id: "cielo-marino",
+
+    activo: true,
+    favorito: false,
+
+    categoria: "trajes",
+
+    nombre: "Cielo Marino",
+    precio: "40.000",
+
+    tallas: ["XS" , "S"],
+    color: ["azul"],
+
+    etiquetas: [
+      "nuevo",
+    ],
+
+    descripcion:
+      "Un bikini inspirado en el azul del océano y la calma del verano. Un diseño fresco y atemporal que roba miradas.",
+
+    imagenes: [
+      "/productos/cielo-frontal.webp",
+      "/productos/cielo-detalle.webp",
+      "/productos/cielo-trasera.webp",
+      "/productos/cielo-producto.webp",
+      
+    ],
+  },
+
+  {
+    id: "noche-de-verano",
+
+    activo: true,
+    favorito: false,
+
+    categoria: "trajes",
+
+    nombre: "Noche de Verano 🖤",
+    precio: "80.000",
+
+    tallas: ["S" , "L" , "XL"],
+    color: ["negro"],
+
+    palabrasClave: [
+    "4 piezas",
+    "cuatro piezas",
+    ],
+
+    etiquetas: [
+      "nuevo",
+    ],
+
+    descripcion:
+      "Un set de 4 piezas. Incluye bikini, blusa y falda para un look sofisticado, fresco y perfecto para la playa, la piscina o un beach club.",
+
+    imagenes: [
+      "/productos/nochedv-frontal.webp",
+      "/productos/nochedv-detalle.webp",
+      "/productos/nochedv-producto.webp",
+      
+    ],
+  },
+
+  {
+    id: "marea-turquesa",
+
+    activo: true,
+    favorito: false,
+
+    categoria: "trajes",
+
+    nombre: "Marea Turquesa 💎",
+    precio: "80.000",
+
+    tallas: ["M"],
+    color: ["azul"],
+
+    palabrasClave: [
+    "3 piezas",
+    "tres piezas",
+    "malla",
+    ],
+
+    etiquetas: [
+      "nuevo",
+    ],
+
+    descripcion:
+      "Set de 3 piezas inspirado en la intensidad del mar Caribe. Incluye bikini, falda de malla y detalles que realzan la silueta con un estilo elegante, fresco y sofisticado.",
+
+    imagenes: [
+      "/productos/marea-frontal.webp",
+      "/productos/marea-trasera.webp",
+      "/productos/marea-detalle.webp",
+      "/productos/marea-producto.webp",
+      
+    ],
+  },
+
+  {
+    id: "sol-dorado",
+
+    activo: true,
+    favorito: false,
+
+    categoria: "trajes",
+
+    nombre: "✨ Sol Dorado",
+    precio: "60.000",
+
+    tallas: ["S" , "M"],
+    color: ["dorado"],
+
+    palabrasClave: [
+    "enterizo",
+    "entero",
+    ],
+
+    etiquetas: [
+      "nuevo",
+    ],
+
+    descripcion:
+      "Enterizo de acabado brillante inspirado en los destellos del sol sobre el mar. Un diseño sofisticado que realza la silueta con un toque de lujo para disfrutar el verano con estilo.",
+
+    imagenes: [
+      "/productos/sol-frontal.webp",
+      "/productos/sol-trasera.webp",
+      "/productos/sol-producto.webp",
+      
+    ],
+  },
+
+  {
+    id: "vino-tropical",
+
+    activo: true,
+    favorito: false,
+
+    categoria: "trajes",
+
+    nombre: "🍷Vino Tropical",
+    precio: "60.000",
+
+    tallas: ["S" , "M"],
+    color: ["vinotinto"],
+
+    palabrasClave: [
+    "3 piezas",
+    "tres piezas",
+    "malla",
+    "flor",
+    "orquidea",
+    ],
+
+    etiquetas: [
+      "nuevo",
+      "3-piezas",
+      "pareo",
+      "edicion-limitada"
+    ],
+
+    descripcion:
+      "Set de 3 piezas en tono vino con delicados detalles florales y falda de malla translúcida. Un diseño romántico que resalta la silueta con un toque de sofisticación tropical.",
+
+    imagenes: [
+      "/productos/vino-frontal.webp",
+      "/productos/vino-trasera.webp",
+      "/productos/vino-detalle.webp",
+      "/productos/vino-producto.webp",
+      
+    ],
+  },
+
+
+  {
+    id: "jardin-azul",
+
+    activo: true,
+    favorito: false,
+
+    categoria: "trajes",
+
+    nombre: "🌼 Jardín Azul",
+    precio: "40.000",
+
+    tallas: ["S" , "M"],
+    color: ["Azul floral"],
+
+    etiquetas: [
+      "nuevo",
+      "edicion-limitada"
+    ],
+
+    descripcion:
+      "Un bikini ligero y romántico, perfecto para días de playa y piscina.",
+
+    imagenes: [
+      "/productos/jardinA-frontal.webp",
+      "/productos/jardinA-trasera.webp",
+      
+    ],
+  },
+
+  {
+    id: "palmeras",
+
+    activo: true,
+    favorito: false,
+
+    categoria: "trajes",
+
+    nombre: "🌴 Palmeras",
+    precio: "60.000",
+
+    tallas: ["M"],
+    color: ["marfil"],
+
+    palabrasClave: [
+    "mostazillas",
+    ],
+
+    etiquetas: [
+      "nuevo",
+      "edicion-limitada"
+    ],
+
+    descripcion:
+      "Bikini de dos piezas en tono blanco con delicadas palmeras bordadas en mostacilla.",
+
+    imagenes: [
+      "/productos/palmera-frontal.webp",
+      "/productos/palmera-trasera.webp",
+      "/productos/palmera-detalle.webp",
+      
+    ],
+  },
+
+  {
+    id: "doble-encanto",
+
+    activo: true,
+    favorito: false,
+
+    categoria: "trajes",
+
+    nombre: "🌸 Doble Encanto",
+    precio: "40.000",
+
+    tallas: ["M"],
+    color: ["amarillo y rojo"],
+
+    palabrasClave: [
+    "doble",
+    ],
+
+    etiquetas: [
+      "nuevo",
+    ],
+
+    descripcion:
+      "Bikini reversible de dos piezas con doble estampado floral y cuadros vichy. Dos looks en un solo diseño para combinar frescura, color y versatilidad",
+
+    imagenes: [
+      "/productos/dobleE-frontal.webp",
+      "/productos/dobleE-trasera.webp",
+      
+    ],
+  },
+
+  {
+    id: "Fiera-dorada",
+
+    activo: true,
+    favorito: false,
+
+    categoria: "trajes",
+
+    nombre: "🐆 Fiera Dorada",
+    precio: "60.000",
+
+    tallas: ["M"],
+    color: ["café"],
+
+    palabrasClave: [
+    "lentejuela",
+    "3 piezas",
+    "tres piezas",
+    ],
+
+    etiquetas: [
+      "nuevo",
+    ],
+
+    descripcion:
+      "Set de 3 piezas con bikini de lentejuelas, pareo estampado animal print y detalles dorados. Un diseño sofisticado que combina el espíritu salvaje de la selva con el lujo del verano.",
+
+    imagenes: [
+      "/productos/fiera-frontal.webp",
+      "/productos/fiera-trasera.webp",
+      "/productos/fiera-detalle.webp",
+      
+    ],
+  },
+
 
 
 ];
