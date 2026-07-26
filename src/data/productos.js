@@ -1,37 +1,4 @@
 const productos = [
-  {
-    id: "set-oliva",
-
-    activo: false,
-    favorito: false,
-
-    categoria: "trajes",
-
-    nombre: "Set OLIVA PREMIUM",
-    precio: "80.000",
-
-    tallas: ["M", "L"],
-    color: ["verde", "oliva"],
-
-    etiquetas: [
-      "nuevo",
-      "3-piezas",
-      "pareo",
-      "edicion-limitada"
-    ],
-
-    descripcion:
-      "Diseño elegante inspirado en los tonos naturales del verano. Incluye salida de baño a juego. Ideal para lucir sofisticada, fresca y cómoda durante tus días de verano.",
-
-    imagenes: [
-      "/productos/set-oliva-frontal.webp",
-      "/productos/set-oliva-trasera.webp",
-      "/productos/set-oliva-lateral.webp",
-      "/productos/set-oliva-detalle.webp",
-      "/productos/set-oliva-resort.webp",
-      "/productos/set-oliva-producto.webp",
-    ],
-  },
 
   {
     id: "fleur-limon",
@@ -64,70 +31,6 @@ const productos = [
     ],
   },
 
-  {
-    id: "palma-real",
-
-    activo: false,
-    favorito: false,
-
-    categoria: "trajes",
-
-    nombre: "Palma Real",
-    precio: "60.000",
-
-    activo: false,
-    favorito: false,
-
-    categoria: "trajes",
-
-    tallas: ["S", "M"],
-    color: ["verde"],
-
-    etiquetas: [
-      "nuevo"
-    ],
-
-    descripcion:
-      "Diseño fresco y versátil pensado para disfrutar el verano con estilo.",
-
-    imagenes: [
-      "/productos/palma-real.webp",
-      "/productos/palma-real.webp",
-      "/productos/palma-real.webp",
-      "/productos/palma-real.webp",
-      "/productos/palma-real.webp",
-    ],
-  },
-  
-
-  {
-    id: "costa-verde",
-
-    activo: false,
-    favorito: false,
-
-    categoria: "trajes",
-
-    nombre: "Enterizo Costa Verde",
-    precio: "70.000",
-
-    tallas: ["M", "L"],
-    color: ["verde"],
-
-    etiquetas: [
-      "edicion-limitada"
-    ],
-
-    descripcion:
-      "Enterizo elegante que estiliza la figura y aporta comodidad durante todo el día.",
-
-    imagenes: [
-      "/productos/costa-verde-frontal.webp",
-      "/productos/costa-verde-detalle.webp",
-      "/productos/costa-verde-trasera.webp",
-      
-    ],
-  },
 
   {
     id: "jardin-capri",
@@ -153,11 +56,9 @@ const productos = [
       "Conjunto floral romántico con bikini triangular y pareo translúcido a juego. Inspirado en los jardines mediterráneos y las vacaciones de lujo.",
 
     imagenes: [
-      "/productos/jardin-capri-frontal.webp",
-      "/productos/jardin-capri-lateral.webp",
-      "/productos/jardin-capri-trasera.webp",
-      "/productos/jardin-capri-detalle.webp",
-      "/productos/jardin-capri-producto.webp",
+      "/productos/jardinDC-frontal.webp",
+      "/productos/jardinDC-trasera.webp",
+      "/productos/jardinDC-producto.webp",
     ],
   },
 
@@ -198,7 +99,7 @@ const productos = [
 {
     id: "concha-nacar",
 
-    activo: true,
+    activo: false,
     favorito: false,
 
     categoria: "trajes",
@@ -934,41 +835,6 @@ const productos = [
     ],
   },
 
-  {
-    id: "orquidea-fuccia",
-
-    activo: true,
-    favorito: false,
-
-    categoria: "trajes",
-
-    nombre: "Set Orquídea Fuccia",
-    precio: "80.000",
-
-    tallas: ["M" , "L"],
-    color: ["fuccia"],
-
-    palabrasClave: [
-    "flores",
-    ],
-
-    etiquetas: [
-      "nuevo",
-      "3-piezas",
-      "pareo",
-      "edicion-limitada"
-    ],
-
-    descripcion:
-      "Un set de tres piezas diseñado para robar miradas. El bikini con flores 3D y la falda de malla crean una combinación elegante, femenina y perfecta para disfrutar del verano con un estilo único.",
-
-    imagenes: [
-      "/productos/orquidea-frontal.webp",
-      "/productos/orquidea-detalle.webp",
-      "/productos/orquidea-trasera.webp",
-      
-    ],
-  },
 
   {
     id: "serena",
@@ -1338,6 +1204,304 @@ const productos = [
       "/productos/fiera-frontal.webp",
       "/productos/fiera-trasera.webp",
       "/productos/fiera-detalle.webp",
+      
+    ],
+  },
+
+  {
+    id: "isla-blanca",
+
+    activo: true,
+    favorito: false,
+
+    categoria: "trajes",
+
+    nombre: "Isla Blanca",
+    precio: "40.000",
+
+    tallas: ["XS" , "S"],
+    color: ["Estampado azul, fondo blanco"],
+
+    palabrasClave: [
+    "hilo",
+    ],
+
+    etiquetas: [
+      "nuevo",
+    ],
+
+    descripcion:
+      "Un bikini fresco, cómodo y fácil de combinar. Su estampado azul le da un toque especial para disfrutar del verano.",
+
+    imagenes: [
+      "/productos/islaB-frontal.webp",
+      "/productos/islaB-trasera.webp",
+      
+    ],
+  },
+
+  {
+    id: "brisa-de-coco",
+
+    activo: true,
+    favorito: false,
+
+    categoria: "trajes",
+
+    nombre: "🥥 Brisa de Coco",
+    precio: "40.000",
+
+    tallas: ["XS" , "S"],
+    color: ["Azul"],
+
+    etiquetas: [
+      "nuevo",
+    ],
+
+    descripcion:
+      "Bikini de amarre con contraste en azul marino y celeste. Ligero, cómodo y perfecto para acompañarte en cualquier plan bajo el sol.",
+
+    imagenes: [
+      "/productos/brisadC-frontal.webp",
+      "/productos/brisadC-trasera.webp",
+      
+    ],
+  },
+
+  {
+    id: "nube-de-mar",
+
+    activo: true,
+    favorito: false,
+
+    categoria: "trajes",
+
+    nombre: "Nube de Mar",
+    precio: "40.000",
+
+    tallas: ["XS" , "S"],
+    color: ["azul cielo"],
+
+    palabrasClave: [
+    "hilo",
+    ],
+
+    etiquetas: [
+      "nuevo",
+    ],
+
+    descripcion:
+      "Bikini strapless en tono azul cielo con detalle de estrella de mar en el top. Un diseño fresco y fácil de combinar para tus días de verano. Incluye tira removible para usarlo también con soporte al cuello.",
+
+    imagenes: [
+      "/productos/nubedM-frontal.webp",
+      "/productos/nubedM-trasera.webp",
+      
+    ],
+  },
+
+  {
+    id: "red-de-mar",
+
+    activo: true,
+    favorito: false,
+
+    categoria: "trajes",
+
+    nombre: "Red de Mar",
+    precio: "40.000",
+
+    tallas: ["XS" , "S"],
+    color: ["azul rey con beige"],
+
+    palabrasClave: [
+    "tejido",
+    ],
+
+    etiquetas: [
+      "nuevo",
+    ],
+
+    descripcion:
+      "Bikini de tejido artesanal en tonos azul y crema. Un diseño fresco y cómodo, ideal para disfrutar de la playa con un estilo natural.",
+
+    imagenes: [
+      "/productos/reddM-frontal.webp",
+      "/productos/reddM-trasera.webp",
+      "/productos/reddM-detalle.webp",
+      
+    ],
+  },
+
+  {
+    id: "tierra-viva",
+
+    activo: true,
+    favorito: false,
+
+    categoria: "trajes",
+
+    nombre: "Tierra Viva 🌾",
+    precio: "40.000",
+
+    tallas: ["XS" , "S"],
+    color: ["mezcla de colores: verde, tierra y mostaza"],
+
+    palabrasClave: [
+    "tejido",
+    ],
+
+    etiquetas: [
+      "nuevo",
+    ],
+
+    descripcion:
+      "Bikini tejido con detalles artesanales y una combinación de colores inspirada en la naturaleza. Ligero, cómodo y perfecto para disfrutar de la playa o la piscina.",
+
+    imagenes: [
+      "/productos/tierraV-frontal.webp",
+      "/productos/tierraV-trasera.webp",
+      "/productos/tierraV-detalle.webp",
+      
+    ],
+  },
+
+  {
+    id: "mango-biche",
+
+    activo: true,
+    favorito: false,
+
+    categoria: "trajes",
+
+    nombre: "🥭 Mango Biche",
+    precio: "40.000",
+
+    tallas: ["L"],
+    color: ["verde degradado"],
+
+    palabrasClave: [
+    "degradado",
+    ],
+
+    etiquetas: [
+      "nuevo",
+    ],
+
+    descripcion:
+      "Bikini con degradado en tonos azul y verde limón, detalle de caballito de mar y panty ajustable con recogido posterior. Un diseño fresco, alegre y perfecto para disfrutar los días de sol.",
+
+    imagenes: [
+      "/productos/mangoB-frontal.webp",
+      "/productos/mangoB-trasera.webp",
+      "/productos/mangoB-detalle.webp",
+      "/productos/mangoB-bra.webp",
+      
+    ],
+  },
+
+  {
+    id: "jardin-costero",
+
+    activo: true,
+    favorito: false,
+
+    categoria: "trajes",
+
+    nombre: "Jardín Costero",
+    precio: "40.000",
+
+    tallas: ["M"],
+    color: ["verde"],
+
+    palabrasClave: [
+    "encaje",
+    ],
+
+    etiquetas: [
+      "nuevo",
+    ],
+
+    descripcion:
+      "Bikini en tono verde oliva con delicado encaje y detalles de perlas. Un diseño fresco y cómodo para disfrutar de la playa o la piscina con un estilo natural.",
+
+    imagenes: [
+      "/productos/jardinC-frontal.webp",
+      "/productos/jardinC-trasera.webp",
+      "/productos/jardinC-detalle.webp",
+      
+      
+    ],
+  },
+
+  {
+    id: "agua-de-coco",
+
+    activo: true,
+    favorito: false,
+
+    categoria: "trajes",
+
+    nombre: "Agua de Coco",
+    precio: "40.000",
+
+    tallas: ["L"],
+    color: ["verde"],
+
+    palabrasClave: [
+    "textura",
+    "enterizo",
+    "entero",
+    ],
+
+    etiquetas: [
+      "nuevo",
+    ],
+
+    descripcion:
+      "Enterizo de silueta moderna con abertura frontal y detalle de aro dorado. Su diseño estiliza la figura y combina fácilmente con salidas de baño, shorts o una falda para un look de playa completo.",
+
+    imagenes: [
+      "/productos/aguadC-frontal.webp",
+      "/productos/aguadC-trasera.webp",
+      "/productos/aguadC-detalle.webp",
+      
+      
+    ],
+  },
+
+  {
+    id: "playa-madera",
+
+    activo: true,
+    favorito: false,
+
+    categoria: "trajes",
+
+    nombre: "Playa Madera",
+    precio: "60.000",
+
+    tallas: ["M"],
+    color: ["café"],
+
+    palabrasClave: [
+    "salida",
+    "tres piezas",
+    "3 piezas",
+    ],
+
+    etiquetas: [
+      "nuevo",
+    ],
+
+    descripcion:
+      "Bikini de estampado en tonos tierra con detalles de cuentas decorativas y pareo a juego. Un diseño cómodo y versátil para disfrutar de la playa o la piscina con un estilo natural.",
+
+    imagenes: [
+      "/productos/playaM-frontal.webp",
+      "/productos/playaM-trasera.webp",
+      "/productos/playaM-detalle.webp",
+      
       
     ],
   },
