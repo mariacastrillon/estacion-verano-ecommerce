@@ -34,7 +34,23 @@ const estilosEtiquetas = {
   },
 };
 
+const imagenesVacias = [];
+const imagenesSinVariantesResponsivas = new Set([
+  "/productos/flor-de-fuego-detalle.webp",
+  "/productos/jade-detalle.webp",
+]);
+
+function obtenerSrcSet(imagen) {
+  if (!imagen?.endsWith(".webp") || imagenesSinVariantesResponsivas.has(imagen)) {
+    return undefined;
+  }
+
+  const base = imagen.slice(0, -".webp".length);
+  return `${base}-480w.webp 480w, ${base}-768w.webp 768w, ${imagen} 1200w`;
+}
+
 function ProductoCard({ producto }) {
+  const imagenes = producto.variantes?.[0]?.imagenes ?? producto.imagenes ?? imagenesVacias;
   const [imagenActual, setImagenActual] = useState(0);
   const [hover, setHover] = useState(false);
   const [visible, setVisible] = useState(true);
@@ -43,7 +59,7 @@ function ProductoCard({ producto }) {
   const { esFavorito, toggleFavorito } = useFavoritos();
 
   useEffect(() => {
-    if (!hover || producto.imagenes.length <= 1) {
+    if (!hover || imagenes.length <= 1) {
       setImagenActual(0);
       setVisible(true);
       return;
@@ -55,7 +71,7 @@ function ProductoCard({ producto }) {
       requestAnimationFrame(() => {
         setTimeout(() => {
           setImagenActual(
-            (actual) => (actual + 1) % producto.imagenes.length
+            (actual) => (actual + 1) % imagenes.length
           );
 
           setVisible(true);
@@ -64,7 +80,7 @@ function ProductoCard({ producto }) {
     }, 1300);
 
     return () => clearInterval(intervalo);
-  }, [hover, producto.imagenes]);
+  }, [hover, imagenes]);
 
   return (
     <div className="group relative bg-[#102A2A] rounded-3xl overflow-hidden border border-[#2E4A47] hover:border-[#DCCDA4] hover:-translate-y-2 transition-all duration-500 shadow-xl">
@@ -143,9 +159,14 @@ function ProductoCard({ producto }) {
         onMouseLeave={() => setHover(false)}
       >
         <img
-          src={producto.imagenes[imagenActual]}
+          src={imagenes[imagenActual]}
+          srcSet={obtenerSrcSet(imagenes[imagenActual])}
+          sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
           alt={producto.nombre}
           loading="lazy"
+          decoding="async"
+          width="1200"
+          height="1600"
           className={`
             w-full
             h-[450px]

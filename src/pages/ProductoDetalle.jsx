@@ -119,6 +119,9 @@ console.log("Producto encontrado:", producto);
 
               <img
                 src={imagenActiva}
+                width="1200"
+                height="1600"
+                decoding="async"
                 alt={producto.nombre}
                 className="w-full transition-transform duration-300"
                 style={zoomStyle}

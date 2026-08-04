@@ -57,6 +57,10 @@ function Inicio() {
       <section className="w-full">
         <img
           src="/hero/portada.webp"
+          width="1280"
+          height="853"
+          fetchPriority="high"
+          decoding="async"
           alt="Portada Estación Verano"
           className="w-full h-[210px] md:h-auto object-cover"
         />
