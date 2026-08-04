@@ -3,6 +3,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import productos from "../data/productos";
 import ImagenModal from "../components/ImagenModal";
 import Navbar from "../components/Navbar";
+import SelectorVariantes from "../components/SelectorVariantes";
 
 function ProductoDetalle() {
   const { id } = useParams();
@@ -12,9 +13,17 @@ function ProductoDetalle() {
     (p) => p.id === id
   );
 
+  console.log("ID recibido:", id);
+console.log("Producto encontrado:", producto);
+
   const [imagenActiva, setImagenActiva] = useState(
-    producto?.imagenes[0]
-  );
+  producto?.imagenes?.[0] ?? ""
+);
+
+  const [varianteActiva, setVarianteActiva] = useState(
+  producto?.variantes?.[0] ?? null
+);
+
 
   const [tallaSeleccionada, setTallaSeleccionada] = useState("");
 
@@ -26,9 +35,9 @@ function ProductoDetalle() {
   const [esMovil, setEsMovil] = useState(false);
 
   const indiceImagen =
-    producto?.imagenes.findIndex(
-      (img) => img === imagenActiva
-    ) ?? 0;
+  producto?.imagenes?.findIndex(
+    (img) => img === imagenActiva
+  ) || 0;
 
   useEffect(() => {
     const comprobarPantalla = () => {
@@ -38,6 +47,8 @@ function ProductoDetalle() {
     comprobarPantalla();
 
     window.addEventListener("resize", comprobarPantalla);
+
+      
 
     return () =>
       window.removeEventListener(
@@ -64,6 +75,16 @@ function ProductoDetalle() {
       transform: "scale(1)",
     });
   };
+
+  const seleccionarVariante = (variante) => {
+
+  setVarianteActiva(variante);
+
+  setImagenActiva(variante.imagenes[0]);
+
+  setTallaSeleccionada("");
+
+};
 
   if (!producto) {
     return (
@@ -107,7 +128,7 @@ function ProductoDetalle() {
 
             <div className="grid grid-cols-3 gap-3 mt-4">
 
-              {producto.imagenes.map((imagen, index) => (
+              {(varianteActiva?.imagenes ?? []).map((imagen, index) => (
 
                 <button
                   key={index}
@@ -158,6 +179,12 @@ function ProductoDetalle() {
             <p className="text-[#DCCDA4] text-4xl font-semibold mb-8">
               ${producto.precio}
             </p>
+
+            <SelectorVariantes
+  variantes={producto.variantes}
+  varianteActiva={varianteActiva}
+  onSeleccionar={seleccionarVariante}
+/>
               
               {/* Características */}
 

@@ -933,38 +933,35 @@ const productos = [
   },
 
   {
-    id: "noche-de-verano",
+  id: "noche-de-verano",
 
-    activo: true,
-    favorito: false,
+  nombre: "Noche de Verano",
 
-    categoria: "trajes",
+  precio: "80.000",
 
-    nombre: "Noche de Verano 🖤",
-    precio: "80.000",
+  variantes: [
 
-    tallas: ["S" , "L" , "XL"],
-    color: ["negro"],
+    {
+      id: "negro",
 
-    palabrasClave: [
-    "4 piezas",
-    "cuatro piezas",
-    ],
+      nombre: "Negro",
 
-    etiquetas: [
-      "nuevo",
-    ],
+      codigo: "#111111",
 
-    descripcion:
-      "Un set de 4 piezas. Incluye bikini, blusa y falda para un look sofisticado, fresco y perfecto para la playa, la piscina o un beach club.",
+      miniatura:
+        "/productos/nochedv-frontal.webp",
 
-    imagenes: [
-      "/productos/nochedv-frontal.webp",
-      "/productos/nochedv-detalle.webp",
-      "/productos/nochedv-producto.webp",
-      
-    ],
-  },
+      imagenes: [
+        "/productos/nochedv-frontal.webp",
+        "/productos/nochedv-detalle.webp",
+        "/productos/nochedv-producto.webp",
+      ],
+
+      tallas:["S","L","XL"]
+    }
+
+  ]
+},
 
   {
     id: "marea-turquesa",
@@ -1509,5 +1506,23 @@ const productos = [
 
 
 ];
+
+productos.forEach((producto) => {
+  if (Array.isArray(producto.variantes) && producto.variantes.length > 0) {
+    return;
+  }
+
+  producto.variantes = [
+    {
+      id: producto.id,
+      nombre: producto.nombre,
+      codigo: "",
+      miniatura: producto.imagenes?.[0] || "",
+      imagenes: producto.imagenes || [],
+      tallas: producto.tallas,
+    },
+  ];
+
+});
 
 export default productos;
