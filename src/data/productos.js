@@ -1507,22 +1507,32 @@ const productos = [
 
 ];
 
-productos.forEach((producto) => {
-  if (Array.isArray(producto.variantes) && producto.variantes.length > 0) {
-    return;
-  }
-
-  producto.variantes = [
-    {
-      id: producto.id,
-      nombre: producto.nombre,
-      codigo: "",
-      miniatura: producto.imagenes?.[0] || "",
-      imagenes: producto.imagenes || [],
-      tallas: producto.tallas,
-    },
-  ];
-
+// Future colors for Brisa Orquidea, Luna Negra, Fuccia Tropical and Noche de
+// Verano should be added to their respective `variantes` arrays only after
+// their real image assets are available.
+const crearVariantePredeterminada = (producto) => ({
+  id: producto.id,
+  nombre: producto.nombre,
+  codigo: "",
+  miniatura: producto.imagenes?.[0] ?? "",
+  imagenes: producto.imagenes ?? [],
+  tallas: producto.tallas ?? [],
 });
 
-export default productos;
+const productosConVariantes = productos.map((producto) => ({
+  ...producto,
+  variantes:
+    Array.isArray(producto.variantes) && producto.variantes.length > 0
+      ? producto.variantes
+      : [crearVariantePredeterminada(producto)],
+}));
+
+export const obtenerVariantes = (producto) => producto.variantes ?? [];
+
+export const obtenerTallas = (producto) => [
+  ...new Set(
+    obtenerVariantes(producto).flatMap((variante) => variante.tallas ?? [])
+  ),
+];
+
+export default productosConVariantes;

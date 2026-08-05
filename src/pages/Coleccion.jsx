@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import productos from "../data/productos";
+import productos, { obtenerTallas } from "../data/productos";
 import ProductoCard from "../components/ProductoCard";
 import Navbar from "../components/Navbar";
 
@@ -15,6 +15,7 @@ function Coleccion() {
 
   const productosFiltrados = [...productos]
     .filter((producto) => {
+      const tallas = obtenerTallas(producto);
 
       // Solo productos activos
       if (!producto.activo) return false;
@@ -33,7 +34,7 @@ function Coleccion() {
       const contenido = `
   ${producto.nombre}
   ${producto.descripcion}
-  ${producto.tallas?.join(" ") || ""}
+  ${tallas.join(" ")}
   ${producto.color || ""}
   ${producto.palabrasClave?.join(" ") || ""}
   ${producto.material || ""}
@@ -47,7 +48,7 @@ function Coleccion() {
 
       const coincideTalla =
   filtroTalla === "todas" ||
-  producto.tallas?.includes(filtroTalla);
+  tallas.includes(filtroTalla);
 
       return (
         coincideBusqueda &&

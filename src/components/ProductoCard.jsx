@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useFavoritos } from "../context/FavoritosContext";
+import { obtenerVariantes } from "../data/productos";
 
 const estilosEtiquetas = {
   nuevo: {
@@ -34,7 +35,6 @@ const estilosEtiquetas = {
   },
 };
 
-const imagenesVacias = [];
 const imagenesSinVariantesResponsivas = new Set([
   "/productos/flor-de-fuego-detalle.webp",
   "/productos/jade-detalle.webp",
@@ -50,7 +50,7 @@ function obtenerSrcSet(imagen) {
 }
 
 function ProductoCard({ producto }) {
-  const imagenes = producto.variantes?.[0]?.imagenes ?? producto.imagenes ?? imagenesVacias;
+  const imagenes = obtenerVariantes(producto)[0]?.imagenes ?? [];
   const [imagenActual, setImagenActual] = useState(0);
   const [hover, setHover] = useState(false);
   const [visible, setVisible] = useState(true);
