@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
+  <title id="title">Estación Verano symbol</title>
+  <desc id="desc">Gold swimsuit and ocean waves on a dark green circular field.</desc>
+  <circle cx="256" cy="256" r="248" fill="#102f30"/>
+  <g fill="none" stroke="#dccda4" stroke-linecap="round" stroke-linejoin="round">
+    <g stroke-width="11">
+      <path d="M195 73v52M317 73v52"/>
+      <circle cx="201" cy="143" r="38"/>
+      <circle cx="311" cy="143" r="38"/>
+      <path d="M239 143h34M185 178c3 29 10 49-11 78l-19 25c31 15 57 38 75 69 7 12 14 18 26 18s19-6 26-18c18-31 44-54 75-69l-19-25c-21-29-14-49-11-78"/>
+    </g>
+    <circle cx="256" cy="210" r="6" fill="#dccda4" stroke="none"/>
+    <g stroke-width="10">
+      <path d="M100 245c0 106 70 160 156 160s156-54 156-160"/>
+      <path d="M108 286c44-38 79-38 121-10 19 13 35 20 55 20 23 0 40-9 63-24 38-25 72-23 113 10"/>
+      <path d="M123 330c38-31 72-30 107-7 19 13 35 20 56 20 24 0 41-9 64-24 30-20 58-20 92 4"/>
+    </g>
+  </g>
+</svg>

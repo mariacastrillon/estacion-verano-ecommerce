@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
+  <title id="title">Estación Verano</title>
+  <desc id="desc">Estación Verano logo: a gold swimsuit and ocean waves on a dark green circle, with a classic gold wordmark.</desc>
+  <circle cx="256" cy="256" r="248" fill="#102f30"/>
+  <g fill="none" stroke="#dccda4" stroke-linecap="round" stroke-linejoin="round">
+    <g stroke-width="9">
+      <path d="M205 55v40M307 55v40"/>
+      <circle cx="210" cy="109" r="29"/>
+      <circle cx="302" cy="109" r="29"/>
+      <path d="M239 109h34M198 136c3 24 9 39-10 65l-15 20c30 14 53 35 69 62 5 9 9 13 14 13s9-4 14-13c16-27 39-48 69-62l-15-20c-19-26-13-41-10-65"/>
+    </g>
+    <circle cx="256" cy="164" r="5" fill="#dccda4" stroke="none"/>
+    <g stroke-width="8">
+      <path d="M112 191c0 92 64 137 144 137s144-45 144-137"/>
+      <path d="M119 226c40-33 70-33 108-8 17 11 31 17 49 17 20 0 35-8 56-21 34-22 63-20 95 8"/>
+      <path d="M132 265c33-27 61-26 92-6 17 11 31 17 49 17 20 0 35-8 55-21 27-18 51-18 79 4"/>
+    </g>
+  </g>
+  <!-- Custom path wordmark: a high-contrast, classical serif construction. -->
+  <g fill="#dccda4" aria-label="VERANO">
+    <path d="M91 355h20v4h-5l14 46 14-46h-6v-4h17v4h-5l-18 58h-8l-18-58h-5z"/>
+    <path d="M150 355h42v15h-4c-3-8-7-11-14-11h-9v22h8c6 0 8-3 9-9h4v23h-4c-1-7-3-10-9-10h-8v25h10c8 0 13-5 17-14h4l-3 18h-44v-4h6v-51h-6z"/>
+    <path d="M201 355h25c17 0 27 6 27 19 0 10-6 16-16 18l16 18h6v4h-16l-19-23h-6v19h6v4h-23v-4h6v-51h-6zm17 4v28h7c10 0 14-5 14-14 0-9-4-14-14-14z"/>
+    <path d="M280 354h9l22 56h6v4h-24v-4h6l-5-14h-21l-5 14h6v4h-17v-4h6zm3 14-9 24h18z"/>
+    <path d="M316 355h20l30 42v-38h-7v-4h19v4h-7v56h-7l-35-48v43h7v4h-20v-4h7v-51h-7z"/>
+    <path d="M414 353c19 0 31 12 31 31s-12 32-31 32-31-12-31-32 12-31 31-31zm0 4c-11 0-17 10-17 27s6 28 17 28 17-10 17-28-6-27-17-27z"/>
+  </g>
+  <g fill="#dccda4" aria-label="ESTACION" transform="translate(133 439) scale(.64)">
+    <path d="M0 0h28v10h-3C23 5 20 3 15 3H9v14h5c4 0 6-2 6-6h3v15h-3c0-5-2-6-6-6H9v16h7c5 0 8-3 10-9h3l-2 12H0v-3h4V3H0z"/>
+    <path d="M34 27h3c1 7 5 10 11 10 5 0 8-3 8-7 0-5-4-7-10-9-7-3-11-6-11-12 0-6 5-10 12-10 4 0 7 1 9 3l2-2h2v12h-3c-1-6-4-9-9-9-4 0-7 2-7 6 0 4 4 6 10 8 7 3 11 6 11 13 0 7-5 12-14 12-4 0-8-1-10-4l-3 3h-2z"/>
+    <path d="M64 0h36v13h-3c-2-7-5-10-11-10h-2v33h5v3H74v-3h5V3h-2c-6 0-9 3-11 10h-3z"/>
+    <path d="M115-1h6l15 37h4v3h-16v-3h4l-3-9h-14l-3 9h4v3H101v-3h4zm3 9-6 16h12z"/>
+    <path d="M142 0h13l20 28V3h-5V0h13v3h-5v37h-5l-23-32v28h5v3h-13v-3h5V3h-5z"/>
+    <path d="M205 0h15v3h-5v33h5v3h-15v-3h5V3h-5z"/>
+    <path d="M245-1c12 0 20 8 20 20s-8 21-20 21-20-8-20-21 8-20 20-20zm0 3c-7 0-11 7-11 17s4 18 11 18 11-7 11-18-4-17-11-17z"/>
+    <path d="M270 0h13l20 28V3h-5V0h13v3h-5v37h-5l-23-32v28h5v3h-13v-3h5V3h-5z"/>
+  </g>
+</svg>
