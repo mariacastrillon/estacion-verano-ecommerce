@@ -935,6 +935,11 @@ const productos = [
   {
   id: "noche-de-verano",
 
+  activo: true,
+  favorito: false,
+
+  categoria: "trajes",
+
   nombre: "Noche de Verano",
 
   precio: "80.000",
@@ -958,7 +963,22 @@ const productos = [
       ],
 
       tallas:["S","L","XL"]
-    }
+    },
+
+    {
+    id: "azul",
+    nombre: "Azul",
+    codigo: "NDV-AZU",
+    colorHex: "#1E5EFF",
+    miniatura: "/productos/nochedv-azul-frontal.webp",
+    imagenes: [
+      "/productos/nochedv-azul-frontal.webp",
+      "/productos/nochedv-azul-producto.webp",
+      "/productos/nochedv-azul-lateral.webp",
+      "/productos/nochedv-azul-detalle.webp",
+    ],
+    tallas: ["L", "XL"],
+  },
 
   ]
 },

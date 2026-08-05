@@ -75,11 +75,18 @@ function ProductoDetalle() {
       return;
     }
 
+    const detalleVariante =
+      variantes.length >= 2 && varianteActiva?.nombre
+        ? `Variante: ${varianteActiva.nombre}`
+        : "";
+
     const mensaje = `Hola.
 
 Me interesa:
 
 ${producto.nombre}
+
+${detalleVariante}
 
 ${tallasActivas.length > 0 ? `Talla: ${tallaSeleccionada}` : ""}
 
@@ -151,6 +158,13 @@ ${tallasActivas.length > 0 ? `Talla: ${tallaSeleccionada}` : ""}
 
             <h1 className="text-4xl md:text-5xl font-light mb-4">{producto.nombre}</h1>
             <p className="text-[#DCCDA4] text-4xl font-semibold mb-8">${producto.precio}</p>
+
+            <div className="mb-8 rounded-2xl border border-slate-800 bg-slate-900/50 px-5 py-4">
+              <p className="text-xs uppercase tracking-[0.18em] text-slate-400">Color seleccionado</p>
+              <p className="mt-1 text-lg font-medium text-[#DCCDA4]">
+                {varianteActiva?.nombre ?? producto.nombre}
+              </p>
+            </div>
 
             <SelectorVariantes
               variantes={variantes}
