@@ -73,7 +73,7 @@ const productos = [
     nombre: "Set Brisa de Orquídea",
     precio: "80.000",
 
-    tallas: ["S", "M", "L"],
+    tallas: ["M", "L"],
     color: ["rosa"],
 
     etiquetas: [
@@ -94,7 +94,39 @@ const productos = [
       "/productos/brisa-orquidea-detalle.webp",
       "/productos/brisa-orquidea-producto.webp",
     ],
+
+    variantes: [
+      {
+        id: "rosa",
+        activo: true,
+        nombre: "Rosa",
+        codigo: "",
+        miniatura: "/productos/brisa-orquidea-frontal.webp",
+        imagenes: [
+          "/productos/brisa-orquidea-frontal.webp",
+          "/productos/brisa-orquidea-lateral.webp",
+          "/productos/brisa-orquidea-trasera.webp",
+          "/productos/brisa-orquidea-detalle.webp",
+          "/productos/brisa-orquidea-producto.webp",
+        ],
+        tallas: ["M", "L"],
+      },
+      {
+        id: "vino",
+        activo: true,
+        nombre: "Vino",
+        codigo: "#608963",
+        miniatura: "/productos/brisa-orquidea-vino-frontal.webp",
+        imagenes: [
+          "/productos/brisa-orquidea-vino-frontal.webp",
+          "/productos/brisa-orquidea-vino-trasera.webp",
+        ],
+        tallas: ["M"],
+      },
+    ],
   },
+
+  
 
 {
     id: "concha-nacar",
@@ -208,6 +240,7 @@ const productos = [
 
     {
       id: "rojo",
+      activo: false,
       nombre: "Rojo",
       codigo: "#C1121F",
 

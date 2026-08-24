@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import productos, { obtenerTallas } from "../data/productos";
+import productos, { obtenerTallas, obtenerVariantes } from "../data/productos";
 import ProductoCard from "../components/ProductoCard";
 import Navbar from "../components/Navbar";
 
@@ -16,6 +16,10 @@ function Coleccion() {
   const productosFiltrados = [...productos]
     .filter((producto) => {
       const tallas = obtenerTallas(producto);
+      const coloresVariantes = obtenerVariantes(producto)
+        .map((variante) => variante.nombre)
+        .filter(Boolean)
+        .join(" ");
 
       // Solo productos activos
       if (!producto.activo) return false;
@@ -27,7 +31,7 @@ function Coleccion() {
 
       const texto = busqueda.toLowerCase().trim();
 
-      const precioNormalizado = producto.precio
+      const precioNormalizado = String(producto.precio ?? "")
         .replace(/\./g, "")
         .replace(/,/g, "");
 
@@ -35,6 +39,7 @@ function Coleccion() {
   ${producto.nombre}
   ${producto.descripcion}
   ${tallas.join(" ")}
+  ${coloresVariantes}
   ${producto.color || ""}
   ${producto.palabrasClave?.join(" ") || ""}
   ${producto.material || ""}
@@ -59,11 +64,11 @@ function Coleccion() {
     .sort((a, b) => {
 
       const precioA = Number(
-        a.precio.replace(/\./g, "")
+        String(a.precio ?? "").replace(/\./g, "")
       );
 
       const precioB = Number(
-        b.precio.replace(/\./g, "")
+        String(b.precio ?? "").replace(/\./g, "")
       );
 
       switch (orden) {
