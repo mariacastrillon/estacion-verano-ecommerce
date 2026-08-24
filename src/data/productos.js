@@ -158,35 +158,73 @@ const productos = [
   },
 
   {
-    id: "luna-negra",
+  id: "luna-negra",
 
-    activo: true,
-    favorito: true,
+  activo: true,
+  favorito: true,
 
-    categoria: "trajes",
+  categoria: "trajes",
 
-    nombre: "Luna Negra",
-    precio: "40.000",
+  nombre: "Luna Negra",
+  precio: "40.000",
 
-    tallas: ["s"],
-    color: ["negro"],
+  palabrasClave: [
+    "bikini",
+    "2 piezas",
+    "dos piezas",
+    "negro",
+    "rojo",
+    "herrajes dorados",
+  ],
 
-    etiquetas: [
-      "nuevo",
-      "detalles dorados"
-    ],
+  etiquetas: [
+    "nuevo",
+    "detalles dorados",
+    "nuevo-color",
+  ],
 
-    descripcion:
-      "Bikini de 2 piezas Su color negro estiliza la figura, mientras que los herrajes dorados le aportan un toque sofisticado y exclusivo. El top con excelente soporte y la panty de corte favorecedor crean un equilibrio perfecto entre elegancia y comodidad. 🌊 Ideal para playa, piscina o tus vacaciones.✨ Un básico premium que combina con cualquier salida de baño o accesorio. ",
+  descripcion:
+    "Bikini de 2 piezas con herrajes dorados que aportan un toque sofisticado. Su diseño estiliza la figura y ofrece comodidad para disfrutar de la playa, la piscina o tus vacaciones con un estilo elegante y versátil.",
 
-    imagenes: [
-      "/productos/luna-negra-frontal.webp",
-      "/productos/luna-negra-lateral.webp",
-      "/productos/luna-negra-trasera.webp",
-      "/productos/luna-negra-detalle.webp",
-      
-    ],
-  },
+  variantes: [
+
+    {
+      id: "negro",
+      nombre: "Negro",
+      codigo: "#111111",
+
+      miniatura:
+        "/productos/luna-negra-frontal.webp",
+
+      imagenes: [
+        "/productos/luna-negra-frontal.webp",
+        "/productos/luna-negra-lateral.webp",
+        "/productos/luna-negra-trasera.webp",
+        "/productos/luna-negra-detalle.webp",
+      ],
+
+      tallas: ["S"],
+    },
+
+    {
+      id: "rojo",
+      nombre: "Rojo",
+      codigo: "#C1121F",
+
+      miniatura:
+        "/productos/luna-negra-rojo-frontal.webp",
+
+      imagenes: [
+        "/productos/luna-negra-rojo-frontal.webp",
+        "/productos/luna-negra-rojo-lateral.webp",
+        "/productos/luna-negra-rojo-trasera.webp",
+      ],
+
+      tallas: ["XS", "S"],
+    },
+
+  ],
+},
 
   {
     id: "concha-rosa",
@@ -617,38 +655,70 @@ const productos = [
   },
 
   {
-    id: "fuccia-tropical",
+  id: "fuccia-tropical",
 
-    activo: true,
-    favorito: false,
+  activo: true,
+  favorito: false,
 
-    categoria: "trajes",
+  categoria: "trajes",
 
-    nombre: "Set Fuccia Tropical",
-    precio: "60.000",
+  nombre: "Set Fuccia Tropical",
+  precio: "60.000",
 
-    tallas: ["M" , "L"],
-
-    color: "Fucsia",
-
-    palabrasClave: [
+  palabrasClave: [
     "rosado",
-    "malla"
-    ],
+    "fucsia",
+    "fuccia",
+    "lila",
+    "malla",
+    "3 piezas",
+    "tres piezas",
+  ],
 
-    etiquetas: [
-      "nuevo" ,
-    ],
+  etiquetas: [
+    "nuevo",
+    "nuevo-color",
+  ],
 
-    descripcion:
-      "Color, brillo y actitud en un solo conjunto. Ideal para disfrutar el verano con un estilo fresco y lleno de personalidad.",
+  descripcion:
+    "Color, brillo y actitud en un solo conjunto. Incluye bikini tipo  hilo y pareo de malla para disfrutar la playa o la piscina con un estilo fresco y lleno de personalidad.",
 
-    imagenes: [
-      "/productos/fuccia-tropical-frontal.webp",
-      "/productos/fuccia-tropical-trasera.webp",
-      "/productos/fuccia-tropical-detalle.webp",
-    ],
-  },
+  variantes: [
+    {
+      id: "fuccia",
+      nombre: "Fuccia",
+      codigo: "#D10073",
+
+      miniatura:
+        "/productos/fuccia-tropical-frontal.webp",
+
+      imagenes: [
+        "/productos/fuccia-tropical-frontal.webp",
+        "/productos/fuccia-tropical-trasera.webp",
+        "/productos/fuccia-tropical-detalle.webp",
+      ],
+
+      tallas: ["M", "L"],
+    },
+
+    {
+      id: "lila",
+      nombre: "Lila",
+      codigo: "#B57EDC",
+
+      miniatura:
+        "/productos/fuccia-tropical-lila-frontal.webp",
+
+      imagenes: [
+        "/productos/fuccia-tropical-lila-frontal.webp",
+        "/productos/fuccia-tropical-lila-trasera.webp",
+        "/productos/fuccia-tropical-lila-detalle.webp",
+      ],
+
+      tallas: ["L", "XL"],
+    },
+  ],
+},
 
    {
     id: "terracota",
