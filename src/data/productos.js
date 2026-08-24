@@ -203,7 +203,7 @@ const productos = [
         "/productos/luna-negra-detalle.webp",
       ],
 
-      tallas: ["S"],
+      tallas: ["M"],
     },
 
     {
@@ -422,40 +422,6 @@ const productos = [
     ],
   },
 
-  {
-    id: "flor-de-fuego",
-
-    activo: true,
-    favorito: false,
-
-    categoria: "trajes",
-
-    nombre: "Flor de Fuego",
-    precio: "60.000",
-
-    tallas: ["M" , "L"],
-    color: ["negro"],
-
-    palabrasClave: [
-    "escote",
-    "naranja",
-    "lazo",
-    ],
-
-    etiquetas: [
-      "nuevo" ,
-    ],
-
-    descripcion:
-      "Enterizo con escote profundo y estampado floral vibrante, diseñado para resaltar tu estilo con elegancia y frescura tropical.",
-
-    imagenes: [
-      "/productos/flor-de-fuego-frontal.webp",
-      "/productos/flor-de-fuego-producto.webp",
-      "/productos/flor-de-fuego-trasera.webp",
-      "/productos/flor-de-fuego-detalle.webp",
-    ],
-  },
 
   {
     id: "mar-celeste",
@@ -558,35 +524,6 @@ const productos = [
       "/productos/golden-hour-trasera.webp",
       "/productos/golden-hour-lateral.webp",
       "/productos/golden-hour-detalle.webp",
-    ],
-  },
-
-  {
-    id: "palma-blanca",
-
-    activo: true,
-    favorito: false,
-
-    categoria: "bolsos",
-
-    nombre: "Palma Blanca",
-    precio: "40.000",
-
-    color: ["blanco"],
-
-    medidas: "27 x 43 cm",
-
-    etiquetas: [
-      "nuevo" ,
-    ],
-
-    descripcion:
-      "🤍 Palma Blanca 🏝️ El bolso perfecto para acompañar tus días de sol. Amplio, elegante y fácil de combinar con cualquier look de playa.",
-
-    imagenes: [
-      "/productos/palma-blanca-frontal.webp",
-      "/productos/palma-blanca-lateral.webp",
-      "/productos/palma-blanca-detalle.webp",
     ],
   },
 
@@ -1032,11 +969,12 @@ const productos = [
         "/productos/nochedv-producto.webp",
       ],
 
-      tallas:["S","L","XL"]
+      tallas:["L","XL"]
     },
 
     {
     id: "azul",
+    activo: false,
     nombre: "Azul",
     codigo: "NDV-AZU",
     colorHex: "#1E5EFF",
@@ -1100,7 +1038,7 @@ const productos = [
     nombre: "✨ Sol Dorado",
     precio: "60.000",
 
-    tallas: ["S" , "M"],
+    tallas: ["S"],
     color: ["dorado"],
 
     palabrasClave: [
@@ -1134,7 +1072,7 @@ const productos = [
     nombre: "🍷Vino Tropical",
     precio: "60.000",
 
-    tallas: ["S" , "M"],
+    tallas: ["S"],
     color: ["vinotinto"],
 
     palabrasClave: [
@@ -1453,40 +1391,7 @@ const productos = [
     ],
   },
 
-  {
-    id: "mango-biche",
-
-    activo: true,
-    favorito: false,
-
-    categoria: "trajes",
-
-    nombre: "🥭 Mango Biche",
-    precio: "40.000",
-
-    tallas: ["L"],
-    color: ["verde degradado"],
-
-    palabrasClave: [
-    "degradado",
-    ],
-
-    etiquetas: [
-      "nuevo",
-    ],
-
-    descripcion:
-      "Bikini con degradado en tonos azul y verde limón, detalle de caballito de mar y panty ajustable con recogido posterior. Un diseño fresco, alegre y perfecto para disfrutar los días de sol.",
-
-    imagenes: [
-      "/productos/mangoB-frontal.webp",
-      "/productos/mangoB-trasera.webp",
-      "/productos/mangoB-detalle.webp",
-      "/productos/mangoB-bra.webp",
-      
-    ],
-  },
-
+  
   {
     id: "jardin-costero",
 
@@ -1557,42 +1462,6 @@ const productos = [
     ],
   },
 
-  {
-    id: "playa-madera",
-
-    activo: true,
-    favorito: false,
-
-    categoria: "trajes",
-
-    nombre: "Playa Madera",
-    precio: "60.000",
-
-    tallas: ["M"],
-    color: ["café"],
-
-    palabrasClave: [
-    "salida",
-    "tres piezas",
-    "3 piezas",
-    ],
-
-    etiquetas: [
-      "nuevo",
-    ],
-
-    descripcion:
-      "Bikini de estampado en tonos tierra con detalles de cuentas decorativas y pareo a juego. Un diseño cómodo y versátil para disfrutar de la playa o la piscina con un estilo natural.",
-
-    imagenes: [
-      "/productos/playaM-frontal.webp",
-      "/productos/playaM-trasera.webp",
-      "/productos/playaM-detalle.webp",
-      
-      
-    ],
-  },
-
 
 
 ];
@@ -1617,7 +1486,8 @@ const productosConVariantes = productos.map((producto) => ({
       : [crearVariantePredeterminada(producto)],
 }));
 
-export const obtenerVariantes = (producto) => producto.variantes ?? [];
+export const obtenerVariantes = (producto) =>
+  (producto.variantes ?? []).filter((variante) => variante.activo !== false);
 
 export const obtenerTallas = (producto) => [
   ...new Set(
