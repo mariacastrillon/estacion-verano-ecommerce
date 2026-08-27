@@ -1,12 +1,81 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import { createPortal } from "react-dom";
 import productos from "../data/productos";
 import ProductoCard from "../components/ProductoCard";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import PromocionSemana from "../components/PromocionSemana";
 import Navbar from "../components/Navbar";
 
 function Inicio() {
-  const [menuAbierto, setMenuAbierto] = useState(false);
+  const navigate = useNavigate();
+  const [avisoColeccionAbierto, setAvisoColeccionAbierto] = useState(false);
+  const botonAvisoRef = useRef(null);
+  const botonOrigenRef = useRef(null);
+  const dialogoColeccionRef = useRef(null);
+
+  useEffect(() => {
+    if (!avisoColeccionAbierto) return undefined;
+
+    const gestionarTeclado = (event) => {
+      if (event.key === "Escape") {
+        setAvisoColeccionAbierto(false);
+        return;
+      }
+
+      if (event.key !== "Tab") return;
+
+      const elementos = dialogoColeccionRef.current?.querySelectorAll("button");
+      if (!elementos?.length) return;
+
+      const primero = elementos[0];
+      const ultimo = elementos[elementos.length - 1];
+
+      if (event.shiftKey && document.activeElement === primero) {
+        event.preventDefault();
+        ultimo.focus();
+      } else if (!event.shiftKey && document.activeElement === ultimo) {
+        event.preventDefault();
+        primero.focus();
+      }
+    };
+
+    window.addEventListener("keydown", gestionarTeclado);
+    botonAvisoRef.current?.focus();
+    const botonOrigen = botonOrigenRef.current;
+
+    return () => {
+      window.removeEventListener("keydown", gestionarTeclado);
+      botonOrigen?.focus();
+    };
+  }, [avisoColeccionAbierto]);
+
+  const abrirColeccion = (event) => {
+    botonOrigenRef.current = event.currentTarget;
+    let avisoVisto = false;
+
+    try {
+      avisoVisto = sessionStorage.getItem("aviso-coleccion-visto") === "true";
+    } catch {
+      // El aviso sigue funcionando aunque el navegador bloquee sessionStorage.
+    }
+
+    if (avisoVisto) {
+      navigate("/coleccion");
+      return;
+    }
+
+    setAvisoColeccionAbierto(true);
+  };
+
+  const confirmarColeccion = () => {
+    try {
+      sessionStorage.setItem("aviso-coleccion-visto", "true");
+    } catch {
+      // La navegación no debe bloquearse si sessionStorage no está disponible.
+    }
+    setAvisoColeccionAbierto(false);
+    navigate("/coleccion");
+  };
 
   
 
@@ -31,11 +100,13 @@ function Inicio() {
 
           <div className="flex flex-col md:flex-row justify-center gap-4 md:gap-6 mt-6">
 
-            <Link to="/coleccion">
-              <button className="bg-[#DCCDA4] text-slate-900 px-8 py-3 rounded-full font-medium hover:opacity-90 transition">
+            <button
+              type="button"
+              onClick={abrirColeccion}
+              className="bg-[#DCCDA4] text-slate-900 px-8 py-3 rounded-full font-medium hover:opacity-90 transition"
+            >
                 Ver Colección
-              </button>
-            </Link>
+            </button>
 
             <a
               href="https://wa.me/573159048807?text=Hola,%20quiero%20información%20sobre%20los%20trajes%20de%20baño"
@@ -93,14 +164,60 @@ function Inicio() {
 </div>
 
         <div className="text-center mt-12">
-          <Link to="/coleccion">
-            <button className="bg-[#DCCDA4] text-slate-900 px-8 py-3 rounded-full font-medium hover:opacity-90 transition">
+          <button
+            type="button"
+            onClick={abrirColeccion}
+            className="bg-[#DCCDA4] text-slate-900 px-8 py-3 rounded-full font-medium hover:opacity-90 transition"
+          >
               Ver Colección Completa
-            </button>
-          </Link>
+          </button>
         </div>
 
       </section>
+
+      {avisoColeccionAbierto && createPortal(
+        <div className="fixed inset-0 z-[100] flex items-end justify-center bg-slate-950/70 p-4 backdrop-blur-[2px] md:items-center">
+          <div
+            ref={dialogoColeccionRef}
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="titulo-aviso-coleccion"
+            className="relative w-full max-w-md rounded-3xl border border-[#DCCDA4]/40 bg-[#102A2A] px-6 pb-6 pt-8 text-center shadow-2xl transition duration-200 md:px-8 md:pb-8"
+          >
+            <button
+              type="button"
+              onClick={() => setAvisoColeccionAbierto(false)}
+              aria-label="Cerrar aviso de la colecci&oacute;n"
+              className="absolute right-4 top-3 flex h-9 w-9 items-center justify-center rounded-full text-xl text-slate-400 transition hover:bg-white/10 hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-[#DCCDA4]"
+            >
+              &times;
+            </button>
+
+            <h2
+              id="titulo-aviso-coleccion"
+              className="mb-3 pr-5 text-2xl font-light text-white"
+            >
+              Encuentra tu favorito m&aacute;s r&aacute;pido &#10024;
+            </h2>
+
+            <p className="mb-6 text-sm leading-relaxed text-slate-300 md:text-base">
+              Usa la b&uacute;squeda, que tambi&eacute;n reconoce colores, filtra por
+              talla y ordena por precio para encontrar opciones m&aacute;s cercanas
+              a lo que buscas.
+            </p>
+
+            <button
+              ref={botonAvisoRef}
+              type="button"
+              onClick={confirmarColeccion}
+              className="w-full rounded-full bg-[#DCCDA4] px-6 py-3 font-medium text-slate-900 transition hover:opacity-90 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#102A2A]"
+            >
+              Ver colecci&oacute;n
+            </button>
+          </div>
+        </div>,
+        document.body
+      )}
 
       <PromocionSemana />
 

@@ -1700,6 +1700,41 @@ const productos = [
     ],
   },
 
+  {
+    id: "isla-fuego",
+
+    activo: true,
+    favorito: false,
+
+    categoria: "trajes",
+
+    nombre: "Isla Fuego",
+    precio: "60.000",
+
+    tallas: ["L", "XL"],
+    color: ["coral"],
+
+    palabrasClave: [
+    "pareo",
+    "cuatro piezas",
+    "4 piezas",
+    ],
+
+    etiquetas: [
+      "nuevo",
+    ],
+
+    descripcion:
+      "Set de 4 piezas con bikini triangular, panty, falda corta ajustable y top de manga larga en mesh. Estampado en tonos fucsia, naranja y amarillo, pensado para combinar las piezas entre sí según el plan.",
+
+    imagenes: [
+      "/productos/Isla-Fuego-frontal.webp",
+      "/productos/Isla-Fuego-trasera.webp",
+      
+      
+    ],
+  },
+
 
 
 ];
