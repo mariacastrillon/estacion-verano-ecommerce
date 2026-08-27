@@ -1735,6 +1735,152 @@ const productos = [
     ],
   },
 
+  {
+    id: "rojo-nautico",
+
+    activo: true,
+    favorito: false,
+
+    categoria: "trajes",
+
+    nombre: "Rojo Nautico",
+    precio: "60.000",
+
+    tallas: ["L", "XL"],
+    color: ["rojo"],
+
+    palabrasClave: [
+    "tejido",
+    "pantalon",
+    "tres piezas",
+    "3 piezas",
+    ],
+
+    etiquetas: [
+      "nuevo",
+    ],
+
+    descripcion:
+      "Set de tres piezas en tejido tipo crochet, con bikini triangular, panty de amarre lateral y short a juego. Combina rojo intenso con franjas crema y tiene una estética muy playera y artesanal.",
+
+    imagenes: [
+      "/productos/Rojo-Nautico-frontal.webp",
+      "/productos/Rojo-Nautico-trasero.webp",
+      "/productos/Rojo-Nautico-detalle.webp",
+      
+      
+    ],
+  },
+
+  {
+    id: "laguna-verde",
+
+    activo: true,
+    favorito: false,
+
+    categoria: "trajes",
+
+    nombre: "Laguna Verde",
+    precio: "60.000",
+
+    tallas: ["M", "L"],
+    color: ["verde degradado"],
+
+    palabrasClave: [
+    "tres piezas",
+    "3 piezas",
+    "pareo"
+    ],
+
+    etiquetas: [
+      "nuevo",
+    ],
+
+    descripcion:
+      "Set de 3 piezas en tonos verde y azul, con top de flor central y falda ajustable. Incluye panty a juego",
+
+    imagenes: [
+      "/productos/lagunaV-frontal.webp",
+      "/productos/lagunaV-trasero.webp",
+      "/productos/lagunaV-detalle.webp",
+      
+      
+    ],
+  },
+
+  {
+    id: "maracuya",
+
+    activo: true,
+    favorito: false,
+
+    categoria: "trajes",
+
+    nombre: "Set Maracuyá",
+    precio: "60.000",
+
+    tallas: ["M", "L"],
+    color: ["naranja degradado"],
+
+    palabrasClave: [
+    "tres piezas",
+    "3 piezas",
+    "pareo",
+    "hilo",
+    ],
+
+    etiquetas: [
+      "nuevo",
+    ],
+
+    descripcion:
+      "Set de 3 piezas en tonos naranja y coral. Incluye top halter con detalle fruncido al centro, panty tipo hilo y pareo corto con volantes y amarre lateral.",
+
+    imagenes: [
+      "/productos/maracuya-frontal.webp",
+      "/productos/maracuya-trasero.webp",
+      "/productos/maracuya-detalle.webp",
+      
+      
+    ],
+  },
+
+  {
+    id: "amatista",
+
+    activo: true,
+    favorito: false,
+
+    categoria: "trajes",
+
+    nombre: "Set Amatista",
+    precio: "60.000",
+
+    tallas: ["M", "XL"],
+    color: ["lila marmoleado"],
+
+    palabrasClave: [
+    "tres piezas",
+    "3 piezas",
+    "pareo",
+    ],
+
+    etiquetas: [
+      "nuevo",
+    ],
+
+    descripcion:
+      "",
+
+    imagenes: [
+      "/productos/amatista-frontal.webp",
+      "/productos/amatista-trasero.webp",
+      "/productos/amatista-detalle.webp",
+      
+      
+    ],
+  },
+
 
 
 ];
