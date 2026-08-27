@@ -1495,6 +1495,175 @@ const productos = [
     ],
   },
 
+  {
+    id: "sol-caribe",
+
+    activo: true,
+    favorito: false,
+
+    categoria: "trajes",
+
+    nombre: "Sol Caribe",
+    precio: "40.000",
+
+    tallas: ["L", "XL"],
+    color: ["amarillo"],
+
+    palabrasClave: [
+    "basico",
+    ],
+
+    etiquetas: [
+      "nuevo",
+    ],
+
+    descripcion:
+      "Bikini amarillo intenso de dos piezas, con top triangular de amarre y panty de tiras ajustables con detalles de corazón. Alegre, ligero y hecho para días de mucho sol.",
+
+    imagenes: [
+      "/productos/solC-frontal.webp",
+      "/productos/solC-detalle.webp",
+      
+      
+    ],
+  },
+
+  {
+    id: "verde-marea-oliva",
+
+    activo: true,
+    favorito: false,
+
+    categoria: "trajes",
+
+    nombre: "Verde: Marea Oliva",
+    precio: "40.000",
+
+    tallas: ["L", "XL"],
+    color: ["verde"],
+
+    palabrasClave: [
+    "basico",
+    ],
+
+    etiquetas: [
+      "nuevo",
+    ],
+
+    descripcion:
+      "Bikini verde oliva de dos piezas, con top triangular ajustable y panty de tiro alto visual con detalle fruncido en la parte trasera. Fresco, cómodo y fácil de combinar.",
+
+    imagenes: [
+      "/productos/VMOf-frontal.webp",
+      "/productos/VMO-detalle.webp",
+      
+      
+    ],
+  },
+
+  {
+    id: "concha-dorada",
+
+    activo: true,
+    favorito: false,
+
+    categoria: "trajes",
+
+    nombre: "Concha Dorada",
+    precio: "40.000",
+
+    tallas: ["L", "XL"],
+    color: ["amarillo"],
+
+    palabrasClave: [
+    "concha",
+    ],
+
+    etiquetas: [
+      "nuevo",
+    ],
+
+    descripcion:
+      "Bikini amarillo claro de dos piezas, con top tipo concha, tirantes delgados y detalles en el centro. La panty tiene laterales anchos fruncidos y corte alto.",
+
+    imagenes: [
+      "/productos/conchaD-frontal.webp",
+      "/productos/conchaD-detalle.webp",
+      "/productos/conchaD-trasera.webp",
+      
+      
+    ],
+  },
+
+  {
+    id: "costa-blanca",
+
+    activo: true,
+    favorito: false,
+
+    categoria: "trajes",
+
+    nombre: "Costa Blanca",
+    precio: "80.000",
+
+    tallas: ["L", "XL"],
+    color: ["blanco"],
+
+    palabrasClave: [
+    "3 piezas",
+    "pareo",
+    ],
+
+    etiquetas: [
+      "nuevo",
+    ],
+
+    descripcion:
+      "Set blanco de 3 piezas con bikini y falda larga, de líneas limpias y detalles delicados. Una opción fresca, femenina y fácil de llevar de la piscina a un plan frente al mar.",
+
+    imagenes: [
+      "/productos/costaB-frontal.webp",
+      "/productos/costaB-detalle.webp",
+      "/productos/costaB-trasera.webp",
+      "/productos/costaB-producto.webp",
+      
+      
+    ],
+  },
+
+  {
+    id: "selva-coral",
+
+    activo: true,
+    favorito: false,
+
+    categoria: "trajes",
+
+    nombre: "Selva Coral",
+    precio: "40.000",
+
+    tallas: ["L", "XL"],
+    color: ["verde oliva"],
+
+    palabrasClave: [
+    "basico",
+    ],
+
+    etiquetas: [
+      "nuevo",
+    ],
+
+    descripcion:
+      "",
+
+    imagenes: [
+      "/productos/Selva-Coral-frontal.webp",
+      "/productos/Selva-Coral-trasera.webp",
+      
+      
+    ],
+  },
+
 
 
 ];
@@ -1507,6 +1676,7 @@ const crearVariantePredeterminada = (producto) => ({
   nombre: producto.nombre,
   codigo: "",
   miniatura: producto.imagenes?.[0] ?? "",
+
   imagenes: producto.imagenes ?? [],
   tallas: producto.tallas ?? [],
 });
