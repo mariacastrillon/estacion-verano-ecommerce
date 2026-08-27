@@ -4,6 +4,8 @@ import productos, { obtenerTallas, obtenerVariantes } from "../data/productos";
 import ProductoCard from "../components/ProductoCard";
 import Navbar from "../components/Navbar";
 
+const PRODUCTOS_POR_BLOQUE = 12;
+
 function Coleccion() {
   const navigate = useNavigate();
 
@@ -12,6 +14,15 @@ function Coleccion() {
   const [busqueda, setBusqueda] = useState("");
   const [orden, setOrden] = useState("recientes");
   const [filtroTalla, setFiltroTalla] = useState("todas");
+  const claveFiltros = `${busqueda}|${categoria ?? ""}|${orden}|${filtroTalla}`;
+  const [limiteVisible, setLimiteVisible] = useState({
+    claveFiltros,
+    cantidad: PRODUCTOS_POR_BLOQUE,
+  });
+  const cantidadVisible =
+    limiteVisible.claveFiltros === claveFiltros
+      ? limiteVisible.cantidad
+      : PRODUCTOS_POR_BLOQUE;
 
   const productosFiltrados = [...productos]
     .filter((producto) => {
@@ -87,6 +98,9 @@ function Coleccion() {
       }
 
     });
+
+  const productosVisibles = productosFiltrados.slice(0, cantidadVisible);
+  const hayMasProductos = cantidadVisible < productosFiltrados.length;
 
   const titulos = {
     trajes: "🌊 Trajes de baño",
@@ -211,7 +225,7 @@ function Coleccion() {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
 
-            {productosFiltrados.map((producto) => (
+            {productosVisibles.map((producto) => (
 
               <ProductoCard
                 key={producto.id}
@@ -222,6 +236,23 @@ function Coleccion() {
 
           </div>
 
+        )}
+
+        {hayMasProductos && (
+          <div className="mt-12 text-center">
+            <button
+              type="button"
+              onClick={() =>
+                setLimiteVisible({
+                  claveFiltros,
+                  cantidad: cantidadVisible + PRODUCTOS_POR_BLOQUE,
+                })
+              }
+              className="rounded-full border border-[#DCCDA4] px-8 py-3 font-medium text-[#DCCDA4] transition hover:bg-[#DCCDA4] hover:text-slate-900"
+            >
+              Mostrar m&aacute;s
+            </button>
+          </div>
         )}
 
       </section>

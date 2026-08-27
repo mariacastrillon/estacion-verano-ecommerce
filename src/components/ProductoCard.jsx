@@ -35,13 +35,8 @@ const estilosEtiquetas = {
   },
 };
 
-const imagenesSinVariantesResponsivas = new Set([
-  "/productos/flor-de-fuego-detalle.webp",
-  "/productos/jade-detalle.webp",
-]);
-
 function obtenerSrcSet(imagen) {
-  if (!imagen?.endsWith(".webp") || imagenesSinVariantesResponsivas.has(imagen)) {
+  if (!imagen?.endsWith(".webp")) {
     return undefined;
   }
 

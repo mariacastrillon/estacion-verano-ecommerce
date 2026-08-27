@@ -136,6 +136,10 @@ ${tallasActivas.length > 0 ? `Talla: ${tallaSeleccionada}` : ""}
                   <img
                     src={imagen}
                     alt={`${producto.nombre} ${index + 1}`}
+                    loading="lazy"
+                    decoding="async"
+                    width="400"
+                    height="400"
                     className="w-full h-28 object-cover"
                   />
                 </button>
@@ -159,12 +163,14 @@ ${tallasActivas.length > 0 ? `Talla: ${tallaSeleccionada}` : ""}
             <h1 className="text-4xl md:text-5xl font-light mb-4">{producto.nombre}</h1>
             <p className="text-[#DCCDA4] text-4xl font-semibold mb-8">${producto.precio}</p>
 
-            <div className="mb-8 rounded-2xl border border-slate-800 bg-slate-900/50 px-5 py-4">
-              <p className="text-xs uppercase tracking-[0.18em] text-slate-400">Color seleccionado</p>
-              <p className="mt-1 text-lg font-medium text-[#DCCDA4]">
-                {varianteActiva?.nombre ?? producto.nombre}
-              </p>
-            </div>
+            {variantes.length >= 2 && varianteActiva?.nombre && (
+              <div className="mb-8 rounded-2xl border border-slate-800 bg-slate-900/50 px-5 py-4">
+                <p className="text-xs uppercase tracking-[0.18em] text-slate-400">Color seleccionado</p>
+                <p className="mt-1 text-lg font-medium text-[#DCCDA4]">
+                  {varianteActiva.nombre}
+                </p>
+              </div>
+            )}
 
             <SelectorVariantes
               variantes={variantes}

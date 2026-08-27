@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "imagenes:responsive": "node herramientas/generar-variantes-responsivas.js",
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview"

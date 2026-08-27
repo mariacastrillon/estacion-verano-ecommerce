@@ -1664,6 +1664,42 @@ const productos = [
     ],
   },
 
+  {
+    id: "brisa-lavanda",
+
+    activo: true,
+    favorito: false,
+
+    categoria: "trajes",
+
+    nombre: "Brisa Lavanda",
+    precio: "40.000",
+
+    tallas: ["L", "XL"],
+    color: ["lila"],
+
+    palabrasClave: [
+    "pareo",
+    "tres piezas",
+    "3 piezas",
+    ],
+
+    etiquetas: [
+      "nuevo",
+    ],
+
+    descripcion:
+      "Set de tres piezas en tono lavanda, con top de tirantes ajustables, panty de corte alto y pareo corto para amarrar a un lado. Una opción fresca y fácil de combinar para playa o piscina.",
+
+    imagenes: [
+      "/productos/brisaL-frontal.webp",
+      "/productos/brisaL-trasera.webp",
+      "/productos/brisaL-detalle.webp",
+      
+      
+    ],
+  },
+
 
 
 ];

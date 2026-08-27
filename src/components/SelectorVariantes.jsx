@@ -31,6 +31,10 @@ function SelectorVariantes({
             <img
               src={variante.miniatura}
               alt={variante.nombre}
+              loading="lazy"
+              decoding="async"
+              width="96"
+              height="96"
               className="h-24 w-full rounded-xl object-cover"
             />
 
