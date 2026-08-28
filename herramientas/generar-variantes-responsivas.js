@@ -2,11 +2,10 @@ import fs from "fs";
 import path from "path";
 import process from "node:process";
 import { fileURLToPath } from "url";
-import sharp from "sharp";
+import { ANCHOS_RESPONSIVOS, generarDerivadosDesdeWebp } from "./imagenes/procesar-imagen-producto.js";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const carpetaProductos = path.join(__dirname, "../public/productos");
-const anchos = [480, 768];
 
 async function generarVariantesResponsivas() {
   const archivos = fs
@@ -19,18 +18,16 @@ async function generarVariantesResponsivas() {
       const nombre = path.parse(archivo).name;
       const fechaFuente = fs.statSync(entrada).mtimeMs;
 
-      return anchos.flatMap((width) => {
+      const salidas = ANCHOS_RESPONSIVOS.flatMap((width) => {
         const salida = path.join(carpetaProductos, `${nombre}-${width}w.webp`);
         const necesitaGenerarse =
           !fs.existsSync(salida) || fs.statSync(salida).mtimeMs < fechaFuente;
 
         if (!necesitaGenerarse) return [];
 
-        return sharp(entrada)
-          .resize({ width, withoutEnlargement: true })
-          .webp({ quality: 82 })
-          .toFile(salida);
+        return { width, salida };
       });
+      return salidas.length ? generarDerivadosDesdeWebp(entrada, salidas) : [];
     });
 
   await Promise.all(tareas);

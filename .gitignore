@@ -159,3 +159,6 @@ dist
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
 .vite/
+
+# Respaldos locales del gestor
+respaldos/

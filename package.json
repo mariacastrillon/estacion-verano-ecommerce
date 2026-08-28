@@ -4,7 +4,12 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "dev": "node herramientas/gestor-local/iniciar-desarrollo.js",
+    "dev:web": "vite",
+    "dev:gestor-api": "node herramientas/gestor-local/servidor.js",
+    "catalogo:verificar": "node herramientas/verificar-integridad-catalogo.js",
+    "catalogo:migracion-verificar": "node herramientas/verificar-equivalencia-catalogo.js",
+    "imagenes:probar-carga": "node herramientas/probar-carga-imagenes.js",
     "imagenes:responsive": "node herramientas/generar-variantes-responsivas.js",
     "build": "vite build",
     "lint": "eslint .",

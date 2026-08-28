@@ -1,9 +1,14 @@
+import { lazy, Suspense } from "react";
 import { Routes, Route } from "react-router-dom";
 
 import Inicio from "./pages/Inicio.jsx";
 import Coleccion from "./pages/Coleccion.jsx";
 import ProductoDetalle from "./pages/ProductoDetalle.jsx";
 import Favoritos from "./pages/Favoritos.jsx";
+
+const GestorCatalogo = import.meta.env.DEV
+  ? lazy(() => import("./pages/gestor/GestorCatalogo.jsx"))
+  : null;
 
 function App() {
   return (
@@ -37,6 +42,17 @@ function App() {
         path="/producto/:id"
         element={<ProductoDetalle />}
       />
+
+      {GestorCatalogo && (
+        <Route
+          path="/gestor"
+          element={
+            <Suspense fallback={<main className="min-h-screen bg-slate-950 p-10 text-white">Cargando gestor…</main>}>
+              <GestorCatalogo />
+            </Suspense>
+          }
+        />
+      )}
 
     </Routes>
   );

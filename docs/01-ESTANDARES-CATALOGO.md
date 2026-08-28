@@ -422,7 +422,7 @@ variantes: [
   {
     id: "negro",
     nombre: "Negro",
-    codigo: "NDV-NEG",
+    codigo: "#111111",
     miniatura: "/productos/nochedv-frontal.webp",
     imagenes: [
       "/productos/nochedv-frontal.webp",
@@ -446,7 +446,7 @@ Si el producto solo existe en un color, igualmente debe tener una variante.
 |---|---|---|
 | `id` | String | Identificador interno del color |
 | `nombre` | String | Nombre visible del color |
-| `codigo` | String | Referencia interna o SKU |
+| `codigo` | String | Color de la variante en formato hexadecimal |
 | `miniatura` | String | Imagen usada en el selector de variantes |
 | `imagenes` | Array | Galería completa de esa variante |
 | `tallas` | Array | Tallas disponibles para ese color |
@@ -458,7 +458,7 @@ variantes: [
   {
     id: "negro",
     nombre: "Negro",
-    codigo: "NDV-NEG",
+    codigo: "#111111",
     miniatura: "/productos/nochedv-frontal.webp",
     imagenes: [
       "/productos/nochedv-frontal.webp",
@@ -470,7 +470,7 @@ variantes: [
   {
     id: "azul",
     nombre: "Azul",
-    codigo: "NDV-AZU",
+    codigo: "#1E5EFF",
     miniatura: "/productos/nochedv-azul-frontal.webp",
     imagenes: [
       "/productos/nochedv-azul-frontal.webp",
@@ -520,39 +520,38 @@ Los IDs deben mantenerse simples y reutilizables.
 
 ---
 
-## 15. Código interno de variante
+## 15. Código hexadecimal de la variante
 
-El código sirve como referencia para inventario, pedidos o mensajes internos.
+El campo `codigo` guarda directamente el color hexadecimal usado por la variante.
+No representa un SKU ni una referencia de inventario.
 
 Ejemplo:
 
 ```js
-codigo: "NDV-NEG"
+codigo: "#111111"
 ```
 
-Formato recomendado:
+Formato requerido:
 
 ```text
-SIGLA DEL PRODUCTO + COLOR
+#RRGGBB
 ```
 
 Ejemplos:
 
 ```text
-NDV-NEG
-NDV-AZU
-BO-NEG
-BO-ROS
-LN-NEG
-LN-AZU
+#111111
+#1E5EFF
+#608963
+#D10073
 ```
 
-El código debe ser:
+El código debe:
 
-- único;
-- corto;
-- fácil de leer;
-- consistente.
+- comenzar con `#`;
+- contener seis dígitos hexadecimales;
+- representar visualmente el color de la variante;
+- guardarse siempre en `codigo`, sin crear un campo `colorHex` separado.
 
 ---
 
