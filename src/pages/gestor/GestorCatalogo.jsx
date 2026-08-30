@@ -11,11 +11,27 @@ const slug = (texto) =>
     .replace(/[^a-z0-9]+/g, "-")
     .replace(/^-|-$/g, "");
 
-const listaDesdeTexto = (texto) =>
-  texto.split(",").map((item) => item.trim()).filter(Boolean);
+const listaDesdeTexto = (texto) => [
+  ...new Set(texto.split(",").map((item) => item.trim()).filter(Boolean)),
+];
 
-const nuevaVariante = () => ({
-  id: "color-principal",
+const idVarianteUnico = (nombre, variantes, indiceActual = -1) => {
+  const base = slug(nombre) || "color";
+  const ocupados = new Set(
+    variantes
+      .filter((_, indice) => indice !== indiceActual)
+      .map(({ id }) => id)
+  );
+  if (!ocupados.has(base)) return base;
+  let consecutivo = 2;
+  while (ocupados.has(`${base}-${consecutivo}`)) consecutivo += 1;
+  return `${base}-${consecutivo}`;
+};
+
+const nuevaVariante = (variantes = []) => ({
+  uiId: crypto.randomUUID(),
+  esNueva: true,
+  id: idVarianteUnico("Color principal", variantes),
   activo: false,
   nombre: "Color principal",
   codigo: "#111111",
@@ -35,6 +51,8 @@ const prepararParaEdicion = (producto) => ({
   ...structuredClone(producto),
   variantes: producto.variantes.map((variante) => ({
     ...variante,
+    uiId: variante.uiId ?? crypto.randomUUID(),
+    esNueva: variante.esNueva ?? false,
     imagenes: variante.imagenes.map(imagenExistente),
   })),
 });
@@ -82,7 +100,7 @@ function SelectorTallas({ valor, onChange }) {
   );
 }
 
-function EditorVariante({ variante, indice, total, onChange, onMover, onAgregar }) {
+function EditorVariante({ variante, indice, total, onChange, onCambiarNombre, onMover, onAgregar }) {
   const [arrastrando, setArrastrando] = useState(false);
   const [errorImagen, setErrorImagen] = useState("");
   const cambiar = (campo, valor) => onChange({ ...variante, [campo]: valor });
@@ -131,7 +149,7 @@ function EditorVariante({ variante, indice, total, onChange, onMover, onAgregar 
       </div>
       <div className="grid gap-4 md:grid-cols-2">
         <label className="text-sm text-slate-300">Nombre del color
-          <input value={variante.nombre} onChange={(e) => cambiar("nombre", e.target.value)} className="mt-1 w-full rounded-xl border border-slate-700 bg-slate-950 px-4 py-3" />
+          <input value={variante.nombre} onChange={(e) => onCambiarNombre(e.target.value)} className="mt-1 w-full rounded-xl border border-slate-700 bg-slate-950 px-4 py-3" />
         </label>
         <label className="text-sm text-slate-300">Color
           <div className="mt-1 flex gap-3">
@@ -140,7 +158,7 @@ function EditorVariante({ variante, indice, total, onChange, onMover, onAgregar 
           </div>
         </label>
         <label className="text-sm text-slate-300">ID del color
-          <input value={variante.id} onChange={(e) => cambiar("id", slug(e.target.value))} className="mt-1 w-full rounded-xl border border-slate-700 bg-slate-950 px-4 py-3" />
+          <input readOnly value={variante.id} className="mt-1 w-full cursor-default rounded-xl border border-slate-700 bg-slate-950 px-4 py-3 text-slate-400" />
         </label>
         <label className="flex items-center gap-3 pt-7 text-sm text-slate-300">
           <input type="checkbox" checked={variante.activo !== false} onChange={(e) => cambiar("activo", e.target.checked)} /> Variante activa
@@ -195,12 +213,31 @@ function EditorVariante({ variante, indice, total, onChange, onMover, onAgregar 
 
 function FormularioProducto({ inicial, esNuevo, onCancelar, onGuardado }) {
   const [producto, setProducto] = useState(() => prepararParaEdicion(inicial));
+  const [palabrasClaveTexto, setPalabrasClaveTexto] = useState(() =>
+    (inicial.palabrasClave ?? []).join(", ")
+  );
+  const [etiquetasTexto, setEtiquetasTexto] = useState(() =>
+    (inicial.etiquetas ?? []).join(", ")
+  );
   const [guardando, setGuardando] = useState(false);
   const [error, setError] = useState("");
   const cambiar = (campo, valor) => setProducto((actual) => ({ ...actual, [campo]: valor }));
   const cambiarVariante = (indice, variante) => setProducto((actual) => ({
     ...actual,
     variantes: actual.variantes.map((item, itemIndice) => itemIndice === indice ? variante : item),
+  }));
+  const cambiarNombreVariante = (indice, nombre) => setProducto((actual) => ({
+    ...actual,
+    variantes: actual.variantes.map((variante, varianteIndice) => {
+      if (varianteIndice !== indice) return variante;
+      return {
+        ...variante,
+        nombre,
+        id: variante.esNueva
+          ? idVarianteUnico(nombre, actual.variantes, indice)
+          : variante.id,
+      };
+    }),
   }));
   const moverVariante = (indice, direccion) => setProducto((actual) => {
     const variantes = [...actual.variantes];
@@ -217,8 +254,8 @@ function FormularioProducto({ inicial, esNuevo, onCancelar, onGuardado }) {
       const preparado = {
         ...producto,
         id: esNuevo ? slug(producto.id || producto.nombre) : producto.id,
-        palabrasClave: producto.palabrasClave ?? [],
-        etiquetas: producto.etiquetas ?? [],
+        palabrasClave: listaDesdeTexto(palabrasClaveTexto),
+        etiquetas: listaDesdeTexto(etiquetasTexto),
         variantes: await Promise.all(producto.variantes.map(async (variante) => {
           const imagenes = [];
           for (const imagen of variante.imagenes) {
@@ -229,9 +266,14 @@ function FormularioProducto({ inicial, esNuevo, onCancelar, onGuardado }) {
               imagenesNuevas.push({ token: imagen.id, nombre: imagen.archivo.name, tipo: imagen.archivo.type, contenido: await archivoABase64(imagen.archivo) });
             }
           }
+          const varianteCatalogo = Object.fromEntries(
+            Object.entries(variante).filter(
+              ([campo]) => !["uiId", "esNueva"].includes(campo)
+            )
+          );
           return {
-            ...variante,
-            id: slug(variante.id || variante.nombre),
+            ...varianteCatalogo,
+            id: variante.id,
             imagenes,
             miniatura: imagenes[0] ?? "",
           };
@@ -270,17 +312,17 @@ function FormularioProducto({ inicial, esNuevo, onCancelar, onGuardado }) {
           <textarea value={producto.descripcion ?? ""} onChange={(e) => cambiar("descripcion", e.target.value)} rows="4" className="mt-1 w-full rounded-xl border border-slate-700 bg-slate-950 px-4 py-3" />
         </label>
         <label className="text-sm text-slate-300">Palabras clave, separadas por coma
-          <input value={(producto.palabrasClave ?? []).join(", ")} onChange={(e) => cambiar("palabrasClave", listaDesdeTexto(e.target.value))} className="mt-1 w-full rounded-xl border border-slate-700 bg-slate-950 px-4 py-3" />
+          <input value={palabrasClaveTexto} onChange={(e) => setPalabrasClaveTexto(e.target.value)} className="mt-1 w-full rounded-xl border border-slate-700 bg-slate-950 px-4 py-3" />
         </label>
         <label className="text-sm text-slate-300">Etiquetas, separadas por coma
-          <input value={(producto.etiquetas ?? []).join(", ")} onChange={(e) => cambiar("etiquetas", listaDesdeTexto(e.target.value))} className="mt-1 w-full rounded-xl border border-slate-700 bg-slate-950 px-4 py-3" />
+          <input value={etiquetasTexto} onChange={(e) => setEtiquetasTexto(e.target.value)} className="mt-1 w-full rounded-xl border border-slate-700 bg-slate-950 px-4 py-3" />
         </label>
         <label className="flex items-center gap-3"><input type="checkbox" checked={producto.activo} onChange={(e) => cambiar("activo", e.target.checked)} /> Producto activo</label>
         <label className="flex items-center gap-3"><input type="checkbox" checked={producto.favorito} onChange={(e) => cambiar("favorito", e.target.checked)} /> Favorito destacado</label>
       </section>
       <div className="space-y-4">
         {producto.variantes.map((variante, indice) => (
-          <EditorVariante key={`${variante.id}-${indice}`} variante={variante} indice={indice} total={producto.variantes.length} onChange={(valor) => cambiarVariante(indice, valor)} onMover={(direccion) => moverVariante(indice, direccion)} onAgregar={() => cambiar("variantes", [...producto.variantes, nuevaVariante()])} />
+          <EditorVariante key={variante.uiId} variante={variante} indice={indice} total={producto.variantes.length} onChange={(valor) => cambiarVariante(indice, valor)} onCambiarNombre={(nombre) => cambiarNombreVariante(indice, nombre)} onMover={(direccion) => moverVariante(indice, direccion)} onAgregar={() => cambiar("variantes", [...producto.variantes, nuevaVariante(producto.variantes)])} />
         ))}
       </div>
       {error && <p role="alert" className="rounded-xl border border-red-500/60 bg-red-950/50 p-4 text-red-200">{error}</p>}

@@ -1,5 +1,320 @@
 [
   {
+    "id": "mar-de-conchas",
+    "activo": true,
+    "favorito": false,
+    "categoria": "trajes",
+    "nombre": "Mar de Conchas",
+    "precio": "60.000",
+    "palabrasClave": [
+      "encaje"
+    ],
+    "etiquetas": [
+      "Nuevo"
+    ],
+    "descripcion": "Bikini de dos piezas en encaje rosa, con top de caída suave y panty de amarre lateral. Lleva detalles de conchas y cuentas decorativas que le dan un acabado muy playero y diferente.",
+    "variantes": [
+      {
+        "id": "color-principal",
+        "activo": true,
+        "nombre": "Color principal",
+        "codigo": "#DDB4E9",
+        "miniatura": "/productos/mar-de-conchas-color-principal-01.webp",
+        "imagenes": [
+          "/productos/mar-de-conchas-color-principal-01.webp",
+          "/productos/mar-de-conchas-color-principal-02.webp",
+          "/productos/mar-de-conchas-color-principal-03.webp"
+        ],
+        "tallas": [
+          "M"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "set-brisa-artesanal",
+    "activo": true,
+    "favorito": false,
+    "categoria": "trajes",
+    "nombre": "Set Brisa Artesanal",
+    "precio": "60.000",
+    "palabrasClave": [
+      "3 piezas",
+      "tres piezas",
+      "pareo",
+      "tejido"
+    ],
+    "etiquetas": [
+      "Nuevo"
+    ],
+    "descripcion": "Set de 3 piezas con top triangular, panty de amarre lateral y pareo corto a juego. Su diseño tejido multicolor y los detalles decorativos le dan un look playero, llamativo y diferente.",
+    "variantes": [
+      {
+        "id": "tejido-variado",
+        "activo": true,
+        "nombre": "tejido variado",
+        "codigo": "#2D2910",
+        "miniatura": "/productos/set-brisa-artesanal-tejido-variado-01.webp",
+        "imagenes": [
+          "/productos/set-brisa-artesanal-tejido-variado-01.webp",
+          "/productos/set-brisa-artesanal-tejido-variado-02.webp",
+          "/productos/set-brisa-artesanal-tejido-variado-03.webp"
+        ],
+        "tallas": [
+          "M"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "lavanda-nacar",
+    "activo": true,
+    "favorito": false,
+    "categoria": "trajes",
+    "nombre": "Lavanda Nácar",
+    "precio": "40.000",
+    "palabrasClave": [
+      "copa",
+      "basico"
+    ],
+    "etiquetas": [
+      "Nuevo"
+    ],
+    "descripcion": "Bikini de dos piezas en tono lavanda satinado, con top estructurado tipo concha y panty. Incluye tirante adicional.",
+    "variantes": [
+      {
+        "id": "lila-perlado",
+        "activo": true,
+        "nombre": "Lila perlado",
+        "codigo": "#A168CF",
+        "miniatura": "/productos/lavanda-nacar-lila-perlado-01.webp",
+        "imagenes": [
+          "/productos/lavanda-nacar-lila-perlado-01.webp",
+          "/productos/lavanda-nacar-lila-perlado-02.webp"
+        ],
+        "tallas": [
+          "M"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "marea-marina",
+    "activo": true,
+    "favorito": false,
+    "categoria": "trajes",
+    "nombre": "Marea Marina",
+    "precio": "40.000",
+    "palabrasClave": [
+      "basico"
+    ],
+    "etiquetas": [
+      "Nuevo"
+    ],
+    "descripcion": "Bikini de dos piezas en azul marino con detalles blancos, top triangular ajustable y panty  con laterales regulables. Diseño sencillo, limpio y fácil de combinar.",
+    "variantes": [
+      {
+        "id": "color-principal",
+        "activo": true,
+        "nombre": "Color principal",
+        "codigo": "#151741",
+        "miniatura": "/productos/marea-marina-color-principal-01.webp",
+        "imagenes": [
+          "/productos/marea-marina-color-principal-01.webp",
+          "/productos/marea-marina-color-principal-02.webp"
+        ],
+        "tallas": [
+          "XS"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "azul-profundo",
+    "activo": true,
+    "favorito": false,
+    "categoria": "trajes",
+    "nombre": "Azul Profundo",
+    "precio": "60.000",
+    "palabrasClave": [
+      "3 piezas",
+      "tres piezas",
+      "pareo"
+    ],
+    "etiquetas": [
+      "Nuevo"
+    ],
+    "descripcion": "Set de 3 piezas en azul rey, con top estructurado tipo concha y tirantes de perlas, panty a juego y falda corta ajustable con fruncido lateral.",
+    "variantes": [
+      {
+        "id": "color-principal",
+        "activo": true,
+        "nombre": "Color principal",
+        "codigo": "#080EAF",
+        "miniatura": "/productos/azul-profundo-color-principal-01.webp",
+        "imagenes": [
+          "/productos/azul-profundo-color-principal-01.webp",
+          "/productos/azul-profundo-color-principal-02.webp",
+          "/productos/azul-profundo-color-principal-03.webp"
+        ],
+        "tallas": [
+          "S"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "bruma-rosa",
+    "activo": true,
+    "favorito": false,
+    "categoria": "trajes",
+    "nombre": "Bruma Rosa",
+    "precio": "40.000",
+    "palabrasClave": [
+      "brillos",
+      "basico"
+    ],
+    "etiquetas": [
+      "Nuevo"
+    ],
+    "descripcion": "Bikini de dos piezas con degradado en tonos rosa, café y marfil, acabado brillante y pequeños detalles tipo cristal en el top y la panty.",
+    "variantes": [
+      {
+        "id": "color-principal",
+        "activo": true,
+        "nombre": "Color principal",
+        "codigo": "#723C5B",
+        "miniatura": "/productos/bruma-rosa-color-principal-01.webp",
+        "imagenes": [
+          "/productos/bruma-rosa-color-principal-01.webp",
+          "/productos/bruma-rosa-color-principal-02.webp",
+          "/productos/bruma-rosa-color-principal-03.webp"
+        ],
+        "tallas": [
+          "XS",
+          "S"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "concha-perlado",
+    "activo": true,
+    "favorito": false,
+    "categoria": "trajes",
+    "nombre": "Concha Perlado",
+    "precio": "50.000",
+    "palabrasClave": [
+      "enterizo",
+      "una pieza"
+    ],
+    "etiquetas": [
+      "Nuevo"
+    ],
+    "descripcion": "Enterizo rosado de una sola pieza, con copas tipo concha y tirantes con detalle de perlas. Tiene un diseño femenino y llamativo, ideal para usar en piscina o en un plan de playa.",
+    "variantes": [
+      {
+        "id": "color-principal",
+        "activo": true,
+        "nombre": "Color principal",
+        "codigo": "#E59FD8",
+        "miniatura": "/productos/concha-perlado-color-principal-01.webp",
+        "imagenes": [
+          "/productos/concha-perlado-color-principal-01.webp",
+          "/productos/concha-perlado-color-principal-02.webp"
+        ],
+        "tallas": [
+          "S"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "destello",
+    "activo": true,
+    "favorito": false,
+    "categoria": "trajes",
+    "nombre": "Destello",
+    "precio": "40.000",
+    "palabrasClave": [
+      "brillos",
+      "lentejuela",
+      "plateado"
+    ],
+    "etiquetas": [
+      "Nuevo"
+    ],
+    "descripcion": "Bikini de dos piezas en tono café oscuro, con top triangular cubierto de lentejuelas plateadas y panty de corte alto con detalle fruncido atrás.",
+    "variantes": [
+      {
+        "id": "cafe-con-plata",
+        "activo": true,
+        "nombre": "Cafe con plata",
+        "codigo": "#211212",
+        "miniatura": "/productos/destello-cafe-con-plata-01.webp",
+        "imagenes": [
+          "/productos/destello-cafe-con-plata-01.webp",
+          "/productos/destello-cafe-con-plata-02.webp",
+          "/productos/destello-cafe-con-plata-03.webp"
+        ],
+        "tallas": [
+          "S"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "marea-viva",
+    "activo": true,
+    "favorito": false,
+    "categoria": "trajes",
+    "nombre": "Marea Viva",
+    "precio": "60.000",
+    "palabrasClave": [
+      "4 piezas",
+      "cuatro piezas",
+      "pareo",
+      "malla"
+    ],
+    "etiquetas": [
+      "Nuevo",
+      "Edición limitada"
+    ],
+    "descripcion": "Set de 4 piezas en tonos azul profundo y celeste, con bikini triangular, panty, top de manga larga y falda corta ajustable a juego.",
+    "variantes": [
+      {
+        "id": "azul-profundo",
+        "activo": true,
+        "nombre": "Azul profundo",
+        "codigo": "#0D20AF",
+        "miniatura": "/productos/marea-viva-azul-profundo-01.webp",
+        "imagenes": [
+          "/productos/marea-viva-azul-profundo-01.webp",
+          "/productos/marea-viva-azul-profundo-02.webp",
+          "/productos/marea-viva-azul-profundo-03.webp"
+        ],
+        "tallas": [
+          "S"
+        ]
+      },
+      {
+        "id": "fuccia",
+        "activo": false,
+        "nombre": "Fuccia",
+        "codigo": "#8D0741",
+        "miniatura": "/productos/marea-viva-fuccia-01.webp",
+        "imagenes": [
+          "/productos/marea-viva-fuccia-01.webp",
+          "/productos/marea-viva-fuccia-02.webp"
+        ],
+        "tallas": [
+          "L",
+          "XL"
+        ]
+      }
+    ]
+  },
+  {
     "id": "violeta-urbana",
     "activo": true,
     "favorito": false,
@@ -37,7 +352,7 @@
     "favorito": false,
     "categoria": "trajes",
     "nombre": "Fleur Limón",
-    "precio": "60.000",
+    "precio": "40.000",
     "tallas": [
       "M",
       "L"
@@ -61,7 +376,7 @@
       {
         "id": "fleur-limon",
         "nombre": "Fleur Limón",
-        "codigo": "",
+        "codigo": "#BCD638",
         "miniatura": "/productos/fleur-limon-frontal.webp",
         "imagenes": [
           "/productos/fleur-limon-frontal.webp",
@@ -73,9 +388,11 @@
         "tallas": [
           "M",
           "L"
-        ]
+        ],
+        "activo": true
       }
-    ]
+    ],
+    "palabrasClave": []
   },
   {
     "id": "jardin-capri",
@@ -152,7 +469,7 @@
         "id": "rosa",
         "activo": true,
         "nombre": "Rosa",
-        "codigo": "",
+        "codigo": "#FB6ADC",
         "miniatura": "/productos/brisa-orquidea-frontal.webp",
         "imagenes": [
           "/productos/brisa-orquidea-frontal.webp",
@@ -169,8 +486,8 @@
       {
         "id": "vino",
         "activo": true,
-        "nombre": "Vino",
-        "codigo": "#608963",
+        "nombre": "Uva",
+        "codigo": "#3A1051",
         "miniatura": "/productos/brisa-orquidea-vino-frontal.webp",
         "imagenes": [
           "/productos/brisa-orquidea-vino-frontal.webp",
@@ -180,7 +497,8 @@
           "M"
         ]
       }
-    ]
+    ],
+    "palabrasClave": []
   },
   {
     "id": "concha-nacar",
@@ -502,7 +820,7 @@
   },
   {
     "id": "flamenco",
-    "activo": true,
+    "activo": false,
     "favorito": false,
     "categoria": "trajes",
     "nombre": "Flamenco",
@@ -546,7 +864,7 @@
   },
   {
     "id": "cielo",
-    "activo": false,
+    "activo": true,
     "favorito": false,
     "categoria": "trajes",
     "nombre": "Cielo",
@@ -703,7 +1021,7 @@
     "etiquetas": [
       "nuevo"
     ],
-    "descripcion": "✨ Salida de playa dorada en malla con lentejuelas. Ligera, sofisticada y perfecta para elevar cualquier look de verano.",
+    "descripcion": "✨ Salida de playa dorada en malla con lentejuelas. Ligera, sofisticada y perfecta para elevar cualquier look de verano.\nEncuentra el traje de baño como \"Sol Dorado\" en nuestra colección y arma el look perfecto.",
     "imagenes": [
       "/productos/golden-hour-frontal.webp",
       "/productos/golden-hour-trasera.webp",
@@ -714,16 +1032,21 @@
       {
         "id": "golden-hour",
         "nombre": "Golden Hour",
-        "codigo": "",
+        "codigo": "#E4B921",
         "miniatura": "/productos/golden-hour-frontal.webp",
         "imagenes": [
           "/productos/golden-hour-frontal.webp",
           "/productos/golden-hour-trasera.webp",
           "/productos/golden-hour-lateral.webp",
-          "/productos/golden-hour-detalle.webp"
+          "/productos/golden-hour-detalle.webp",
+          "/productos/golden-hour-golden-hour-05.webp"
         ],
         "tallas": [
-          "unica"
+          "unica",
+          "S",
+          "M",
+          "L",
+          "XL"
         ]
       }
     ]
@@ -803,8 +1126,9 @@
           "/productos/bahia-azul-detalle.webp"
         ],
         "tallas": [
-          "L",
-          "XL"
+          "M",
+          "XS",
+          "S"
         ]
       }
     ]
@@ -1087,7 +1411,7 @@
       {
         "id": "marfil",
         "nombre": "🐚 Enterizo Marfil",
-        "codigo": "",
+        "codigo": "#C5C1A6",
         "miniatura": "/productos/marfil-frontal.webp",
         "imagenes": [
           "/productos/marfil-frontal.webp",
@@ -1096,7 +1420,8 @@
         ],
         "tallas": [
           "L",
-          "XL"
+          "XL",
+          "XS"
         ]
       }
     ]
@@ -1234,7 +1559,7 @@
   },
   {
     "id": "noche-de-verano",
-    "activo": true,
+    "activo": false,
     "favorito": false,
     "categoria": "trajes",
     "nombre": "Noche de Verano",
@@ -1272,7 +1597,9 @@
           "XL"
         ]
       }
-    ]
+    ],
+    "palabrasClave": [],
+    "etiquetas": []
   },
   {
     "id": "marea-turquesa",
@@ -1340,7 +1667,7 @@
     "etiquetas": [
       "nuevo"
     ],
-    "descripcion": "Enterizo de acabado brillante inspirado en los destellos del sol sobre el mar. Un diseño sofisticado que realza la silueta con un toque de lujo para disfrutar el verano con estilo.",
+    "descripcion": "Enterizo de acabado brillante inspirado en los destellos del sol sobre el mar. Un diseño sofisticado que realza la silueta con un toque de lujo para disfrutar el verano con estilo.\nEncuentra la salida de baño como \"Golden Hour\" y arma el look perfecto.",
     "imagenes": [
       "/productos/sol-frontal.webp",
       "/productos/sol-trasera.webp",
@@ -1351,8 +1678,9 @@
         "id": "sol-dorado",
         "nombre": "✨ Sol Dorado",
         "codigo": "",
-        "miniatura": "/productos/sol-frontal.webp",
+        "miniatura": "/productos/sol-dorado-sol-dorado-04.webp",
         "imagenes": [
+          "/productos/sol-dorado-sol-dorado-04.webp",
           "/productos/sol-frontal.webp",
           "/productos/sol-trasera.webp",
           "/productos/sol-producto.webp"
@@ -1750,7 +2078,7 @@
   },
   {
     "id": "tierra-viva",
-    "activo": true,
+    "activo": false,
     "favorito": false,
     "categoria": "trajes",
     "nombre": "Tierra Viva 🌾",
@@ -2048,7 +2376,8 @@
         ],
         "tallas": [
           "L",
-          "XL"
+          "XL",
+          "M"
         ]
       }
     ]
