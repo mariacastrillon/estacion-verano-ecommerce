@@ -1,5 +1,396 @@
 [
   {
+    "id": "pareo-fuccia",
+    "activo": true,
+    "favorito": false,
+    "categoria": "salidas",
+    "nombre": "Pareo Fuccia",
+    "precio": "15.000",
+    "palabrasClave": [
+      "pareo",
+      "salida",
+      "malla"
+    ],
+    "etiquetas": [
+      "Nuevo"
+    ],
+    "descripcion": "Pareo corto en tono fucsia con textura de malla, amarre lateral y acabado de flecos en el borde.",
+    "variantes": [
+      {
+        "id": "fuccia",
+        "activo": true,
+        "nombre": "Fuccia",
+        "codigo": "#CA12A2",
+        "miniatura": "/productos/pareo-fuccia-fuccia-01.webp",
+        "imagenes": [
+          "/productos/pareo-fuccia-fuccia-01.webp"
+        ],
+        "tallas": [
+          "XS",
+          "S",
+          "M",
+          "L",
+          "XL"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "pareo-laguna",
+    "activo": true,
+    "favorito": false,
+    "categoria": "salidas",
+    "nombre": "Pareo Laguna",
+    "precio": "15.000",
+    "palabrasClave": [
+      "salida",
+      "pareo",
+      "malla"
+    ],
+    "etiquetas": [
+      "Nuevo"
+    ],
+    "descripcion": "Pareo corto de malla translúcida con degradado entre turquesa y verde, ajustable mediante amarre lateral.",
+    "variantes": [
+      {
+        "id": "verde",
+        "activo": true,
+        "nombre": "verde",
+        "codigo": "#07E47D",
+        "miniatura": "/productos/pareo-laguna-verde-01.webp",
+        "imagenes": [
+          "/productos/pareo-laguna-verde-01.webp"
+        ],
+        "tallas": [
+          "XS",
+          "S",
+          "M",
+          "L",
+          "XL"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "pareo-sunset",
+    "activo": true,
+    "favorito": false,
+    "categoria": "salidas",
+    "nombre": "Pareo Sunset",
+    "precio": "15.000",
+    "palabrasClave": [
+      "pareo",
+      "salida",
+      "malla"
+    ],
+    "etiquetas": [
+      "Nuevo"
+    ],
+    "descripcion": "Pareo corto semitransparente con degradado entre naranja, coral y rosa, con amarre lateral y caída ligera.",
+    "variantes": [
+      {
+        "id": "coral",
+        "activo": true,
+        "nombre": "Coral",
+        "codigo": "#DA4EA0",
+        "miniatura": "/productos/pareo-sunset-coral-01.webp",
+        "imagenes": [
+          "/productos/pareo-sunset-coral-01.webp"
+        ],
+        "tallas": [
+          "XS",
+          "S",
+          "M",
+          "L",
+          "XL"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "pareo-latte",
+    "activo": true,
+    "favorito": false,
+    "categoria": "trajes",
+    "nombre": "Pareo Latte",
+    "precio": "15.000",
+    "palabrasClave": [
+      "pareo",
+      "salida",
+      "malla"
+    ],
+    "etiquetas": [
+      "Nuevo"
+    ],
+    "descripcion": "Pareo corto semitransparente en tonos degradados de cafe, con amarre lateral y caída ligera para complementar looks de playa.",
+    "variantes": [
+      {
+        "id": "cafe",
+        "activo": true,
+        "nombre": "café",
+        "codigo": "#ABAB87",
+        "miniatura": "/productos/pareo-latte-cafe-01.webp",
+        "imagenes": [
+          "/productos/pareo-latte-cafe-01.webp"
+        ],
+        "tallas": [
+          "XS",
+          "S",
+          "M",
+          "L",
+          "XL"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "pareo-esmeralda",
+    "activo": true,
+    "favorito": false,
+    "categoria": "salidas",
+    "nombre": "Pareo Esmeralda",
+    "precio": "15.000",
+    "palabrasClave": [
+      "pareo",
+      "salida",
+      "malla"
+    ],
+    "etiquetas": [
+      "Nuevo"
+    ],
+    "descripcion": "Pareo corto semitransparente en verde esmeralda, con amarre lateral y caída ligera para complementar looks de playa.",
+    "variantes": [
+      {
+        "id": "verde-esmeralda",
+        "activo": true,
+        "nombre": "Verde esmeralda",
+        "codigo": "#207E49",
+        "miniatura": "/productos/pareo-esmeralda-verde-esmeralda-01.webp",
+        "imagenes": [
+          "/productos/pareo-esmeralda-verde-esmeralda-01.webp"
+        ],
+        "tallas": [
+          "XS",
+          "S",
+          "M",
+          "L",
+          "XL"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "vestido-bruma-marfil",
+    "activo": true,
+    "favorito": false,
+    "categoria": "salidas",
+    "nombre": "Vestido Bruma Marfil",
+    "precio": "45.000",
+    "palabrasClave": [
+      "salida",
+      "vestido",
+      "pareo"
+    ],
+    "etiquetas": [
+      "Nuevo"
+    ],
+    "descripcion": "Vestido corto de malla en tono marfil, con escote drapeado y caída ajustada para usar sobre traje de baño.",
+    "variantes": [
+      {
+        "id": "marfil",
+        "activo": true,
+        "nombre": "Marfil",
+        "codigo": "#D5D9C4",
+        "miniatura": "/productos/vestido-bruma-marfil-marfil-01.webp",
+        "imagenes": [
+          "/productos/vestido-bruma-marfil-marfil-01.webp",
+          "/productos/vestido-bruma-marfil-marfil-02.webp"
+        ],
+        "tallas": [
+          "XS",
+          "S",
+          "M"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "set-brisa-blanca",
+    "activo": true,
+    "favorito": false,
+    "categoria": "salidas",
+    "nombre": "Set Brisa Blanca",
+    "precio": "45.000",
+    "palabrasClave": [
+      "salida",
+      "pantalon",
+      "pareo"
+    ],
+    "etiquetas": [
+      "Nuevo"
+    ],
+    "descripcion": "Conjunto de dos piezas en tela ligera y translúcida, con top corto de manga amplia y pantalón ancho con ajuste en cintura.",
+    "variantes": [
+      {
+        "id": "blanco",
+        "activo": true,
+        "nombre": "Blanco",
+        "codigo": "#EEE7E7",
+        "miniatura": "/productos/set-brisa-blanca-blanco-01.webp",
+        "imagenes": [
+          "/productos/set-brisa-blanca-blanco-01.webp",
+          "/productos/set-brisa-blanca-blanco-02.webp"
+        ],
+        "tallas": [
+          "M",
+          "S"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "vestido-noche-marina",
+    "activo": true,
+    "favorito": false,
+    "categoria": "salidas",
+    "nombre": "Vestido Noche Marina",
+    "precio": "40.000",
+    "palabrasClave": [
+      "salida",
+      "vestido",
+      "pareo"
+    ],
+    "etiquetas": [
+      "Nuevo"
+    ],
+    "descripcion": "Vestido largo de malla negra, semitransparente y de manga larga, pensado como salida de baño sobre bikini.",
+    "variantes": [
+      {
+        "id": "negro",
+        "activo": true,
+        "nombre": "Negro",
+        "codigo": "#0D0D0D",
+        "miniatura": "/productos/vestido-noche-marina-negro-01.webp",
+        "imagenes": [
+          "/productos/vestido-noche-marina-negro-01.webp"
+        ],
+        "tallas": [
+          "S",
+          "M",
+          "L",
+          "XL",
+          "XS"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "vestido-marfil-froral",
+    "activo": true,
+    "favorito": false,
+    "categoria": "salidas",
+    "nombre": "Vestido Marfil Froral",
+    "precio": "50.000",
+    "palabrasClave": [
+      "salida",
+      "vestido",
+      "malla",
+      "tejido"
+    ],
+    "etiquetas": [
+      "Nuevo"
+    ],
+    "descripcion": "Vestido largo de malla en tono marfil, con corte ajustado, espalda y laterales abiertos, y flores aplicadas como detalle principal.",
+    "variantes": [
+      {
+        "id": "marfil",
+        "activo": true,
+        "nombre": "Marfil",
+        "codigo": "#F3E2E2",
+        "miniatura": "/productos/vestido-marfil-froral-marfil-01.webp",
+        "imagenes": [
+          "/productos/vestido-marfil-froral-marfil-01.webp"
+        ],
+        "tallas": [
+          "S",
+          "M",
+          "L"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "salida-flor-caribe",
+    "activo": true,
+    "favorito": false,
+    "categoria": "salidas",
+    "nombre": "Salida Flor Caribe",
+    "precio": "45.000",
+    "palabrasClave": [
+      "vestido",
+      "ropa",
+      "salida",
+      "tejido"
+    ],
+    "etiquetas": [
+      "Nuevo"
+    ],
+    "descripcion": "Vestido corto tejido en fucsia, con aberturas laterales, aplicaciones florales en contraste y detalle decorativo en la cintura.",
+    "variantes": [
+      {
+        "id": "fuccia",
+        "activo": true,
+        "nombre": "Fuccia",
+        "codigo": "#821248",
+        "miniatura": "/productos/salida-flor-caribe-fuccia-01.webp",
+        "imagenes": [
+          "/productos/salida-flor-caribe-fuccia-01.webp"
+        ],
+        "tallas": [
+          "S",
+          "M",
+          "L"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "vestido-destello-dorado",
+    "activo": true,
+    "favorito": false,
+    "categoria": "salidas",
+    "nombre": "Vestido Destello Dorado",
+    "precio": "45.000",
+    "palabrasClave": [
+      "salida",
+      "ropa",
+      "vestido",
+      "tejido"
+    ],
+    "etiquetas": [
+      "Nuevo"
+    ],
+    "descripcion": "Vestido corto tejido en tono beige con aplicaciones metálicas doradas en el busto y acabado de flecos en el bajo.",
+    "variantes": [
+      {
+        "id": "dorado",
+        "activo": true,
+        "nombre": "Dorado",
+        "codigo": "#E1B741",
+        "miniatura": "/productos/vestido-destello-dorado-dorado-01.webp",
+        "imagenes": [
+          "/productos/vestido-destello-dorado-dorado-01.webp",
+          "/productos/vestido-destello-dorado-dorado-02.webp"
+        ],
+        "tallas": [
+          "S",
+          "M",
+          "L"
+        ]
+      }
+    ]
+  },
+  {
     "id": "kimono-brisa-dorada",
     "activo": true,
     "favorito": false,
