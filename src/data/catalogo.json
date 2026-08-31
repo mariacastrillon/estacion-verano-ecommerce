@@ -757,7 +757,7 @@
   {
     "id": "gorra-tortuga",
     "activo": true,
-    "favorito": true,
+    "favorito": false,
     "categoria": "accesorios",
     "nombre": "Gorra tortuga",
     "precio": "15.000",
@@ -1220,9 +1220,9 @@
   {
     "id": "bikine-mare-negro",
     "activo": true,
-    "favorito": true,
+    "favorito": false,
     "categoria": "trajes",
-    "nombre": "Bikine Mare Negro",
+    "nombre": "Bikini Mare Negro",
     "precio": "50.000",
     "palabrasClave": [
       "basico",
