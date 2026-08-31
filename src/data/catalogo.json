@@ -1,5 +1,1257 @@
 [
   {
+    "id": "bolso-arena-negra",
+    "activo": true,
+    "favorito": false,
+    "categoria": "trajes",
+    "nombre": "Bolso Arena Negra",
+    "precio": "30.000",
+    "palabrasClave": [
+      "bolso"
+    ],
+    "etiquetas": [
+      "Nuevo"
+    ],
+    "descripcion": "Bolso pequeño tejido en fique, en tono natural con bordes y asas negras, amplio y fácil de combinar para playa o ciudad.",
+    "variantes": [
+      {
+        "id": "color-principal",
+        "activo": true,
+        "nombre": "Beige",
+        "codigo": "#A9A475",
+        "miniatura": "/productos/bolso-arena-negra-color-principal-01.webp",
+        "imagenes": [
+          "/productos/bolso-arena-negra-color-principal-01.webp"
+        ],
+        "tallas": [
+          "XS",
+          "S"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "bolso-concha-azul",
+    "activo": true,
+    "favorito": false,
+    "categoria": "bolsos",
+    "nombre": "Bolso Concha Azul",
+    "precio": "30.000",
+    "palabrasClave": [
+      "bolso"
+    ],
+    "etiquetas": [
+      "Nuevo"
+    ],
+    "descripcion": "Bolso transparente con forma inspirada en concha, en azul turquesa y con aplique de estrella de mar.",
+    "variantes": [
+      {
+        "id": "azul",
+        "activo": true,
+        "nombre": "Azul",
+        "codigo": "#1981AE",
+        "miniatura": "/productos/bolso-concha-azul-azul-01.webp",
+        "imagenes": [
+          "/productos/bolso-concha-azul-azul-01.webp"
+        ],
+        "tallas": [
+          "M",
+          "L"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "bolso-marea-turquesa",
+    "activo": true,
+    "favorito": false,
+    "categoria": "bolsos",
+    "nombre": "Bolso Marea Turquesa",
+    "precio": "17.000",
+    "palabrasClave": [
+      "bolso"
+    ],
+    "etiquetas": [
+      "Nuevo"
+    ],
+    "descripcion": "Bolso playero semitransparente en tono turquesa, con asas largas y detalles marinos en el frente.",
+    "variantes": [
+      {
+        "id": "azul",
+        "activo": true,
+        "nombre": "Azul",
+        "codigo": "#2A86EA",
+        "miniatura": "/productos/bolso-marea-turquesa-azul-01.webp",
+        "imagenes": [
+          "/productos/bolso-marea-turquesa-azul-01.webp"
+        ],
+        "tallas": [
+          "S",
+          "M"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "collar-marea-rosa",
+    "activo": true,
+    "favorito": false,
+    "categoria": "accesorios",
+    "nombre": "Collar Marea Rosa",
+    "precio": "20.000",
+    "palabrasClave": [
+      "collar"
+    ],
+    "etiquetas": [
+      "Nuevo"
+    ],
+    "descripcion": "Collar de eslabones gruesos en fucsia con dijes marinos de distintos colores, incluyendo conchas, estrella de mar, perla y coral",
+    "variantes": [
+      {
+        "id": "fuccia",
+        "activo": true,
+        "nombre": "Fuccia",
+        "codigo": "#C337A9",
+        "miniatura": "/productos/collar-marea-rosa-fuccia-01.webp",
+        "imagenes": [
+          "/productos/collar-marea-rosa-fuccia-01.webp"
+        ],
+        "tallas": [
+          "XS",
+          "S",
+          "M",
+          "L",
+          "XL",
+          "XXL"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "set-nautico",
+    "activo": true,
+    "favorito": false,
+    "categoria": "accesorios",
+    "nombre": "Set Náutico",
+    "precio": "20.000",
+    "palabrasClave": [
+      "collar",
+      "aretes",
+      "set"
+    ],
+    "etiquetas": [
+      "Nuevo"
+    ],
+    "descripcion": "Conjunto de collar y aretes con diseño de concha espiral en acabado dorado, inspirado en formas marinas.",
+    "variantes": [
+      {
+        "id": "dorado",
+        "activo": true,
+        "nombre": "Dorado",
+        "codigo": "#E3CECE",
+        "miniatura": "/productos/set-nautico-dorado-01.webp",
+        "imagenes": [
+          "/productos/set-nautico-dorado-01.webp"
+        ],
+        "tallas": [
+          "XS",
+          "S",
+          "M",
+          "L",
+          "XL"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "gafas-aura",
+    "activo": true,
+    "favorito": false,
+    "categoria": "accesorios",
+    "nombre": "Gafas Aura",
+    "precio": "10.000",
+    "palabrasClave": [
+      "lentes",
+      "gafas"
+    ],
+    "etiquetas": [
+      "Nuevo"
+    ],
+    "descripcion": "Gafas de sol de montura metálica fina con lentes de color suave, disponibles en varios tonos para combinar con looks de playa o ciudad.",
+    "variantes": [
+      {
+        "id": "amarillo-azul-rosa",
+        "activo": true,
+        "nombre": "Amarillo, Azul, Rosa",
+        "codigo": "#69C2CE",
+        "miniatura": "/productos/gafas-aura-amarillo-azul-rosa-01.webp",
+        "imagenes": [
+          "/productos/gafas-aura-amarillo-azul-rosa-01.webp"
+        ],
+        "tallas": [
+          "XS",
+          "S",
+          "M",
+          "L",
+          "XL",
+          "XXL"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "ear-cuff-pulpo-plata",
+    "activo": true,
+    "favorito": false,
+    "categoria": "accesorios",
+    "nombre": "Ear Cuff Pulpo Plata",
+    "precio": "7.000",
+    "palabrasClave": [
+      "aer cuff",
+      "arete"
+    ],
+    "etiquetas": [
+      "Nuevo"
+    ],
+    "descripcion": "Accesorio plateado en forma de pulpo que se ajusta al borde de la oreja sin necesidad de perforación.",
+    "variantes": [
+      {
+        "id": "plateado",
+        "activo": true,
+        "nombre": "Plateado",
+        "codigo": "#D8CACA",
+        "miniatura": "/productos/ear-cuff-pulpo-plata-plateado-01.webp",
+        "imagenes": [
+          "/productos/ear-cuff-pulpo-plata-plateado-01.webp"
+        ],
+        "tallas": [
+          "XS",
+          "XXL",
+          "XL",
+          "L",
+          "M",
+          "S"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "aretes-tortuga-dorada",
+    "activo": true,
+    "favorito": false,
+    "categoria": "accesorios",
+    "nombre": "Aretes Tortuga Dorada",
+    "precio": "10.000",
+    "palabrasClave": [
+      "aretes"
+    ],
+    "etiquetas": [
+      "Nuevo"
+    ],
+    "descripcion": "Aretes dorados con forma de tortuga marina y textura decorativa en el centro.",
+    "variantes": [
+      {
+        "id": "dorao",
+        "activo": true,
+        "nombre": "Dorao",
+        "codigo": "#ECCE36",
+        "miniatura": "/productos/aretes-tortuga-dorada-dorao-01.webp",
+        "imagenes": [
+          "/productos/aretes-tortuga-dorada-dorao-01.webp",
+          "/productos/aretes-tortuga-dorada-dorao-02.webp"
+        ],
+        "tallas": [
+          "S",
+          "M"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "aretes-pina-perla",
+    "activo": true,
+    "favorito": false,
+    "categoria": "accesorios",
+    "nombre": "Aretes Piña Perla",
+    "precio": "10.000",
+    "palabrasClave": [
+      "aretes"
+    ],
+    "etiquetas": [
+      "Nuevo"
+    ],
+    "descripcion": "Aretes pequeños en forma de piña, con detalle de perlas y acabado dorado",
+    "variantes": [
+      {
+        "id": "blanco-perlado",
+        "activo": true,
+        "nombre": "Blanco perlado",
+        "codigo": "#EEE8E8",
+        "miniatura": "/productos/aretes-pina-perla-blanco-perlado-01.webp",
+        "imagenes": [
+          "/productos/aretes-pina-perla-blanco-perlado-01.webp"
+        ],
+        "tallas": [
+          "S",
+          "M",
+          "L",
+          "XL"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "gafas-prisma",
+    "activo": true,
+    "favorito": false,
+    "categoria": "accesorios",
+    "nombre": "Gafas Prisma",
+    "precio": "20.000",
+    "palabrasClave": [
+      "lentes",
+      "gafas"
+    ],
+    "etiquetas": [
+      "Nuevo"
+    ],
+    "descripcion": "Gafas transparentes de montura geométrica, con diseño moderno y ligero para looks de sol o ciudad.",
+    "variantes": [
+      {
+        "id": "miel",
+        "activo": true,
+        "nombre": "Miel",
+        "codigo": "#575252",
+        "miniatura": "/productos/gafas-prisma-miel-01.webp",
+        "imagenes": [
+          "/productos/gafas-prisma-miel-01.webp"
+        ],
+        "tallas": [
+          "XS",
+          "S",
+          "M",
+          "L",
+          "XL",
+          "XXL"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "clutch-nautilo-dorado",
+    "activo": true,
+    "favorito": false,
+    "categoria": "bolsos",
+    "nombre": "Clutch Náutilo Dorado",
+    "precio": "60.000",
+    "palabrasClave": [
+      "bolso"
+    ],
+    "etiquetas": [
+      "Nuevo"
+    ],
+    "descripcion": "Clutch rígido con forma de concha espiral, acabado dorado brillante y cadena para llevar al hombro.",
+    "variantes": [
+      {
+        "id": "dorado",
+        "activo": true,
+        "nombre": "Dorado",
+        "codigo": "#A19F59",
+        "miniatura": "/productos/clutch-nautilo-dorado-dorado-01.webp",
+        "imagenes": [
+          "/productos/clutch-nautilo-dorado-dorado-01.webp"
+        ],
+        "tallas": [
+          "S",
+          "M"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "bolso-brisa-marina",
+    "activo": true,
+    "favorito": false,
+    "categoria": "bolsos",
+    "nombre": "Bolso Brisa Marina",
+    "precio": "30.000",
+    "palabrasClave": [
+      "bolso",
+      "tejido"
+    ],
+    "etiquetas": [
+      "Nuevo"
+    ],
+    "descripcion": "Bolso tejido en negro marino y blanco, con diseño geométrico y aplique floral en el frente.",
+    "variantes": [
+      {
+        "id": "negro-con-blanco",
+        "activo": true,
+        "nombre": "Negro con Blanco",
+        "codigo": "#000000",
+        "miniatura": "/productos/bolso-brisa-marina-negro-con-blanco-01.webp",
+        "imagenes": [
+          "/productos/bolso-brisa-marina-negro-con-blanco-01.webp"
+        ],
+        "tallas": [
+          "M",
+          "L",
+          "XL"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "brazalete-flor-coral",
+    "activo": true,
+    "favorito": false,
+    "categoria": "accesorios",
+    "nombre": "Brazalete Flor Coral",
+    "precio": "17.000",
+    "palabrasClave": [
+      "brazalete"
+    ],
+    "etiquetas": [
+      "Nuevo"
+    ],
+    "descripcion": "Brazalete dorado abierto con flores translúcidas en tonos rosados y acabado brillante.",
+    "variantes": [
+      {
+        "id": "rosado",
+        "activo": true,
+        "nombre": "Rosado",
+        "codigo": "#5E3143",
+        "miniatura": "/productos/brazalete-flor-coral-rosado-01.webp",
+        "imagenes": [
+          "/productos/brazalete-flor-coral-rosado-01.webp"
+        ],
+        "tallas": [
+          "XS",
+          "S",
+          "M",
+          "L",
+          "XL",
+          "XXL"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "bolso-margarita",
+    "activo": true,
+    "favorito": false,
+    "categoria": "bolsos",
+    "nombre": "Bolso Margarita",
+    "precio": "20.000",
+    "palabrasClave": [
+      "bolso",
+      "tejido"
+    ],
+    "etiquetas": [
+      "Nuevo"
+    ],
+    "descripcion": "Bolso tejido en color crema, de textura abierta, con aplique floral en el frente y asa amplia para llevar al hombro",
+    "variantes": [
+      {
+        "id": "beige",
+        "activo": true,
+        "nombre": "beige",
+        "codigo": "#DCD0D0",
+        "miniatura": "/productos/bolso-margarita-beige-01.webp",
+        "imagenes": [
+          "/productos/bolso-margarita-beige-01.webp"
+        ],
+        "tallas": [
+          "XS",
+          "S",
+          "M",
+          "L",
+          "XL",
+          "XXL"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "aretes-flor-marina",
+    "activo": true,
+    "favorito": false,
+    "categoria": "accesorios",
+    "nombre": "Aretes Flor Marina",
+    "precio": "15.000",
+    "palabrasClave": [
+      "collar"
+    ],
+    "etiquetas": [
+      "Nuevo"
+    ],
+    "descripcion": "Aretes grandes en forma de flor, en tono marfil con centro amarillo, ligeros y muy llamativos.",
+    "variantes": [
+      {
+        "id": "amarrillos",
+        "activo": true,
+        "nombre": "Amarrillos",
+        "codigo": "#D9DB6B",
+        "miniatura": "/productos/aretes-flor-marina-amarrillos-01.webp",
+        "imagenes": [
+          "/productos/aretes-flor-marina-amarrillos-01.webp"
+        ],
+        "tallas": [
+          "XS",
+          "S",
+          "M",
+          "XL",
+          "L",
+          "XXL"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "collar-marea-blanca",
+    "activo": true,
+    "favorito": false,
+    "categoria": "accesorios",
+    "nombre": "Collar Marea Blanca",
+    "precio": "20.000",
+    "palabrasClave": [
+      "collar"
+    ],
+    "etiquetas": [
+      "Nuevo"
+    ],
+    "descripcion": "Collar trenzado en tono blanco con dijes de conchas marinas en acabados nacarados y dorados",
+    "variantes": [
+      {
+        "id": "blanco",
+        "activo": true,
+        "nombre": "Blanco",
+        "codigo": "#FCF8F8",
+        "miniatura": "/productos/collar-marea-blanca-blanco-01.webp",
+        "imagenes": [
+          "/productos/collar-marea-blanca-blanco-01.webp"
+        ],
+        "tallas": [
+          "XS",
+          "S",
+          "M",
+          "L",
+          "XL",
+          "XXL"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "lentes-brisa",
+    "activo": true,
+    "favorito": false,
+    "categoria": "accesorios",
+    "nombre": "Lentes Brisa",
+    "precio": "10.000",
+    "palabrasClave": [
+      "lentes",
+      "gafas"
+    ],
+    "etiquetas": [
+      "Nuevo"
+    ],
+    "descripcion": "Lentes oscuros en forma rectancular, con un detalle dorado en sus laterales, elegante y femenino",
+    "variantes": [
+      {
+        "id": "negro-oscuro",
+        "activo": true,
+        "nombre": "Negro Oscuro",
+        "codigo": "#000000",
+        "miniatura": "/productos/lentes-brisa-negro-oscuro-01.webp",
+        "imagenes": [
+          "/productos/lentes-brisa-negro-oscuro-01.webp",
+          "/productos/lentes-brisa-negro-oscuro-02.webp"
+        ],
+        "tallas": [
+          "XS",
+          "S",
+          "M",
+          "L",
+          "XL",
+          "XXL"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "lentes-solea",
+    "activo": true,
+    "favorito": false,
+    "categoria": "accesorios",
+    "nombre": "Lentes Solea",
+    "precio": "20.000",
+    "palabrasClave": [
+      "lentes",
+      "gafas"
+    ],
+    "etiquetas": [
+      "Nuevo"
+    ],
+    "descripcion": "Preciosos Lentres con marco dorado que hacen que estilices cualquer look en un día soleado",
+    "variantes": [
+      {
+        "id": "cafe",
+        "activo": true,
+        "nombre": "café",
+        "codigo": "#523838",
+        "miniatura": "/productos/lentes-solea-cafe-01.webp",
+        "imagenes": [
+          "/productos/lentes-solea-cafe-01.webp",
+          "/productos/lentes-solea-cafe-02.webp"
+        ],
+        "tallas": [
+          "XS",
+          "S",
+          "M",
+          "L",
+          "XL",
+          "XXL"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "collar-estrella",
+    "activo": true,
+    "favorito": false,
+    "categoria": "accesorios",
+    "nombre": "Collar Estrella",
+    "precio": "15.000",
+    "palabrasClave": [
+      "collar"
+    ],
+    "etiquetas": [
+      "Nuevo"
+    ],
+    "descripcion": "Collar Estrella de mar color plata",
+    "variantes": [
+      {
+        "id": "plateado",
+        "activo": true,
+        "nombre": "Plateado",
+        "codigo": "#BABABA",
+        "miniatura": "/productos/collar-estrella-plateado-01.webp",
+        "imagenes": [
+          "/productos/collar-estrella-plateado-01.webp"
+        ],
+        "tallas": [
+          "S",
+          "M",
+          "L",
+          "XL",
+          "XXL",
+          "XS"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "aretes-estrella-de-mar",
+    "activo": true,
+    "favorito": false,
+    "categoria": "accesorios",
+    "nombre": "Aretes estrella de Mar",
+    "precio": "10.000",
+    "palabrasClave": [
+      "aretes"
+    ],
+    "etiquetas": [
+      "nuevo"
+    ],
+    "descripcion": "Aretes en porcelana con forma de estrella de mar",
+    "variantes": [
+      {
+        "id": "rojos",
+        "activo": true,
+        "nombre": "rojos",
+        "codigo": "#EC3664",
+        "miniatura": "/productos/aretes-estrella-de-mar-rojos-01.webp",
+        "imagenes": [
+          "/productos/aretes-estrella-de-mar-rojos-01.webp"
+        ],
+        "tallas": [
+          "XS",
+          "S",
+          "M",
+          "L",
+          "XL",
+          "XXL"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "aretes-cangrejos",
+    "activo": true,
+    "favorito": false,
+    "categoria": "accesorios",
+    "nombre": "Aretes cangrejos",
+    "precio": "10.000",
+    "palabrasClave": [
+      "aretes"
+    ],
+    "etiquetas": [
+      "Nuevo"
+    ],
+    "descripcion": "Aretes en porcelana, con forma de cangrejo.",
+    "variantes": [
+      {
+        "id": "color-principal",
+        "activo": true,
+        "nombre": "Color principal",
+        "codigo": "#E34545",
+        "miniatura": "/productos/aretes-cangrejos-color-principal-01.webp",
+        "imagenes": [
+          "/productos/aretes-cangrejos-color-principal-01.webp"
+        ],
+        "tallas": [
+          "S",
+          "M",
+          "L",
+          "XL",
+          "XXL",
+          "XS"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "kit-playero",
+    "activo": true,
+    "favorito": false,
+    "categoria": "bolsos",
+    "nombre": "Kit Playero",
+    "precio": "60.000",
+    "palabrasClave": [
+      "bolso",
+      "sombrero"
+    ],
+    "etiquetas": [
+      "Nuevo"
+    ],
+    "descripcion": "Juego de Sombrero + bolso playero, ideal para que combines tu look playero y lo eleves aún mucho más.\nTambién se venden por separado",
+    "variantes": [
+      {
+        "id": "beige",
+        "activo": true,
+        "nombre": "Beige",
+        "codigo": "#7B7A5B",
+        "miniatura": "/productos/kit-playero-beige-01.webp",
+        "imagenes": [
+          "/productos/kit-playero-beige-01.webp"
+        ],
+        "tallas": [
+          "M",
+          "L",
+          "XL",
+          "S"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "gorra-tortuga",
+    "activo": true,
+    "favorito": true,
+    "categoria": "accesorios",
+    "nombre": "Gorra tortuga",
+    "precio": "15.000",
+    "palabrasClave": [
+      "gorra",
+      "gorros"
+    ],
+    "etiquetas": [
+      "Nueva"
+    ],
+    "descripcion": "Gorra playera con bordado mini de tortuga, perfecta para dias soleados",
+    "variantes": [
+      {
+        "id": "gris",
+        "activo": true,
+        "nombre": "Gris",
+        "codigo": "#696363",
+        "miniatura": "/productos/gorra-tortuga-gris-01.webp",
+        "imagenes": [
+          "/productos/gorra-tortuga-gris-01.webp"
+        ],
+        "tallas": [
+          "M",
+          "L"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "brazalete-stikers",
+    "activo": true,
+    "favorito": false,
+    "categoria": "accesorios",
+    "nombre": "Brazalete Stikers",
+    "precio": "7.000",
+    "palabrasClave": [
+      "brazaletes"
+    ],
+    "etiquetas": [
+      "Nuevo"
+    ],
+    "descripcion": "cartón de stikers con diseños de brazaletes con formas y figuras etnicas playeras, duraderos y resistentes al agua.",
+    "variantes": [
+      {
+        "id": "dorado",
+        "activo": true,
+        "nombre": "dorado",
+        "codigo": "#F9ECEC",
+        "miniatura": "/productos/brazalete-stikers-dorado-01.webp",
+        "imagenes": [
+          "/productos/brazalete-stikers-dorado-01.webp"
+        ],
+        "tallas": [
+          "S",
+          "M",
+          "L"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "bolso-playero-maya",
+    "activo": true,
+    "favorito": false,
+    "categoria": "bolsos",
+    "nombre": "Bolso playero Maya",
+    "precio": "25.000",
+    "palabrasClave": [
+      "bolso"
+    ],
+    "etiquetas": [
+      "Nuevo"
+    ],
+    "descripcion": "Bolso tejido en forma de red, ideial para dias de vaciones.\nPuede estirar todo lo que quieras.",
+    "variantes": [
+      {
+        "id": "beige",
+        "activo": true,
+        "nombre": "beige",
+        "codigo": "#CBC3AF",
+        "miniatura": "/productos/bolso-playero-maya-beige-01.webp",
+        "imagenes": [
+          "/productos/bolso-playero-maya-beige-01.webp"
+        ],
+        "tallas": [
+          "M"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "fuccia-sol",
+    "activo": true,
+    "favorito": false,
+    "categoria": "trajes",
+    "nombre": "Fuccia Sol",
+    "precio": "40.000",
+    "palabrasClave": [
+      "basico"
+    ],
+    "etiquetas": [
+      "Nuevo"
+    ],
+    "descripcion": "Bikini de dos piezas en fucsia intenso, con top bandeau fruncido y panty de amarre lateral. Lleva herrajes dorados decorativos que resaltan el diseño y le dan un acabado llamativo.",
+    "variantes": [
+      {
+        "id": "color-principal",
+        "activo": true,
+        "nombre": "Color principal",
+        "codigo": "#C1067C",
+        "miniatura": "/productos/fuccia-sol-color-principal-01.webp",
+        "imagenes": [
+          "/productos/fuccia-sol-color-principal-01.webp"
+        ],
+        "tallas": [
+          "M"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "orquidea-secreta",
+    "activo": true,
+    "favorito": false,
+    "categoria": "trajes",
+    "nombre": "Orquídea Secreta",
+    "precio": "50.000",
+    "palabrasClave": [
+      "basico"
+    ],
+    "etiquetas": [
+      "Nuevo"
+    ],
+    "descripcion": "Bikini lila de dos piezas con aplicación floral sobre el busto, detalles de perlas y panty de amarre lateral. Su diseño de cobertura mínima crea un efecto sensual y llamativo, pensado para lucirse con seguridad.",
+    "variantes": [
+      {
+        "id": "lila",
+        "activo": true,
+        "nombre": "Lila",
+        "codigo": "#BA82D3",
+        "miniatura": "/productos/orquidea-secreta-lila-01.webp",
+        "imagenes": [
+          "/productos/orquidea-secreta-lila-01.webp",
+          "/productos/orquidea-secreta-lila-02.webp",
+          "/productos/orquidea-secreta-lila-03.webp",
+          "/productos/orquidea-secreta-lila-04.webp"
+        ],
+        "tallas": [
+          "L",
+          "XL"
+        ]
+      },
+      {
+        "id": "color-principal",
+        "activo": false,
+        "nombre": "Color principal",
+        "codigo": "#111111",
+        "miniatura": "",
+        "imagenes": [],
+        "tallas": []
+      }
+    ]
+  },
+  {
+    "id": "brisa-naranja",
+    "activo": true,
+    "favorito": false,
+    "categoria": "trajes",
+    "nombre": "Brisa Naranja",
+    "precio": "40.000",
+    "palabrasClave": [
+      "basico"
+    ],
+    "etiquetas": [
+      "Nuevo"
+    ],
+    "descripcion": "Bikini de dos piezas en naranja vibrante, con top triangular y panty de amarre lateral. Lleva flores en relieve como detalle principal, dándole un acabado llamativo y muy veraniego",
+    "variantes": [
+      {
+        "id": "naranja",
+        "activo": true,
+        "nombre": "Naranja",
+        "codigo": "#FA7000",
+        "miniatura": "/productos/brisa-naranja-naranja-01.webp",
+        "imagenes": [
+          "/productos/brisa-naranja-naranja-01.webp"
+        ],
+        "tallas": [
+          "M"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "orquideas",
+    "activo": true,
+    "favorito": false,
+    "categoria": "trajes",
+    "nombre": "Orquídeas",
+    "precio": "50.000",
+    "palabrasClave": [
+      "flores",
+      "orquideas",
+      "basico"
+    ],
+    "etiquetas": [
+      "Nuevo",
+      "Edición limitada"
+    ],
+    "descripcion": "Bikini de dos piezas en rosa intenso, con top decorado con flores en relieve y panty de amarre lateral. Un diseño llamativo, femenino y muy playero.",
+    "variantes": [
+      {
+        "id": "rosado",
+        "activo": true,
+        "nombre": "Rosado",
+        "codigo": "#F254D5",
+        "miniatura": "/productos/orquideas-rosado-01.webp",
+        "imagenes": [
+          "/productos/orquideas-rosado-01.webp"
+        ],
+        "tallas": [
+          "M"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "set-maretta",
+    "activo": true,
+    "favorito": false,
+    "categoria": "trajes",
+    "nombre": "Set Maretta",
+    "precio": "80.000",
+    "palabrasClave": [
+      "3 piezas",
+      "tres piezas",
+      "pareo"
+    ],
+    "etiquetas": [
+      "Nuevo"
+    ],
+    "descripcion": "Set de 3 piezas en tono café, con top estructurado, panty a juego y pareo largo fruncido con abertura lateral y detalle decorativo",
+    "variantes": [
+      {
+        "id": "cafe",
+        "activo": true,
+        "nombre": "Café",
+        "codigo": "#322A2A",
+        "miniatura": "/productos/set-maretta-cafe-01.webp",
+        "imagenes": [
+          "/productos/set-maretta-cafe-01.webp",
+          "/productos/set-maretta-cafe-02.webp",
+          "/productos/set-maretta-cafe-03.webp",
+          "/productos/set-maretta-cafe-04.webp"
+        ],
+        "tallas": [
+          "L",
+          "XL"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "set-palma-azul",
+    "activo": true,
+    "favorito": false,
+    "categoria": "trajes",
+    "nombre": "Set Palma Azul",
+    "precio": "60.000",
+    "palabrasClave": [
+      "3 piezas",
+      "tres piezas",
+      "pantalon",
+      "pareo"
+    ],
+    "etiquetas": [
+      "Nuevo"
+    ],
+    "descripcion": "Set de 3 piezas con top estructurado, panty y short pareo estampado. Cómodo, fresco y perfecto para un look llamativo en playa o piscina.",
+    "variantes": [
+      {
+        "id": "azul",
+        "activo": true,
+        "nombre": "azul",
+        "codigo": "#0B22D0",
+        "miniatura": "/productos/set-palma-azul-azul-01.webp",
+        "imagenes": [
+          "/productos/set-palma-azul-azul-01.webp",
+          "/productos/set-palma-azul-azul-02.webp",
+          "/productos/set-palma-azul-azul-03.webp"
+        ],
+        "tallas": [
+          "M"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "bikini-cayena",
+    "activo": true,
+    "favorito": false,
+    "categoria": "trajes",
+    "nombre": "Bikini Cayena",
+    "precio": "40.000",
+    "palabrasClave": [
+      "basico"
+    ],
+    "etiquetas": [
+      "Nuevo"
+    ],
+    "descripcion": "Bikini rojo con estampado de hibiscos blancos. Incluye top con detalle cruzado en el medio y panty de corte alto.",
+    "variantes": [
+      {
+        "id": "rojo",
+        "activo": true,
+        "nombre": "Rojo",
+        "codigo": "#C51B1B",
+        "miniatura": "/productos/bikini-cayena-rojo-01.webp",
+        "imagenes": [
+          "/productos/bikini-cayena-rojo-01.webp",
+          "/productos/bikini-cayena-rojo-02.webp",
+          "/productos/bikini-cayena-rojo-03.webp"
+        ],
+        "tallas": [
+          "M",
+          "S"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "marea-electrica",
+    "activo": true,
+    "favorito": false,
+    "categoria": "trajes",
+    "nombre": "Marea Eléctrica",
+    "precio": "50.000",
+    "palabrasClave": [
+      "pareo",
+      "tres piezas",
+      "3 piezas"
+    ],
+    "etiquetas": [
+      "Nuevo"
+    ],
+    "descripcion": "Set de tres piezas con bikini triangular, panty de corte alto y salida anudable. Su estampado azul reproduce el efecto de la luz sobre el agua.",
+    "variantes": [
+      {
+        "id": "azul",
+        "activo": true,
+        "nombre": "Azul",
+        "codigo": "#0E13AA",
+        "miniatura": "/productos/marea-electrica-azul-01.webp",
+        "imagenes": [
+          "/productos/marea-electrica-azul-01.webp",
+          "/productos/marea-electrica-azul-02.webp"
+        ],
+        "tallas": [
+          "M"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "set-ola-serena",
+    "activo": true,
+    "favorito": false,
+    "categoria": "trajes",
+    "nombre": "Set Ola Serena",
+    "precio": "50.000",
+    "palabrasClave": [
+      "3 piezas",
+      "tres piezas"
+    ],
+    "etiquetas": [
+      "Nuevo"
+    ],
+    "descripcion": "Set de tres piezas con bikini triangular y salida de baño anudable. Estampado abstracto en tonos azul claro y azul intenso.",
+    "variantes": [
+      {
+        "id": "azul",
+        "activo": true,
+        "nombre": "Azul",
+        "codigo": "#0F1CD2",
+        "miniatura": "/productos/set-ola-serena-azul-01.webp",
+        "imagenes": [
+          "/productos/set-ola-serena-azul-01.webp",
+          "/productos/set-ola-serena-azul-02.webp"
+        ],
+        "tallas": [
+          "M"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "bikini-perla",
+    "activo": true,
+    "favorito": false,
+    "categoria": "trajes",
+    "nombre": "Bikini Perla",
+    "precio": "40.000",
+    "palabrasClave": [
+      "perlas",
+      "basico"
+    ],
+    "etiquetas": [
+      "Nuevo"
+    ],
+    "descripcion": "Bikini color marfil con top de flores tejidas y detalles de perlas. Incluye panty de corte alto y tirantes ajustables.",
+    "variantes": [
+      {
+        "id": "marfil",
+        "activo": true,
+        "nombre": "Marfil",
+        "codigo": "#C8C6AC",
+        "miniatura": "/productos/bikini-perla-marfil-01.webp",
+        "imagenes": [
+          "/productos/bikini-perla-marfil-01.webp",
+          "/productos/bikini-perla-marfil-02.webp"
+        ],
+        "tallas": [
+          "M"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "bikini-jade",
+    "activo": true,
+    "favorito": false,
+    "categoria": "trajes",
+    "nombre": "Bikini Jade",
+    "precio": "50.000",
+    "palabrasClave": [
+      "basico"
+    ],
+    "etiquetas": [
+      "Nuevo"
+    ],
+    "descripcion": "Bikini verde salvia con top ajustable y panty de corte clásico. Incluye detalles de piedras en tonos turquesa y café con piezas doradas.",
+    "variantes": [
+      {
+        "id": "verde-oliva",
+        "activo": true,
+        "nombre": "verde oliva",
+        "codigo": "#39562F",
+        "miniatura": "/productos/bikini-jade-verde-oliva-02.webp",
+        "imagenes": [
+          "/productos/bikini-jade-verde-oliva-02.webp",
+          "/productos/bikini-jade-verde-oliva-01.webp",
+          "/productos/bikini-jade-verde-oliva-03.webp"
+        ],
+        "tallas": [
+          "M"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "bikine-mare-negro",
+    "activo": true,
+    "favorito": true,
+    "categoria": "trajes",
+    "nombre": "Bikine Mare Negro",
+    "precio": "50.000",
+    "palabrasClave": [
+      "basico",
+      "panty alta",
+      "alto"
+    ],
+    "etiquetas": [
+      "Nuevo"
+    ],
+    "descripcion": "Bikini negro de talle alto con bordados en tono beige. Su top tipo halter ofrece buena cobertura y un ajuste cómodo.",
+    "variantes": [
+      {
+        "id": "color-principal",
+        "activo": true,
+        "nombre": "Color principal",
+        "codigo": "#000000",
+        "miniatura": "/productos/bikine-mare-negro-color-principal-01.webp",
+        "imagenes": [
+          "/productos/bikine-mare-negro-color-principal-01.webp",
+          "/productos/bikine-mare-negro-color-principal-02.webp",
+          "/productos/bikine-mare-negro-color-principal-03.webp"
+        ],
+        "tallas": [
+          "M"
+        ]
+      }
+    ]
+  },
+  {
     "id": "mar-de-conchas",
     "activo": true,
     "favorito": false,
