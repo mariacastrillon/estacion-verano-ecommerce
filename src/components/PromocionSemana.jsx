@@ -1,4 +1,5 @@
 import { useState } from "react";
+import WhatsAppButton from "./WhatsAppButton";
 
 function PromocionSemana() {
   const [abierto, setAbierto] = useState(false);
@@ -81,16 +82,12 @@ function PromocionSemana() {
               Haz clic sobre la imagen para acercarla.
             </p>
 
-            <a
-              href="https://wa.me/573159048807?text=Hola,%20vi%20la%20promoción%20de%20la%20semana%20y%20quiero%20aprovecharla."
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-6"
+            <WhatsAppButton
+              mensaje="Hola, vi la promoción de la semana y quiero aprovecharla."
+              className="mt-6 bg-[#DCCDA4] text-slate-900 px-8 py-3 rounded-full font-medium hover:opacity-90 transition"
             >
-              <button className="bg-[#DCCDA4] text-slate-900 px-8 py-3 rounded-full font-medium hover:opacity-90 transition">
-                Aprovechar promoción 📲
-              </button>
-            </a>
+              Aprovechar promoción 📲
+            </WhatsAppButton>
           </div>
         </div>
       )}

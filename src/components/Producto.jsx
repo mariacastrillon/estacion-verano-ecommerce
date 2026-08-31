@@ -1,3 +1,5 @@
+import WhatsAppButton from "./WhatsAppButton";
+
 function Producto({ nombre, precio, tallas, imagen }) {
   const mensaje = `Hola, estoy interesada en ${nombre}. ¿Podrías darme más información?`;
 
@@ -24,15 +26,12 @@ function Producto({ nombre, precio, tallas, imagen }) {
           Tallas: {tallas}
         </p>
 
-        <a
-          href={`https://wa.me/573159048807?text=${encodeURIComponent(mensaje)}`}
-          target="_blank"
-          rel="noopener noreferrer"
+        <WhatsAppButton
+          mensaje={mensaje}
+          className="w-full bg-[#DCCDA4] text-[#102A2A] py-3 rounded-full font-medium hover:opacity-90 transition cursor-pointer"
         >
-          <button className="w-full bg-[#DCCDA4] text-[#102A2A] py-3 rounded-full font-medium hover:opacity-90 transition cursor-pointer">
-            Comprar por WhatsApp
-          </button>
-        </a>
+          Comprar por WhatsApp
+        </WhatsAppButton>
 
       </div>
 

@@ -5,6 +5,7 @@ import ProductoCard from "../components/ProductoCard";
 import { useNavigate } from "react-router-dom";
 import PromocionSemana from "../components/PromocionSemana";
 import Navbar from "../components/Navbar";
+import WhatsAppButton from "../components/WhatsAppButton";
 
 function Inicio() {
   const navigate = useNavigate();
@@ -108,15 +109,12 @@ function Inicio() {
                 Ver Colección
             </button>
 
-            <a
-              href="https://wa.me/573159048807?text=Hola,%20quiero%20información%20sobre%20los%20trajes%20de%20baño"
-              target="_blank"
-              rel="noopener noreferrer"
+            <WhatsAppButton
+              mensaje="Hola, quiero información sobre los trajes de baño"
+              className="border border-[#DCCDA4] text-[#DCCDA4] px-8 py-3 rounded-full hover:bg-[#DCCDA4] hover:text-slate-900 transition"
             >
-              <button className="border border-[#DCCDA4] text-[#DCCDA4] px-8 py-3 rounded-full hover:bg-[#DCCDA4] hover:text-slate-900 transition">
-                WhatsApp
-              </button>
-            </a>
+              WhatsApp
+            </WhatsAppButton>
 
           </div>
 
@@ -251,14 +249,11 @@ function Inicio() {
 
             <p>
               WhatsApp:
-              <a
-                href="https://wa.me/573159048807"
-                target="_blank"
-                rel="noopener noreferrer"
+              <WhatsAppButton
                 className="ml-2 text-[#DCCDA4] hover:underline"
               >
                 315 904 8807
-              </a>
+              </WhatsAppButton>
             </p>
 
             <p>

@@ -4,9 +4,9 @@ import productos, { obtenerVariantes } from "../data/productos";
 import ImagenModal from "../components/ImagenModal";
 import Navbar from "../components/Navbar";
 import SelectorVariantes from "../components/SelectorVariantes";
+import WhatsAppButton from "../components/WhatsAppButton";
 
-function ProductoDetalle() {
-  const { id } = useParams();
+function ProductoDetalleContenido({ id }) {
   const navigate = useNavigate();
   const producto = productos.find((item) => item.id === id);
   const variantes = producto ? obtenerVariantes(producto) : [];
@@ -20,15 +20,6 @@ function ProductoDetalle() {
   const [zoomStyle, setZoomStyle] = useState({});
   const [modalAbierto, setModalAbierto] = useState(false);
   const [esMovil, setEsMovil] = useState(false);
-
-  useEffect(() => {
-    const varianteInicial = variantes[0] ?? null;
-    setVarianteActiva(varianteInicial);
-    setImagenActiva(varianteInicial?.imagenes?.[0] ?? "");
-    setTallaSeleccionada("");
-    setMensajeError("");
-    setModalAbierto(false);
-  }, [id]);
 
   useEffect(() => {
     const comprobarPantalla = () => setEsMovil(window.innerWidth < 768);
@@ -69,18 +60,21 @@ function ProductoDetalle() {
     setMensajeError("");
   };
 
-  const comprarPorWhatsApp = () => {
+  const validarCompra = () => {
     if (tallasActivas.length > 0 && !tallaSeleccionada) {
       setMensajeError("Por favor selecciona una talla antes de continuar.");
-      return;
+      return false;
     }
 
-    const detalleVariante =
-      variantes.length >= 2 && varianteActiva?.nombre
-        ? `Variante: ${varianteActiva.nombre}`
-        : "";
+    return true;
+  };
 
-    const mensaje = `Hola.
+  const detalleVariante =
+    variantes.length >= 2 && varianteActiva?.nombre
+      ? `Variante: ${varianteActiva.nombre}`
+      : "";
+
+  const mensajeWhatsApp = `Hola.
 
 Me interesa:
 
@@ -92,11 +86,6 @@ ${tallasActivas.length > 0 ? `Talla: ${tallaSeleccionada}` : ""}
 
 ¿Está disponible?`;
 
-    window.open(
-      `https://wa.me/573159048807?text=${encodeURIComponent(mensaje)}`,
-      "_blank"
-    );
-  };
 
   return (
     <main className="min-h-screen bg-slate-950 text-white">
@@ -218,12 +207,13 @@ ${tallasActivas.length > 0 ? `Talla: ${tallaSeleccionada}` : ""}
               <p className="text-slate-300 leading-relaxed">{producto.descripcion}</p>
             </div>
 
-            <button
-              onClick={comprarPorWhatsApp}
+            <WhatsAppButton
+              mensaje={mensajeWhatsApp}
+              onBeforeOpen={validarCompra}
               className="bg-[#DCCDA4] text-slate-900 px-8 py-4 rounded-full font-medium hover:opacity-90 transition"
             >
               Comprar por WhatsApp
-            </button>
+            </WhatsAppButton>
 
             {mensajeError && <p className="mt-4 text-red-400 text-sm">{mensajeError}</p>}
           </div>
@@ -238,6 +228,11 @@ ${tallasActivas.length > 0 ? `Talla: ${tallaSeleccionada}` : ""}
       />
     </main>
   );
+}
+
+function ProductoDetalle() {
+  const { id } = useParams();
+  return <ProductoDetalleContenido key={id} id={id} />;
 }
 
 export default ProductoDetalle;

@@ -1,5 +1,74 @@
 [
   {
+    "id": "kimono-brisa-dorada",
+    "activo": true,
+    "favorito": false,
+    "categoria": "salidas",
+    "nombre": "Kimono Brisa Dorada",
+    "precio": "40.000",
+    "palabrasClave": [
+      "salida"
+    ],
+    "etiquetas": [
+      "Nuevo"
+    ],
+    "descripcion": "Kimono largo tejido en tono dorado, de corte amplio y acabado con flecos. Ideal para usar sobre traje de baño o como salida ligera.",
+    "variantes": [
+      {
+        "id": "dorado",
+        "activo": true,
+        "nombre": "Dorado",
+        "codigo": "#A5A749",
+        "miniatura": "/productos/kimono-brisa-dorada-dorado-01.webp",
+        "imagenes": [
+          "/productos/kimono-brisa-dorada-dorado-01.webp",
+          "/productos/kimono-brisa-dorada-dorado-02.webp"
+        ],
+        "tallas": [
+          "S",
+          "M",
+          "L",
+          "XL",
+          "XXL"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "vestido-sol-de-abril",
+    "activo": true,
+    "favorito": false,
+    "categoria": "salidas",
+    "nombre": "Vestido Sol de Abril",
+    "precio": "30.000",
+    "palabrasClave": [
+      "vestido",
+      "ropa",
+      "salida"
+    ],
+    "etiquetas": [
+      "Nuevo"
+    ],
+    "descripcion": "Vestido corto amarillo con estampado floral suave, tirantes finos y caída ligera para días de playa o clima cálido.",
+    "variantes": [
+      {
+        "id": "amarillo",
+        "activo": true,
+        "nombre": "Amarillo",
+        "codigo": "#D1D42B",
+        "miniatura": "/productos/vestido-sol-de-abril-amarillo-01.webp",
+        "imagenes": [
+          "/productos/vestido-sol-de-abril-amarillo-01.webp"
+        ],
+        "tallas": [
+          "S",
+          "M",
+          "XS"
+        ]
+      }
+    ]
+  },
+  {
     "id": "bolso-arena-negra",
     "activo": true,
     "favorito": false,
