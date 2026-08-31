@@ -1,10 +1,61 @@
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import productos, { obtenerTallas, obtenerVariantes } from "../data/productos";
 import ProductoCard from "../components/ProductoCard";
 import Navbar from "../components/Navbar";
 
 const PRODUCTOS_POR_BLOQUE = 12;
+
+function intercalarCategorias(productos) {
+  const grupos = new Map();
+
+  productos.forEach((producto) => {
+    const grupo = grupos.get(producto.categoria) ?? [];
+    grupo.push(producto);
+    grupos.set(producto.categoria, grupo);
+  });
+
+  const trajes = grupos.get("trajes") ?? [];
+  const otrasCategorias = [...grupos.entries()]
+    .filter(([categoria]) => categoria !== "trajes")
+    .map(([, grupo]) => grupo);
+  const resultado = [];
+  let indiceTrajes = 0;
+  let indiceCategoria = 0;
+  const indicesOtrasCategorias = otrasCategorias.map(() => 0);
+
+  while (resultado.length < productos.length) {
+    let productoAgregado = false;
+
+    if (indiceTrajes < trajes.length) {
+      resultado.push(trajes[indiceTrajes]);
+      indiceTrajes += 1;
+      productoAgregado = true;
+    }
+
+    let categoriasRevisadas = 0;
+    while (categoriasRevisadas < otrasCategorias.length) {
+      const categoriaActual = indiceCategoria;
+      const grupo = otrasCategorias[categoriaActual];
+      const indiceProducto = indicesOtrasCategorias[categoriaActual];
+      indiceCategoria = (indiceCategoria + 1) % otrasCategorias.length;
+      categoriasRevisadas += 1;
+
+      if (indiceProducto < grupo.length) {
+        resultado.push(grupo[indiceProducto]);
+        indicesOtrasCategorias[categoriaActual] += 1;
+        productoAgregado = true;
+        break;
+      }
+    }
+
+    if (!productoAgregado) {
+      break;
+    }
+  }
+
+  return resultado;
+}
 
 function Coleccion() {
   const navigate = useNavigate();
@@ -24,8 +75,8 @@ function Coleccion() {
       ? limiteVisible.cantidad
       : PRODUCTOS_POR_BLOQUE;
 
-  const productosFiltrados = [...productos]
-    .filter((producto) => {
+  const productosFiltrados = useMemo(() => {
+    const resultado = [...productos].filter((producto) => {
       const tallas = obtenerTallas(producto);
       const coloresVariantes = obtenerVariantes(producto)
         .map((variante) => variante.nombre)
@@ -70,9 +121,7 @@ function Coleccion() {
         coincideBusqueda &&
         coincideTalla
       );
-    })
-
-    .sort((a, b) => {
+    }).sort((a, b) => {
 
       const precioA = Number(
         String(a.precio ?? "").replace(/\./g, "")
@@ -98,6 +147,17 @@ function Coleccion() {
       }
 
     });
+
+    const mostrarColeccionCompleta =
+      !categoria &&
+      busqueda.trim() === "" &&
+      filtroTalla === "todas" &&
+      orden === "recientes";
+
+    return mostrarColeccionCompleta
+      ? intercalarCategorias(resultado)
+      : resultado;
+  }, [busqueda, categoria, filtroTalla, orden]);
 
   const productosVisibles = productosFiltrados.slice(0, cantidadVisible);
   const hayMasProductos = cantidadVisible < productosFiltrados.length;
