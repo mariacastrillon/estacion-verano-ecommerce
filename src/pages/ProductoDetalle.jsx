@@ -75,7 +75,6 @@ function ProductoDetalleContenido({ id }) {
     variante: varianteActiva,
     cantidadVariantes: variantes.length,
     talla: tallaSeleccionada,
-    origin: window.location.origin,
   });
 
 

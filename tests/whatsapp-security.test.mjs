@@ -3,11 +3,9 @@ import { readFile } from "node:fs/promises";
 import test from "node:test";
 import {
   crearMensajeProductoWhatsApp,
-  crearUrlInternaAbsoluta,
   crearUrlWhatsApp,
 } from "../src/config/whatsapp.js";
 
-const ORIGIN = "https://estacionverano.com";
 const producto = {
   id: "violeta-urbana",
   nombre: "Violeta Urbana",
@@ -30,12 +28,11 @@ function crearMensaje(sobrescribir = {}) {
     variante: fuccia,
     cantidadVariantes: 2,
     talla: "S",
-    origin: ORIGIN,
     ...sobrescribir,
   });
 }
 
-test("incluye producto, variante seleccionada, talla, precio y URLs correctas", () => {
+test("incluye únicamente producto, variante seleccionada, talla y precio", () => {
   assert.equal(
     crearMensaje(),
     `Hola 👋 Quiero consultar disponibilidad de:
@@ -45,25 +42,15 @@ Color: Fuccia degradado
 Talla: S
 Precio: $60.000
 
-Foto: https://estacionverano.com/productos/violeta-urbana-fuccia-01.webp
-Producto: https://estacionverano.com/producto/violeta-urbana
-
 ¿Está disponible? 🌴`
   );
 });
 
-test("cambiar variante cambia el color y la fotografía enviados", () => {
+test("cambiar variante cambia el color enviado", () => {
   const mensaje = crearMensaje({ variante: azul });
   assert.match(mensaje, /Color: Azul océano/);
-  assert.match(mensaje, /violeta-urbana-azul-01\.webp/);
-  assert.doesNotMatch(mensaje, /violeta-urbana-fuccia/);
-});
-
-test("usa imagenes[0] cuando la variante no tiene miniatura", () => {
-  const mensaje = crearMensaje({
-    variante: { nombre: "Coral", imagenes: ["/productos/coral-01.webp"] },
-  });
-  assert.match(mensaje, /Foto: https:\/\/estacionverano\.com\/productos\/coral-01\.webp/);
+  assert.doesNotMatch(mensaje, /Fuccia degradado/);
+  assert.doesNotMatch(mensaje, /Foto:|https?:\/\//);
 });
 
 test("omite talla en productos que no usan tallas", () => {
@@ -86,19 +73,10 @@ test("omite un nombre de variante único igual al producto", () => {
   assert.doesNotMatch(mensaje, /^Color:/m);
 });
 
-test("rechaza esquemas y rutas externas en URLs dinámicas", () => {
-  assert.equal(
-    crearUrlInternaAbsoluta("javascript:alert(1)", ORIGIN, "/productos/"),
-    ""
-  );
-  assert.equal(
-    crearUrlInternaAbsoluta("https://malicioso.example/foto.webp", ORIGIN, "/productos/"),
-    ""
-  );
-  assert.equal(
-    crearUrlInternaAbsoluta("/productos/foto.webp", "javascript:alert(1)", "/productos/"),
-    ""
-  );
+test("no incluye foto ni URL de producto", () => {
+  const mensaje = crearMensaje();
+  assert.doesNotMatch(mensaje, /^Foto:/m);
+  assert.doesNotMatch(mensaje, /^Producto: https?:\/\//m);
 });
 
 test("la URL de WhatsApp codifica tildes, ñ, espacios y emojis", () => {
