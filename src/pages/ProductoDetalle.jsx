@@ -5,6 +5,7 @@ import ImagenModal from "../components/ImagenModal";
 import Navbar from "../components/Navbar";
 import SelectorVariantes from "../components/SelectorVariantes";
 import WhatsAppButton from "../components/WhatsAppButton";
+import { crearMensajeProductoWhatsApp } from "../config/whatsapp";
 
 function ProductoDetalleContenido({ id }) {
   const navigate = useNavigate();
@@ -69,22 +70,13 @@ function ProductoDetalleContenido({ id }) {
     return true;
   };
 
-  const detalleVariante =
-    variantes.length >= 2 && varianteActiva?.nombre
-      ? `Variante: ${varianteActiva.nombre}`
-      : "";
-
-  const mensajeWhatsApp = `Hola.
-
-Me interesa:
-
-${producto.nombre}
-
-${detalleVariante}
-
-${tallasActivas.length > 0 ? `Talla: ${tallaSeleccionada}` : ""}
-
-¿Está disponible?`;
+  const mensajeWhatsApp = crearMensajeProductoWhatsApp({
+    producto,
+    variante: varianteActiva,
+    cantidadVariantes: variantes.length,
+    talla: tallaSeleccionada,
+    origin: window.location.origin,
+  });
 
 
   return (

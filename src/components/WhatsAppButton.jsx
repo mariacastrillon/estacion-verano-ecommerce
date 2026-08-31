@@ -1,17 +1,20 @@
-import useWhatsApp from "../hooks/useWhatsApp";
+import { crearUrlWhatsApp } from "../config/whatsapp";
 
 function WhatsAppButton({ mensaje = "", className = "", children, onBeforeOpen }) {
-  const { abrirWhatsApp } = useWhatsApp();
-
-  const manejarClick = () => {
-    if (onBeforeOpen?.() === false) return;
-    abrirWhatsApp(mensaje);
+  const manejarClick = (event) => {
+    if (onBeforeOpen?.() === false) event.preventDefault();
   };
 
   return (
-    <button type="button" onClick={manejarClick} className={className}>
+    <a
+      href={crearUrlWhatsApp(mensaje)}
+      target="_blank"
+      rel="noopener noreferrer"
+      onClick={manejarClick}
+      className={className}
+    >
       {children}
-    </button>
+    </a>
   );
 }
 
