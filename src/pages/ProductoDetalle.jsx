@@ -6,11 +6,13 @@ import Navbar from "../components/Navbar";
 import SelectorVariantes from "../components/SelectorVariantes";
 import WhatsAppButton from "../components/WhatsAppButton";
 import { crearMensajeProductoWhatsApp } from "../config/whatsapp";
+import { useCarrito } from "../hooks/useCarrito.js";
 
 function ProductoDetalleContenido({ id }) {
   const navigate = useNavigate();
   const producto = productos.find((item) => item.id === id);
   const variantes = producto ? obtenerVariantes(producto) : [];
+  const { agregarProducto } = useCarrito();
 
   const [varianteActiva, setVarianteActiva] = useState(() => variantes[0] ?? null);
   const [imagenActiva, setImagenActiva] = useState(
@@ -18,6 +20,7 @@ function ProductoDetalleContenido({ id }) {
   );
   const [tallaSeleccionada, setTallaSeleccionada] = useState("");
   const [mensajeError, setMensajeError] = useState("");
+  const [agregado, setAgregado] = useState(false);
   const [zoomStyle, setZoomStyle] = useState({});
   const [modalAbierto, setModalAbierto] = useState(false);
   const [esMovil, setEsMovil] = useState(false);
@@ -68,6 +71,13 @@ function ProductoDetalleContenido({ id }) {
     }
 
     return true;
+  };
+
+  const agregarAlCarrito = () => {
+    if (!validarCompra()) return;
+    agregarProducto({ producto, variante: varianteActiva, talla: tallaSeleccionada });
+    setAgregado(true);
+    window.setTimeout(() => setAgregado(false), 1800);
   };
 
   const mensajeWhatsApp = crearMensajeProductoWhatsApp({
@@ -198,13 +208,18 @@ function ProductoDetalleContenido({ id }) {
               <p className="text-slate-300 leading-relaxed">{producto.descripcion}</p>
             </div>
 
-            <WhatsAppButton
-              mensaje={mensajeWhatsApp}
-              onBeforeOpen={validarCompra}
-              className="bg-[#DCCDA4] text-slate-900 px-8 py-4 rounded-full font-medium hover:opacity-90 transition"
-            >
-              Comprar por WhatsApp
-            </WhatsAppButton>
+            <div className="flex flex-col gap-3 sm:flex-row">
+              <button type="button" onClick={agregarAlCarrito} className="bg-[#DCCDA4] px-8 py-4 font-medium text-slate-900 transition hover:opacity-90">
+                {agregado ? "Agregado al carrito ✓" : "Agregar al carrito"}
+              </button>
+              <WhatsAppButton
+                mensaje={mensajeWhatsApp}
+                onBeforeOpen={validarCompra}
+                className="border border-[#DCCDA4] px-8 py-4 text-center font-medium text-[#DCCDA4] transition hover:bg-[#DCCDA4] hover:text-slate-900"
+              >
+                Comprar por WhatsApp
+              </WhatsAppButton>
+            </div>
 
             {mensajeError && <p className="mt-4 text-red-400 text-sm">{mensajeError}</p>}
           </div>

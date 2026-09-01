@@ -5,6 +5,8 @@ import Inicio from "./pages/Inicio.jsx";
 import Coleccion from "./pages/Coleccion.jsx";
 import ProductoDetalle from "./pages/ProductoDetalle.jsx";
 import Favoritos from "./pages/Favoritos.jsx";
+import Carrito from "./pages/Carrito.jsx";
+import Checkout from "./pages/Checkout.jsx";
 
 const GestorCatalogo = import.meta.env.DEV
   ? lazy(() => import("./pages/gestor/GestorCatalogo.jsx"))
@@ -42,6 +44,9 @@ function App() {
         path="/producto/:id"
         element={<ProductoDetalle />}
       />
+
+      <Route path="/carrito" element={<Carrito />} />
+      <Route path="/checkout" element={<Checkout />} />
 
       {GestorCatalogo && (
         <Route

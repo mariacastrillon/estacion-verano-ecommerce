@@ -1,9 +1,21 @@
 import { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
+import { useCarrito } from "../hooks/useCarrito.js";
+
+function CarritoLink({ className = "", totalUnidades }) {
+  return <NavLink to="/carrito" aria-label={`Carrito, ${totalUnidades} unidades`} className={`relative h-10 w-10 shrink-0 items-center justify-center text-slate-200 transition hover:text-[#DCCDA4] ${className}`}>
+    <svg viewBox="0 0 24 24" aria-hidden="true" className="h-6 w-6 fill-none stroke-current" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+      <circle cx="9" cy="20" r="1" /><circle cx="19" cy="20" r="1" />
+      <path d="M3 4h2l2.4 10.1a2 2 0 0 0 2 1.5h7.9a2 2 0 0 0 1.9-1.4L21 8H6" />
+    </svg>
+    {totalUnidades > 0 && <span className="absolute right-0 top-0 min-w-4 rounded-full bg-[#DCCDA4] px-1 text-center text-[10px] font-bold leading-4 text-slate-950">{totalUnidades}</span>}
+  </NavLink>;
+}
 
 function Navbar() {
   const [menuAbierto, setMenuAbierto] = useState(false);
   const [coleccionesAbierto, setColeccionesAbierto] = useState(false);
+  const { totalUnidades } = useCarrito();
 
   return (
     <nav className="border-b border-slate-800">
@@ -120,11 +132,15 @@ function Navbar() {
             Contacto
           </a>
 
+          <CarritoLink className="flex" totalUnidades={totalUnidades} />
+
         </div>
 
         {/* ===========================
              BOTÓN MÓVIL
         ============================ */}
+
+        <CarritoLink className="flex md:hidden ml-auto mr-2" totalUnidades={totalUnidades} />
 
         <button
           className="md:hidden text-3xl"
