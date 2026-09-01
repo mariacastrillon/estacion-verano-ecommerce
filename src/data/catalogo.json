@@ -111,7 +111,7 @@
     "id": "pareo-latte",
     "activo": true,
     "favorito": false,
-    "categoria": "trajes",
+    "categoria": "salidas",
     "nombre": "Pareo Latte",
     "precio": "15.000",
     "palabrasClave": [
@@ -2192,7 +2192,9 @@
         ],
         "tallas": [
           "M",
-          "L"
+          "L",
+          "XS",
+          "S"
         ]
       },
       {
