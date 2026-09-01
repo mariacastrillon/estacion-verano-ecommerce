@@ -1,5 +1,42 @@
 [
   {
+    "id": "set-limon-rayado",
+    "activo": true,
+    "favorito": false,
+    "categoria": "trajes",
+    "nombre": "Set Limón Rayado",
+    "precio": "60.000",
+    "palabrasClave": [
+      "3 piezas",
+      "tres piezas",
+      "pareo",
+      "pantalon",
+      "tejido"
+    ],
+    "etiquetas": [
+      "Nuevo"
+    ],
+    "descripcion": "Set de tres piezas con bikini triangular y short ligero, en tejido a rayas amarillas y blancas con amarres ajustables. Ideal para playa o piscina.",
+    "variantes": [
+      {
+        "id": "amarillo-limon",
+        "activo": true,
+        "nombre": "Amarillo limón",
+        "codigo": "#C9D378",
+        "miniatura": "/productos/set-limon-rayado-amarillo-limon-01.webp",
+        "imagenes": [
+          "/productos/set-limon-rayado-amarillo-limon-01.webp",
+          "/productos/set-limon-rayado-amarillo-limon-02.webp",
+          "/productos/set-limon-rayado-amarillo-limon-03.webp"
+        ],
+        "tallas": [
+          "XS",
+          "S"
+        ]
+      }
+    ]
+  },
+  {
     "id": "pareo-fuccia",
     "activo": true,
     "favorito": false,
@@ -1486,7 +1523,7 @@
     "favorito": false,
     "categoria": "trajes",
     "nombre": "Set Palma Azul",
-    "precio": "60.000",
+    "precio": "50.000",
     "palabrasClave": [
       "3 piezas",
       "tres piezas",
@@ -2112,7 +2149,7 @@
     "favorito": false,
     "categoria": "trajes",
     "nombre": "Set Jardín de Capri",
-    "precio": "60.000",
+    "precio": "50.000",
     "tallas": [
       "M"
     ],
@@ -2145,7 +2182,8 @@
           "M"
         ]
       }
-    ]
+    ],
+    "palabrasClave": []
   },
   {
     "id": "brisa-orquidea",
@@ -2721,7 +2759,7 @@
     "favorito": false,
     "categoria": "salidas",
     "nombre": "Golden Hour",
-    "precio": "80.000",
+    "precio": "70.000",
     "tallas": [
       "unica"
     ],
@@ -3321,7 +3359,7 @@
     "favorito": false,
     "categoria": "trajes",
     "nombre": "Marea Turquesa 💎",
-    "precio": "80.000",
+    "precio": "70.000",
     "tallas": [
       "M"
     ],
@@ -3585,7 +3623,7 @@
     "favorito": false,
     "categoria": "trajes",
     "nombre": "🐆 Fiera Dorada",
-    "precio": "60.000",
+    "precio": "50.000",
     "tallas": [
       "M"
     ],
@@ -4144,7 +4182,7 @@
     "favorito": false,
     "categoria": "trajes",
     "nombre": "Brisa Lavanda",
-    "precio": "40.000",
+    "precio": "50.000",
     "tallas": [
       "L",
       "XL"
@@ -4281,7 +4319,7 @@
     "favorito": false,
     "categoria": "trajes",
     "nombre": "Laguna Verde",
-    "precio": "60.000",
+    "precio": "50.000",
     "tallas": [
       "M",
       "L"
@@ -4327,7 +4365,7 @@
     "favorito": false,
     "categoria": "trajes",
     "nombre": "Set Maracuyá",
-    "precio": "60.000",
+    "precio": "50.000",
     "tallas": [
       "M",
       "L"
