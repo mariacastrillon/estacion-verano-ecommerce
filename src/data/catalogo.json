@@ -2887,7 +2887,7 @@
   },
   {
     "id": "fuccia-tropical",
-    "activo": true,
+    "activo": false,
     "favorito": false,
     "categoria": "trajes",
     "nombre": "Set Fuccia Tropical",
@@ -2920,7 +2920,8 @@
         "tallas": [
           "M",
           "L"
-        ]
+        ],
+        "activo": true
       },
       {
         "id": "lila",
@@ -2935,7 +2936,8 @@
         "tallas": [
           "L",
           "XL"
-        ]
+        ],
+        "activo": false
       }
     ]
   },
