@@ -27,4 +27,15 @@ export const gestorApi = {
       `/productos/${encodeURIComponent(idProducto)}/variantes/${encodeURIComponent(idVariante)}/activo`,
       { method: "PATCH", body: JSON.stringify({ activo }) }
     ),
+  leerInventario: (idProducto) =>
+    solicitar(`/inventario/${encodeURIComponent(idProducto)}`),
+  guardarGruposInventario: (variantId, groups, confirmarReconfiguracion = false) =>
+    solicitar("/inventario/grupos", {
+      method: "PUT",
+      body: JSON.stringify({
+        variant_id: variantId,
+        groups,
+        confirmar_reconfiguracion: confirmarReconfiguracion,
+      }),
+    }),
 };

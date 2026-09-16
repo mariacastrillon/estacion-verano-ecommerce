@@ -9,12 +9,17 @@
     "dev:gestor-api": "node herramientas/gestor-local/servidor.js",
     "catalogo:verificar": "node herramientas/verificar-integridad-catalogo.js",
     "catalogo:migracion-verificar": "node herramientas/verificar-equivalencia-catalogo.js",
+    "supabase:migrar:dry": "node herramientas/supabase/migrar-catalogo.js --dry-run",
+    "supabase:migrar": "node herramientas/supabase/migrar-catalogo.js --write",
     "imagenes:probar-carga": "node herramientas/probar-carga-imagenes.js",
     "imagenes:responsive": "node herramientas/generar-variantes-responsivas.js",
     "build": "vite build",
     "lint": "eslint .",
     "test:security": "node --test tests/whatsapp-security.test.mjs",
     "test:carrito": "node --test tests/carrito.test.mjs",
+    "test:inventario": "node --test tests/inventario-gestor.test.mjs",
+    "test:inventario-fisico": "node --test tests/inventario-unidades-fisicas.test.mjs",
+    "test:inventario-publico": "node --test tests/inventario-publico.test.mjs",
     "preview": "vite preview"
   },
   "dependencies": {

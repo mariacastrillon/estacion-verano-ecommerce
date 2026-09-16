@@ -2,6 +2,7 @@ import assert from "node:assert/strict";
 import { readFile } from "node:fs/promises";
 import test from "node:test";
 import {
+  crearMensajeCarritoWhatsApp,
   crearMensajeProductoWhatsApp,
   crearUrlWhatsApp,
 } from "../src/config/whatsapp.js";
@@ -93,4 +94,22 @@ test("el botón usa un enlace directo y no crea pestañas provisionales", async 
   );
   assert.match(fuente, /href=\{crearUrlWhatsApp\(mensaje\)\}/);
   assert.doesNotMatch(fuente, /window\.open|about:blank/);
+});
+
+test("checkout prepara producto, color, talla, cantidad y total sin prometer reserva", () => {
+  const mensaje = crearMensajeCarritoWhatsApp([
+    { nombre: "Marea Viva", varianteNombre: "Azul", selectedSize: "M", cantidad: 2, precio: "60.000" },
+    { nombre: "Bolso Concha", varianteNombre: "Rojo", selectedSize: "ÚNICA", cantidad: 1, precio: "45.000" },
+  ]);
+  assert.match(mensaje, /Producto: Marea Viva\nColor: Azul\nTalla: M\nCantidad: 2/);
+  assert.match(mensaje, /Producto: Bolso Concha\nColor: Rojo\nTalla: ÚNICA\nCantidad: 1/);
+  assert.match(mensaje, /Total: \$\s?165\.000/);
+  assert.match(mensaje, /disponibilidad final/);
+});
+
+test("checkout solo muestra WhatsApp con inventario validado", async () => {
+  const fuente = await readFile(new URL("../src/pages/Checkout.jsx", import.meta.url), "utf8");
+  assert.match(fuente, /puedeFinalizar && <WhatsAppButton/);
+  assert.match(fuente, /Finalizar por WhatsApp/);
+  assert.match(fuente, /Volver al carrito/);
 });

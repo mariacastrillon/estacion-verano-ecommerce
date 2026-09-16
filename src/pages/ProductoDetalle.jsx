@@ -7,6 +7,7 @@ import SelectorVariantes from "../components/SelectorVariantes";
 import WhatsAppButton from "../components/WhatsAppButton";
 import { crearMensajeProductoWhatsApp } from "../config/whatsapp";
 import { useCarrito } from "../hooks/useCarrito.js";
+import { consultarDisponibilidadVariante } from "../services/inventarioPublico.js";
 
 function ProductoDetalleContenido({ id }) {
   const navigate = useNavigate();
@@ -24,6 +25,21 @@ function ProductoDetalleContenido({ id }) {
   const [zoomStyle, setZoomStyle] = useState({});
   const [modalAbierto, setModalAbierto] = useState(false);
   const [esMovil, setEsMovil] = useState(false);
+  const [disponibilidad, setDisponibilidad] = useState({ loading: true, configured: false, options: [], error: "" });
+
+  useEffect(() => {
+    if (!producto || !varianteActiva) return undefined;
+    let vigente = true;
+    consultarDisponibilidadVariante(producto.id, varianteActiva.id).then(
+      (resultado) => {
+        if (vigente) setDisponibilidad({ loading: false, ...resultado, error: "" });
+      },
+      () => {
+        if (vigente) setDisponibilidad({ loading: false, configured: false, options: [], error: "No pudimos verificar la disponibilidad. Puedes consultarnos por WhatsApp." });
+      }
+    );
+    return () => { vigente = false; };
+  }, [producto, varianteActiva]);
 
   useEffect(() => {
     const comprobarPantalla = () => setEsMovil(window.innerWidth < 768);
@@ -43,7 +59,8 @@ function ProductoDetalleContenido({ id }) {
   }
 
   const imagenesActivas = varianteActiva?.imagenes ?? [];
-  const tallasActivas = varianteActiva?.tallas ?? [];
+  const tallasActivas = disponibilidad.options;
+  const opcionSeleccionada = tallasActivas.find(({ displaySize }) => displaySize === tallaSeleccionada);
   const indiceImagen = Math.max(0, imagenesActivas.indexOf(imagenActiva));
 
   const handleMouseMove = (event) => {
@@ -62,11 +79,24 @@ function ProductoDetalleContenido({ id }) {
     setImagenActiva(variante.imagenes?.[0] ?? "");
     setTallaSeleccionada("");
     setMensajeError("");
+    setDisponibilidad({ loading: true, configured: false, options: [], error: "" });
   };
 
   const validarCompra = () => {
-    if (tallasActivas.length > 0 && !tallaSeleccionada) {
+    if (disponibilidad.loading) {
+      setMensajeError("Estamos verificando la disponibilidad.");
+      return false;
+    }
+    if (disponibilidad.error || !disponibilidad.configured) {
+      setMensajeError(disponibilidad.error || "Disponibilidad por confirmar. Consúltanos por WhatsApp.");
+      return false;
+    }
+    if (!opcionSeleccionada) {
       setMensajeError("Por favor selecciona una talla antes de continuar.");
+      return false;
+    }
+    if (!opcionSeleccionada.available) {
+      setMensajeError("Esta talla está agotada.");
       return false;
     }
 
@@ -75,9 +105,20 @@ function ProductoDetalleContenido({ id }) {
 
   const agregarAlCarrito = () => {
     if (!validarCompra()) return;
-    agregarProducto({ producto, variante: varianteActiva, talla: tallaSeleccionada });
+    if (!agregarProducto({ producto, variante: varianteActiva, opcionInventario: opcionSeleccionada })) {
+      setMensajeError(`Solo quedan ${opcionSeleccionada.stockDisponible} unidades disponibles para esta talla o sus tallas compatibles.`);
+      return;
+    }
     setAgregado(true);
     window.setTimeout(() => setAgregado(false), 1800);
+  };
+
+  const validarWhatsApp = () => {
+    if (disponibilidad.configured && tallasActivas.length > 0 && !tallaSeleccionada) {
+      setMensajeError("Selecciona una talla o consulta la disponibilidad directamente por WhatsApp.");
+      return false;
+    }
+    return true;
   };
 
   const mensajeWhatsApp = crearMensajeProductoWhatsApp({
@@ -186,17 +227,22 @@ function ProductoDetalleContenido({ id }) {
               )}
             </div>
 
-            {tallasActivas.length > 0 && (
+            {disponibilidad.loading && <p className="mb-8 text-sm text-slate-400">Verificando disponibilidad…</p>}
+            {!disponibilidad.loading && !disponibilidad.configured && (
+              <p className="mb-8 rounded-xl border border-amber-700/50 bg-amber-950/30 p-4 text-sm text-amber-200">{disponibilidad.error || "Disponibilidad por confirmar. Puedes consultarnos por WhatsApp."}</p>
+            )}
+            {disponibilidad.configured && tallasActivas.length > 0 && (
               <div className="mb-8">
                 <h3 className="text-lg mb-3">Tallas disponibles</h3>
                 <div className="flex gap-3">
-                  {tallasActivas.map((talla) => (
+                  {tallasActivas.map((opcion) => (
                     <button
-                      key={talla}
-                      onClick={() => { setTallaSeleccionada(talla); setMensajeError(""); }}
-                      className={`px-5 py-2 rounded-full border transition-all duration-300 ${tallaSeleccionada === talla ? "bg-[#DCCDA4] text-slate-900 border-[#DCCDA4]" : "border-[#DCCDA4] text-[#DCCDA4] hover:bg-[#DCCDA4] hover:text-slate-900"}`}
+                      key={opcion.displaySize}
+                      disabled={!opcion.available}
+                      onClick={() => { setTallaSeleccionada(opcion.displaySize); setMensajeError(""); }}
+                      className={`px-5 py-2 rounded-full border transition-all duration-300 disabled:cursor-not-allowed disabled:border-slate-700 disabled:text-slate-600 ${tallaSeleccionada === opcion.displaySize ? "bg-[#DCCDA4] text-slate-900 border-[#DCCDA4]" : "border-[#DCCDA4] text-[#DCCDA4] hover:bg-[#DCCDA4] hover:text-slate-900"}`}
                     >
-                      {talla}
+                      {opcion.displaySize}{!opcion.available ? " · Agotada" : ""}
                     </button>
                   ))}
                 </div>
@@ -209,12 +255,12 @@ function ProductoDetalleContenido({ id }) {
             </div>
 
             <div className="flex flex-col gap-3 sm:flex-row">
-              <button type="button" onClick={agregarAlCarrito} className="bg-[#DCCDA4] px-8 py-4 font-medium text-slate-900 transition hover:opacity-90">
-                {agregado ? "Agregado al carrito ✓" : "Agregar al carrito"}
+              <button type="button" disabled={disponibilidad.loading || !disponibilidad.configured || !opcionSeleccionada?.available} onClick={agregarAlCarrito} className="bg-[#DCCDA4] px-8 py-4 font-medium text-slate-900 transition hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-40">
+                {opcionSeleccionada && !opcionSeleccionada.available ? "Agotado" : agregado ? "Agregado al carrito ✓" : "Agregar al carrito"}
               </button>
               <WhatsAppButton
                 mensaje={mensajeWhatsApp}
-                onBeforeOpen={validarCompra}
+                onBeforeOpen={validarWhatsApp}
                 className="border border-[#DCCDA4] px-8 py-4 text-center font-medium text-[#DCCDA4] transition hover:bg-[#DCCDA4] hover:text-slate-900"
               >
                 Comprar por WhatsApp

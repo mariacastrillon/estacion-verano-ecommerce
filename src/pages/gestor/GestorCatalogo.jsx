@@ -1,5 +1,7 @@
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
 import { gestorApi } from "../../services/gestorApi";
+import EditorInventarioFisico from "./EditorInventarioFisico.jsx";
+import { descartarPosicionLista, guardarPosicionLista, restaurarPosicionLista } from "./posicion-lista";
 
 const TALLAS = ["XS", "S", "M", "L", "XL", "XXL"];
 
@@ -213,6 +215,10 @@ function EditorVariante({ variante, indice, total, onChange, onCambiarNombre, on
 
 function FormularioProducto({ inicial, esNuevo, onCancelar, onGuardado }) {
   const [producto, setProducto] = useState(() => prepararParaEdicion(inicial));
+  const [guardadoInicial, setGuardadoInicial] = useState(!esNuevo);
+  const [inventarioHabilitado, setInventarioHabilitado] = useState(!esNuevo);
+  const [versionInventario, setVersionInventario] = useState(0);
+  const [avisoSincronizacion, setAvisoSincronizacion] = useState("");
   const [palabrasClaveTexto, setPalabrasClaveTexto] = useState(() =>
     (inicial.palabrasClave ?? []).join(", ")
   );
@@ -249,11 +255,12 @@ function FormularioProducto({ inicial, esNuevo, onCancelar, onGuardado }) {
     event.preventDefault();
     setGuardando(true);
     setError("");
+    setAvisoSincronizacion("");
     try {
       const imagenesNuevas = [];
       const preparado = {
         ...producto,
-        id: esNuevo ? slug(producto.id || producto.nombre) : producto.id,
+        id: guardadoInicial ? producto.id : slug(producto.id || producto.nombre),
         palabrasClave: listaDesdeTexto(palabrasClaveTexto),
         etiquetas: listaDesdeTexto(etiquetasTexto),
         variantes: await Promise.all(producto.variantes.map(async (variante) => {
@@ -279,9 +286,19 @@ function FormularioProducto({ inicial, esNuevo, onCancelar, onGuardado }) {
           };
         })),
       };
-      if (esNuevo) await gestorApi.crear(preparado, imagenesNuevas);
-      else await gestorApi.guardar(preparado, imagenesNuevas);
-      onGuardado();
+      const respuesta = guardadoInicial
+        ? await gestorApi.guardar(preparado, imagenesNuevas)
+        : await gestorApi.crear(preparado, imagenesNuevas);
+      setGuardadoInicial(true);
+      setProducto(prepararParaEdicion(respuesta.producto));
+      if (!respuesta.sincronizacion?.ok) {
+        setInventarioHabilitado(false);
+        setAvisoSincronizacion(respuesta.sincronizacion?.mensaje || "Producto guardado localmente. Vuelve a guardar para sincronizar su inventario.");
+      } else {
+        setInventarioHabilitado(true);
+        setVersionInventario((version) => version + 1);
+        if (!esNuevo) onGuardado();
+      }
     } catch (err) {
       setError(err.message);
     } finally {
@@ -292,7 +309,7 @@ function FormularioProducto({ inicial, esNuevo, onCancelar, onGuardado }) {
   return (
     <form onSubmit={guardar} className="mx-auto max-w-5xl space-y-6">
       <div className="flex flex-wrap items-center justify-between gap-4">
-        <div><p className="text-sm uppercase tracking-widest text-[#DCCDA4]">{esNuevo ? "Nuevo producto" : "Editar producto"}</p><h1 className="text-3xl font-light">{producto.nombre || "Producto sin nombre"}</h1></div>
+        <div><p className="text-sm uppercase tracking-widest text-[#DCCDA4]">{guardadoInicial ? "Editar producto" : "Nuevo producto"}</p><h1 className="text-3xl font-light">{producto.nombre || "Producto sin nombre"}</h1></div>
         <button type="button" onClick={onCancelar} className="text-slate-400 hover:text-white">← Volver a la lista</button>
       </div>
       <section className="grid gap-5 rounded-2xl border border-slate-700 bg-[#102A2A] p-6 md:grid-cols-2">
@@ -300,7 +317,7 @@ function FormularioProducto({ inicial, esNuevo, onCancelar, onGuardado }) {
           <input required value={producto.nombre} onChange={(e) => cambiar("nombre", e.target.value)} className="mt-1 w-full rounded-xl border border-slate-700 bg-slate-950 px-4 py-3" />
         </label>
         <label className="text-sm text-slate-300">ID {esNuevo ? "(se genera automáticamente)" : "(no se puede cambiar)"}
-          <input required disabled={!esNuevo} value={producto.id || slug(producto.nombre)} onChange={(e) => cambiar("id", slug(e.target.value))} className="mt-1 w-full rounded-xl border border-slate-700 bg-slate-950 px-4 py-3 disabled:opacity-60" />
+          <input required disabled={guardadoInicial} value={producto.id || slug(producto.nombre)} onChange={(e) => cambiar("id", slug(e.target.value))} className="mt-1 w-full rounded-xl border border-slate-700 bg-slate-950 px-4 py-3 disabled:opacity-60" />
         </label>
         <label className="text-sm text-slate-300">Precio
           <input required value={producto.precio} onChange={(e) => cambiar("precio", e.target.value.replace(/[^0-9.]/g, ""))} placeholder="60.000" className="mt-1 w-full rounded-xl border border-slate-700 bg-slate-950 px-4 py-3" />
@@ -325,6 +342,9 @@ function FormularioProducto({ inicial, esNuevo, onCancelar, onGuardado }) {
           <EditorVariante key={variante.uiId} variante={variante} indice={indice} total={producto.variantes.length} onChange={(valor) => cambiarVariante(indice, valor)} onCambiarNombre={(nombre) => cambiarNombreVariante(indice, nombre)} onMover={(direccion) => moverVariante(indice, direccion)} onAgregar={() => cambiar("variantes", [...producto.variantes, nuevaVariante(producto.variantes)])} />
         ))}
       </div>
+      {inventarioHabilitado && <EditorInventarioFisico key={versionInventario} productId={producto.id} />}
+      {!guardadoInicial && <p className="rounded-xl border border-slate-700 p-4 text-slate-300">Guarda primero el producto para habilitar su inventario.</p>}
+      {avisoSincronizacion && <p role="status" className="rounded-xl border border-amber-500/60 bg-amber-950/30 p-4 text-amber-200">{avisoSincronizacion}</p>}
       {error && <p role="alert" className="rounded-xl border border-red-500/60 bg-red-950/50 p-4 text-red-200">{error}</p>}
       <div className="flex justify-end gap-3"><button type="button" onClick={onCancelar} className="rounded-full border border-slate-600 px-6 py-3">Cancelar</button><button disabled={guardando} className="rounded-full bg-[#DCCDA4] px-7 py-3 font-medium text-slate-950 disabled:opacity-50">{guardando ? "Guardando…" : "Guardar producto"}</button></div>
     </form>
@@ -336,6 +356,7 @@ export default function GestorCatalogo() {
   const [seleccion, setSeleccion] = useState(null);
   const [busqueda, setBusqueda] = useState("");
   const [error, setError] = useState("");
+  const regresoDesdeEdicion = useRef(false);
 
   const cargar = async () => {
     try {
@@ -352,6 +373,22 @@ export default function GestorCatalogo() {
   }, []);
   const visibles = useMemo(() => productos.filter(({ nombre, id }) => `${nombre} ${id}`.toLowerCase().includes(busqueda.toLowerCase())), [productos, busqueda]);
 
+  useLayoutEffect(() => {
+    if (seleccion || !regresoDesdeEdicion.current) return;
+    regresoDesdeEdicion.current = false;
+    restaurarPosicionLista();
+  }, [seleccion, visibles]);
+
+  const volverALista = () => {
+    regresoDesdeEdicion.current = true;
+    setSeleccion(null);
+  };
+
+  const editarProducto = (producto, evento) => {
+    guardarPosicionLista(producto.id, evento.currentTarget.closest("article"));
+    setSeleccion({ nuevo: false, producto });
+  };
+
   const cambiarEstado = async (producto) => {
     try { await gestorApi.cambiarProducto(producto.id, !producto.activo); await cargar(); }
     catch (err) { setError(err.message); }
@@ -361,18 +398,18 @@ export default function GestorCatalogo() {
     catch (err) { setError(err.message); }
   };
 
-  if (seleccion) return <main className="min-h-screen bg-slate-950 px-5 py-10 text-white"><FormularioProducto inicial={seleccion.producto} esNuevo={seleccion.nuevo} onCancelar={() => setSeleccion(null)} onGuardado={async () => { await cargar(); setSeleccion(null); }} /></main>;
+  if (seleccion) return <main className="min-h-screen bg-slate-950 px-5 py-10 text-white"><FormularioProducto inicial={seleccion.producto} esNuevo={seleccion.nuevo} onCancelar={async () => { await cargar(); volverALista(); }} onGuardado={async () => { await cargar(); volverALista(); }} /></main>;
 
   return (
     <main className="min-h-screen bg-slate-950 px-5 py-10 text-white">
       <div className="mx-auto max-w-6xl">
-        <header className="mb-8 flex flex-wrap items-end justify-between gap-5"><div><p className="text-sm uppercase tracking-[0.22em] text-[#DCCDA4]">Estación Verano</p><h1 className="text-4xl font-light">Gestor local de catálogo</h1><p className="mt-2 text-slate-400">Disponible únicamente durante el desarrollo local.</p></div><button onClick={() => setSeleccion({ nuevo: true, producto: nuevoProducto() })} className="rounded-full bg-[#DCCDA4] px-6 py-3 font-medium text-slate-950">+ Nuevo producto</button></header>
+        <header className="mb-8 flex flex-wrap items-end justify-between gap-5"><div><p className="text-sm uppercase tracking-[0.22em] text-[#DCCDA4]">Estación Verano</p><h1 className="text-4xl font-light">Gestor local de catálogo</h1><p className="mt-2 text-slate-400">Disponible únicamente durante el desarrollo local.</p></div><button onClick={() => { descartarPosicionLista(); setSeleccion({ nuevo: true, producto: nuevoProducto() }); }} className="rounded-full bg-[#DCCDA4] px-6 py-3 font-medium text-slate-950">+ Nuevo producto</button></header>
         <input type="search" value={busqueda} onChange={(e) => setBusqueda(e.target.value)} placeholder="Buscar producto…" className="mb-6 w-full rounded-2xl border border-slate-700 bg-slate-900 px-5 py-4" />
         {error && <p role="alert" className="mb-5 rounded-xl border border-red-500/60 p-4 text-red-200">{error}</p>}
         <div className="space-y-3">
           {visibles.map((producto) => (
-            <article key={producto.id} className="rounded-2xl border border-slate-700 bg-[#102A2A] p-5">
-              <div className="flex flex-wrap items-center gap-4"><img src={producto.variantes[0]?.imagenes[0]} alt="" className="h-20 w-20 rounded-xl bg-slate-800 object-cover" /><div className="min-w-48 flex-1"><h2 className="text-xl">{producto.nombre}</h2><p className="text-sm text-slate-400">{producto.id} · {producto.categoria} · {producto.variantes.length} color(es)</p><span className={`mt-2 inline-block rounded-full px-3 py-1 text-xs ${producto.activo ? "bg-emerald-900 text-emerald-200" : "bg-slate-800 text-slate-400"}`}>{producto.activo ? "Activo" : "Inactivo"}</span></div><button onClick={() => setSeleccion({ nuevo: false, producto })} className="rounded-full border border-[#DCCDA4] px-5 py-2 text-[#DCCDA4]">Editar</button><button onClick={() => cambiarEstado(producto)} className="rounded-full border border-slate-600 px-5 py-2">{producto.activo ? "Desactivar" : "Activar"}</button></div>
+            <article key={producto.id} data-gestor-producto-id={producto.id} className="rounded-2xl border border-slate-700 bg-[#102A2A] p-5">
+              <div className="flex flex-wrap items-center gap-4"><img src={producto.variantes[0]?.imagenes[0]} alt="" className="h-20 w-20 rounded-xl bg-slate-800 object-cover" /><div className="min-w-48 flex-1"><h2 className="text-xl">{producto.nombre}</h2><p className="text-sm text-slate-400">{producto.id} · {producto.categoria} · {producto.variantes.length} color(es)</p><span className={`mt-2 inline-block rounded-full px-3 py-1 text-xs ${producto.activo ? "bg-emerald-900 text-emerald-200" : "bg-slate-800 text-slate-400"}`}>{producto.activo ? "Activo" : "Inactivo"}</span></div><button onClick={(evento) => editarProducto(producto, evento)} className="rounded-full border border-[#DCCDA4] px-5 py-2 text-[#DCCDA4]">Editar</button><button onClick={() => cambiarEstado(producto)} className="rounded-full border border-slate-600 px-5 py-2">{producto.activo ? "Desactivar" : "Activar"}</button></div>
               {producto.variantes.length > 1 && <div className="mt-4 flex flex-wrap gap-2 border-t border-slate-700 pt-4">{producto.variantes.map((variante) => <button key={variante.id} onClick={() => cambiarVariante(producto, variante)} className="flex items-center gap-2 rounded-full border border-slate-700 px-3 py-1.5 text-xs"><span className="h-3 w-3 rounded-full border border-white/30" style={{ background: variante.codigo || "transparent" }} />{variante.nombre}: {variante.activo === false ? "inactiva" : "activa"}</button>)}</div>}
             </article>
           ))}

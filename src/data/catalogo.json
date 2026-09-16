@@ -1,5 +1,280 @@
 [
   {
+    "id": "doble-cielo",
+    "activo": true,
+    "favorito": false,
+    "categoria": "trajes",
+    "nombre": "Doble cielo",
+    "precio": "40.000",
+    "palabrasClave": [],
+    "etiquetas": [],
+    "descripcion": "Bikini de dos piezas con diseño efecto doble: base celeste y capa exterior café con lunares. Tiras ajustables y contraste de colores que hace que parezcan dos bikinis superpuestos.",
+    "variantes": [
+      {
+        "id": "azul",
+        "activo": true,
+        "nombre": "Azul",
+        "codigo": "#1E72CC",
+        "miniatura": "/productos/doble-cielo-azul-01.webp",
+        "imagenes": [
+          "/productos/doble-cielo-azul-01.webp",
+          "/productos/doble-cielo-azul-02.webp",
+          "/productos/doble-cielo-azul-03.webp"
+        ],
+        "tallas": [
+          "S"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "set-aurora-rosa",
+    "activo": true,
+    "favorito": false,
+    "categoria": "trajes",
+    "nombre": "Set Aurora Rosa",
+    "precio": "80.000",
+    "palabrasClave": [
+      "pareo"
+    ],
+    "etiquetas": [],
+    "descripcion": "Set de 3 piezas con bikini y pareo largo en degradado rosa, blanco y vino. El top tiene tiras trenzadas y el pareo semitransparente completa el conjunto sin quitarle protagonismo al bikini.",
+    "variantes": [
+      {
+        "id": "rosa",
+        "activo": true,
+        "nombre": "rosa",
+        "codigo": "#F240CB",
+        "miniatura": "/productos/set-aurora-rosa-rosa-01.webp",
+        "imagenes": [
+          "/productos/set-aurora-rosa-rosa-01.webp",
+          "/productos/set-aurora-rosa-rosa-02.webp"
+        ],
+        "tallas": [
+          "S"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "set-safari-vino",
+    "activo": true,
+    "favorito": false,
+    "categoria": "trajes",
+    "nombre": "Set Safari Vino",
+    "precio": "40.000",
+    "palabrasClave": [],
+    "etiquetas": [],
+    "descripcion": "Bikini de dos piezas en tono vino con contraste animal print. Top triangular combinado y panty tipo hilo de corte alto para un look más atrevido.",
+    "variantes": [
+      {
+        "id": "vino",
+        "activo": true,
+        "nombre": "vino",
+        "codigo": "#3A1212",
+        "miniatura": "/productos/set-safari-vino-vino-01.webp",
+        "imagenes": [
+          "/productos/set-safari-vino-vino-01.webp"
+        ],
+        "tallas": [
+          "S"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "set-selva-brazil",
+    "activo": true,
+    "favorito": false,
+    "categoria": "trajes",
+    "nombre": "Set Selva Brazil",
+    "precio": "40.000",
+    "palabrasClave": [],
+    "etiquetas": [],
+    "descripcion": "Bikini de dos piezas en verde profundo y amarillo lima, con tiras trenzadas y corte alto. Fresco, llamativo y con mucho contraste.",
+    "variantes": [
+      {
+        "id": "verde",
+        "activo": true,
+        "nombre": "verde",
+        "codigo": "#042A07",
+        "miniatura": "/productos/set-selva-brazil-verde-02.webp",
+        "imagenes": [
+          "/productos/set-selva-brazil-verde-02.webp",
+          "/productos/set-selva-brazil-verde-01.webp"
+        ],
+        "tallas": [
+          "XS"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "set-atardecer",
+    "activo": true,
+    "favorito": false,
+    "categoria": "trajes",
+    "nombre": "Set atardecer",
+    "precio": "60.000",
+    "palabrasClave": [
+      "pareo"
+    ],
+    "etiquetas": [],
+    "descripcion": "Set de 3 piezas en tonos naranja y coral, con bikini de amarre y falda corta fruncida. Tiene textura marcada y un contraste de color que lo hace verse muy de verano",
+    "variantes": [
+      {
+        "id": "naranja",
+        "activo": true,
+        "nombre": "Naranja",
+        "codigo": "#E66F00",
+        "miniatura": "/productos/set-atardecer-naranja-01.webp",
+        "imagenes": [
+          "/productos/set-atardecer-naranja-01.webp",
+          "/productos/set-atardecer-naranja-02.webp",
+          "/productos/set-atardecer-naranja-03.webp"
+        ],
+        "tallas": [
+          "M"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "set-corazon-rosa",
+    "activo": true,
+    "favorito": false,
+    "categoria": "trajes",
+    "nombre": "Set Corazón Rosa",
+    "precio": "40.000",
+    "palabrasClave": [],
+    "etiquetas": [],
+    "descripcion": "Bikini rosa de dos piezas con amarres ajustables y apliques de corazón dorados en top y panty. Llamativo, coqueto y con bastante detalle sin verse recargado.",
+    "variantes": [
+      {
+        "id": "rosa",
+        "activo": true,
+        "nombre": "rosa",
+        "codigo": "#E647D9",
+        "miniatura": "/productos/set-corazon-rosa-rosa-01.webp",
+        "imagenes": [
+          "/productos/set-corazon-rosa-rosa-01.webp"
+        ],
+        "tallas": [
+          "M"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "set-lima",
+    "activo": true,
+    "favorito": false,
+    "categoria": "trajes",
+    "nombre": "Set Lima",
+    "precio": "40.000",
+    "palabrasClave": [],
+    "etiquetas": [],
+    "descripcion": "Bikini verde de dos piezas con top de tirantes anchos, panty de corte alto y detalle metálico central. Un diseño sencillo, pero con una forma diferente.",
+    "variantes": [
+      {
+        "id": "verde",
+        "activo": true,
+        "nombre": "Verde",
+        "codigo": "#347447",
+        "miniatura": "/productos/set-lima-verde-01.webp",
+        "imagenes": [
+          "/productos/set-lima-verde-01.webp",
+          "/productos/set-lima-verde-02.webp"
+        ],
+        "tallas": [
+          "L"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "collar-concha-rosa",
+    "activo": true,
+    "favorito": false,
+    "categoria": "accesorios",
+    "nombre": "Collar Concha Rosa",
+    "precio": "15.000",
+    "palabrasClave": [],
+    "etiquetas": [],
+    "descripcion": "Collar de piedras rosadas con detalles dorados y dije de concha. Un accesorio playero llamativo, femenino y fácil de combinar.",
+    "variantes": [
+      {
+        "id": "rosado",
+        "activo": true,
+        "nombre": "Rosado",
+        "codigo": "#D7A2BC",
+        "miniatura": "/productos/collar-concha-rosa-rosado-01.webp",
+        "imagenes": [
+          "/productos/collar-concha-rosa-rosado-01.webp"
+        ],
+        "tallas": []
+      }
+    ]
+  },
+  {
+    "id": "set-gardenia",
+    "activo": true,
+    "favorito": false,
+    "categoria": "trajes",
+    "nombre": "Set Gardenia",
+    "precio": "50.000",
+    "palabrasClave": [],
+    "etiquetas": [
+      "Nuevo"
+    ],
+    "descripcion": "Bikini de dos piezas en tono marfil con contraste negro, amarres laterales y aplicaciones florales en top y panty. Femenino, diferente y con bastante detalle sin recargarlo",
+    "variantes": [
+      {
+        "id": "blanco",
+        "activo": true,
+        "nombre": "Blanco",
+        "codigo": "#C9C5C5",
+        "miniatura": "/productos/set-gardenia-blanco-01.webp",
+        "imagenes": [
+          "/productos/set-gardenia-blanco-01.webp",
+          "/productos/set-gardenia-blanco-02.webp"
+        ],
+        "tallas": [
+          "M"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "puerto-azul",
+    "activo": true,
+    "favorito": false,
+    "categoria": "trajes",
+    "nombre": "Puerto Azul",
+    "precio": "50.000",
+    "palabrasClave": [
+      "short"
+    ],
+    "etiquetas": [],
+    "descripcion": "Set de dos piezas en azul marino con contraste blanco. Top con amarre al cuello y short de tiro alto, cómodo y práctico para playa o piscina.",
+    "variantes": [
+      {
+        "id": "azul",
+        "activo": true,
+        "nombre": "Azul",
+        "codigo": "#162B6A",
+        "miniatura": "/productos/puerto-azul-azul-01.webp",
+        "imagenes": [
+          "/productos/puerto-azul-azul-01.webp",
+          "/productos/puerto-azul-azul-02.webp"
+        ],
+        "tallas": [
+          "S"
+        ]
+      }
+    ]
+  },
+  {
     "id": "set-limon-rayado",
     "activo": true,
     "favorito": false,
@@ -110,7 +385,7 @@
   },
   {
     "id": "pareo-sunset",
-    "activo": true,
+    "activo": false,
     "favorito": false,
     "categoria": "salidas",
     "nombre": "Pareo Sunset",
@@ -253,7 +528,7 @@
   },
   {
     "id": "set-brisa-blanca",
-    "activo": true,
+    "activo": false,
     "favorito": false,
     "categoria": "salidas",
     "nombre": "Set Brisa Blanca",
@@ -358,7 +633,7 @@
   },
   {
     "id": "salida-flor-caribe",
-    "activo": true,
+    "activo": false,
     "favorito": false,
     "categoria": "salidas",
     "nombre": "Salida Flor Caribe",
@@ -889,11 +1164,7 @@
         "imagenes": [
           "/productos/bolso-brisa-marina-negro-con-blanco-01.webp"
         ],
-        "tallas": [
-          "M",
-          "L",
-          "XL"
-        ]
+        "tallas": []
       }
     ]
   },
@@ -1265,7 +1536,7 @@
     "etiquetas": [
       "Nueva"
     ],
-    "descripcion": "Gorra playera con bordado mini de tortuga, perfecta para dias soleados",
+    "descripcion": "Gorra playera con diseño mini de tortuga, perfecta para dias soleados",
     "variantes": [
       {
         "id": "gris",
@@ -1782,7 +2053,7 @@
   },
   {
     "id": "set-brisa-artesanal",
-    "activo": true,
+    "activo": false,
     "favorito": false,
     "categoria": "trajes",
     "nombre": "Set Brisa Artesanal",
@@ -1914,7 +2185,7 @@
   },
   {
     "id": "bruma-rosa",
-    "activo": true,
+    "activo": false,
     "favorito": false,
     "categoria": "trajes",
     "nombre": "Bruma Rosa",
@@ -2230,9 +2501,7 @@
         ],
         "tallas": [
           "M",
-          "L",
-          "XS",
-          "S"
+          "L"
         ]
       },
       {
@@ -2298,7 +2567,7 @@
   },
   {
     "id": "marina",
-    "activo": false,
+    "activo": true,
     "favorito": false,
     "categoria": "trajes",
     "nombre": "Brisa Marina",
@@ -2324,7 +2593,7 @@
     "variantes": [
       {
         "id": "marina",
-        "nombre": "Brisa Marina",
+        "nombre": "Azul",
         "codigo": "",
         "miniatura": "/productos/marina-frontal.webp",
         "imagenes": [
@@ -2335,8 +2604,27 @@
         ],
         "tallas": [
           "S"
+        ],
+        "activo": false
+      },
+      {
+        "id": "naranja",
+        "activo": true,
+        "nombre": "Naranja",
+        "codigo": "#B76E2A",
+        "miniatura": "/productos/marina-naranja-01.webp",
+        "imagenes": [
+          "/productos/marina-naranja-01.webp",
+          "/productos/marina-naranja-02.webp",
+          "/productos/marina-naranja-03.webp"
+        ],
+        "tallas": [
+          "M"
         ]
       }
+    ],
+    "palabrasClave": [
+      "pareo"
     ]
   },
   {
@@ -2365,12 +2653,10 @@
         "id": "negro",
         "nombre": "Negro",
         "codigo": "#111111",
-        "miniatura": "/productos/luna-negra-frontal.webp",
+        "miniatura": "/productos/luna-negra-negro-01.webp",
         "imagenes": [
-          "/productos/luna-negra-frontal.webp",
-          "/productos/luna-negra-lateral.webp",
-          "/productos/luna-negra-trasera.webp",
-          "/productos/luna-negra-detalle.webp"
+          "/productos/luna-negra-negro-01.webp",
+          "/productos/luna-negra-negro-02.webp"
         ],
         "tallas": [
           "M"
@@ -2378,12 +2664,12 @@
       },
       {
         "id": "rojo",
-        "activo": false,
+        "activo": true,
         "nombre": "Rojo",
         "codigo": "#C1121F",
-        "miniatura": "/productos/luna-negra-rojo-frontal.webp",
+        "miniatura": "/productos/luna-negra-rojo-01.webp",
         "imagenes": [
-          "/productos/luna-negra-rojo-frontal.webp",
+          "/productos/luna-negra-rojo-01.webp",
           "/productos/luna-negra-rojo-lateral.webp",
           "/productos/luna-negra-rojo-trasera.webp"
         ],
@@ -2477,14 +2763,14 @@
         "imagenes": [
           "/productos/arena-dorada-frontal.webp",
           "/productos/arena-dorada-trasera.webp",
-          "/productos/arena-dorada-lateral.webp",
-          "/productos/arena-dorada-detalle.webp"
+          "/productos/arena-dorada-lateral.webp"
         ],
         "tallas": [
           "M"
         ]
       }
-    ]
+    ],
+    "palabrasClave": []
   },
   {
     "id": "oro-del-mar",
@@ -2525,7 +2811,8 @@
           "L"
         ]
       }
-    ]
+    ],
+    "palabrasClave": []
   },
   {
     "id": "alba",
@@ -2558,9 +2845,8 @@
         "id": "alba",
         "nombre": "Alba",
         "codigo": "",
-        "miniatura": "/productos/alba-frontal.webp",
+        "miniatura": "/productos/alba-trasera.webp",
         "imagenes": [
-          "/productos/alba-frontal.webp",
           "/productos/alba-trasera.webp",
           "/productos/alba-detalle.webp"
         ],
@@ -2652,7 +2938,8 @@
           "/productos/cielo-detalle.webp"
         ],
         "tallas": [
-          "L"
+          "S",
+          "XS"
         ]
       }
     ]
@@ -2838,7 +3125,8 @@
         ],
         "tallas": []
       }
-    ]
+    ],
+    "palabrasClave": []
   },
   {
     "id": "bahia",
@@ -3534,7 +3822,8 @@
           "M"
         ]
       }
-    ]
+    ],
+    "palabrasClave": []
   },
   {
     "id": "palmeras",
@@ -3742,7 +4031,8 @@
           "S"
         ]
       }
-    ]
+    ],
+    "palabrasClave": []
   },
   {
     "id": "nube-de-mar",
@@ -4046,7 +4336,7 @@
   },
   {
     "id": "concha-dorada",
-    "activo": true,
+    "activo": false,
     "favorito": false,
     "categoria": "trajes",
     "nombre": "Concha Dorada",
@@ -4363,7 +4653,7 @@
   },
   {
     "id": "maracuya",
-    "activo": true,
+    "activo": false,
     "favorito": false,
     "categoria": "trajes",
     "nombre": "Set Maracuyá",

@@ -3,6 +3,7 @@ import process from "node:process";
 import { pathToFileURL } from "node:url";
 import { leerCatalogo, guardarCatalogo } from "./catalogo-repository.js";
 import { guardarProductoConImagenes } from "./procesar-imagenes-upload.js";
+import { ErrorInventario, servicioInventario } from "./inventario-supabase.js";
 
 const HOST = "127.0.0.1";
 const PORT = 4174;
@@ -35,6 +36,15 @@ function segmentosDe(ruta) {
   return ruta.split("/").filter(Boolean).map(decodeURIComponent);
 }
 
+async function sincronizarGuardado(producto) {
+  try {
+    const { variantes } = await servicioInventario.sincronizarProducto(producto);
+    return { ok: true, variantes };
+  } catch {
+    return { ok: false, mensaje: "Producto guardado localmente. No se pudo sincronizar con Supabase; vuelve a guardar para reintentar." };
+  }
+}
+
 async function gestionar(solicitud, respuesta) {
   if (!comprobarSolicitudLocal(solicitud)) {
     responder(respuesta, 403, { error: "Solicitud local no permitida." });
@@ -53,11 +63,27 @@ async function gestionar(solicitud, respuesta) {
     return;
   }
 
+  if (solicitud.method === "GET" && segmentos[2] === "inventario" && segmentos.length === 4) {
+    responder(respuesta, 200, await servicioInventario.leerPorProducto(segmentos[3]));
+    return;
+  }
+
+  if (solicitud.method === "PUT" && segmentos[2] === "inventario" && segmentos[3] === "grupos" && segmentos.length === 4) {
+    const { variant_id: variantId, groups, confirmar_reconfiguracion: confirmar } = await leerJson(solicitud);
+    responder(respuesta, 200, await servicioInventario.guardarGrupos({ variant_id: variantId, groups }, confirmar));
+    return;
+  }
+
+  if (solicitud.method === "PUT" && segmentos[2] === "inventario" && segmentos[3] === "unidades" && segmentos.length === 4) {
+    responder(respuesta, 410, { error: "La escritura antigua por stock numérico fue reemplazada por unidades físicas." });
+    return;
+  }
+
   const esProductos = segmentos[2] === "productos";
   if (solicitud.method === "POST" && esProductos && segmentos.length === 3) {
     const { producto, imagenesNuevas } = await leerJson(solicitud);
     const guardado = await guardarProductoConImagenes({ producto, imagenesNuevas, modo: "crear" });
-    responder(respuesta, 201, { producto: guardado });
+    responder(respuesta, 201, { producto: guardado, sincronizacion: await sincronizarGuardado(guardado) });
     return;
   }
 
@@ -65,7 +91,7 @@ async function gestionar(solicitud, respuesta) {
     const id = segmentos[3];
     const { producto, imagenesNuevas } = await leerJson(solicitud);
     const guardado = await guardarProductoConImagenes({ producto, imagenesNuevas, modo: "editar", idOriginal: id });
-    responder(respuesta, 200, { producto: guardado });
+    responder(respuesta, 200, { producto: guardado, sincronizacion: await sincronizarGuardado(guardado) });
     return;
   }
 
@@ -111,7 +137,8 @@ async function gestionar(solicitud, respuesta) {
 export function iniciarServidorGestor() {
   const servidor = createServer((solicitud, respuesta) => {
     gestionar(solicitud, respuesta).catch((error) => {
-      responder(respuesta, 400, { error: error.message || "No se pudo completar la operación." });
+      const estado = error instanceof ErrorInventario ? error.estado : 400;
+      responder(respuesta, estado, { error: error.message || "No se pudo completar la operación." });
     });
   });
   servidor.listen(PORT, HOST, () => {

@@ -61,7 +61,7 @@ function Inicio() {
     }
 
     if (avisoVisto) {
-      navigate("/coleccion");
+      navigate("/coleccion/trajes");
       return;
     }
 
@@ -75,7 +75,7 @@ function Inicio() {
       // La navegación no debe bloquearse si sessionStorage no está disponible.
     }
     setAvisoColeccionAbierto(false);
-    navigate("/coleccion");
+    navigate("/coleccion/trajes");
   };
 
   

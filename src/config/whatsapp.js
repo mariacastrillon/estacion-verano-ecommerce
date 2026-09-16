@@ -1,3 +1,5 @@
+import { formatearCOP, subtotalCarrito } from "../cart/carrito.js";
+
 export const WHATSAPP_NUMBER = "573159048807";
 
 export function crearUrlWhatsApp(mensaje = "") {
@@ -36,4 +38,17 @@ export function crearMensajeProductoWhatsApp({
   if (talla) lineas.push(`Talla: ${talla}`);
   lineas.push(`Precio: $${producto.precio}`, "", "¿Está disponible? 🌴");
   return lineas.join("\n");
+}
+
+export function crearMensajeCarritoWhatsApp(lineas) {
+  const mensaje = ["Hola 👋 Quiero finalizar mi compra de Estación Verano:", ""];
+  lineas.forEach((linea, indice) => {
+    mensaje.push(`${indice + 1}. Producto: ${linea.nombre}`);
+    if (linea.varianteNombre) mensaje.push(`Color: ${linea.varianteNombre}`);
+    if (linea.selectedSize) mensaje.push(`Talla: ${linea.selectedSize}`);
+    mensaje.push(`Cantidad: ${linea.cantidad}`, "");
+  });
+  mensaje.push(`Total: ${formatearCOP(subtotalCarrito(lineas))}`, "",
+    "Revisemos la disponibilidad final y los datos del pedido antes de confirmarlo. 🌴");
+  return mensaje.join("\n");
 }
