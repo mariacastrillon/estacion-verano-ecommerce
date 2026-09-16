@@ -20,6 +20,7 @@
     "test:inventario": "node --test tests/inventario-gestor.test.mjs",
     "test:inventario-fisico": "node --test tests/inventario-unidades-fisicas.test.mjs",
     "test:inventario-publico": "node --test tests/inventario-publico.test.mjs",
+    "test:build-env": "node --test tests/build-env.test.mjs",
     "preview": "vite preview"
   },
   "dependencies": {

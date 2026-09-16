@@ -1,6 +1,7 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import tailwindcss from '@tailwindcss/vite'
+import { verificarSupabaseEnBundle } from './herramientas/verificar-entorno-build.mjs'
 
 export default defineConfig({
   server: {
@@ -21,5 +22,6 @@ export default defineConfig({
   plugins: [
     react(),
     tailwindcss(),
+    verificarSupabaseEnBundle(),
   ],
 })

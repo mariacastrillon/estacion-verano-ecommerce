@@ -1,6 +1,7 @@
-const entorno = import.meta.env ?? {};
-const urlSupabase = entorno.VITE_SUPABASE_URL?.replace(/\/$/, "");
-const publishableKey = entorno.VITE_SUPABASE_PUBLISHABLE_KEY;
+const urlSupabase = (typeof import.meta.env === "undefined"
+  ? undefined : import.meta.env.VITE_SUPABASE_URL)?.replace(/\/$/, "");
+const publishableKey = typeof import.meta.env === "undefined"
+  ? undefined : import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY;
 
 export class ErrorDisponibilidad extends Error {
   constructor(mensaje = "No pudimos verificar la disponibilidad en este momento.", opciones) {
