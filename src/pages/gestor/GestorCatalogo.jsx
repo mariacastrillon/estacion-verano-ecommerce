@@ -356,6 +356,9 @@ export default function GestorCatalogo() {
   const [seleccion, setSeleccion] = useState(null);
   const [busqueda, setBusqueda] = useState("");
   const [error, setError] = useState("");
+  const [eliminando, setEliminando] = useState(null);
+  const [aviso, setAviso] = useState("");
+  const eliminacionEnCurso = useRef(false);
   const regresoDesdeEdicion = useRef(false);
 
   const cargar = async () => {
@@ -393,6 +396,20 @@ export default function GestorCatalogo() {
     try { await gestorApi.cambiarProducto(producto.id, !producto.activo); await cargar(); }
     catch (err) { setError(err.message); }
   };
+  const eliminarProducto = async (producto) => {
+    if (eliminacionEnCurso.current) return;
+    if (!window.confirm(`¿Eliminar definitivamente “${producto.nombre}”?\n\nSe eliminarán sus variantes e inventario si no tiene historial. Esta acción no se puede deshacer. Las imágenes locales se conservarán.\n\nSi tiene pedidos o reservas, se bloqueará la eliminación; puedes desactivarlo.`)) return;
+    eliminacionEnCurso.current = true;
+    setEliminando(producto.id);
+    setError("");
+    setAviso("");
+    try {
+      const resultado = await gestorApi.eliminarProducto(producto.id);
+      setProductos((actuales) => actuales.filter(({ id }) => id !== producto.id));
+      setAviso(resultado.mensaje);
+    } catch (err) { setError(err.message); }
+    finally { eliminacionEnCurso.current = false; setEliminando(null); }
+  };
   const cambiarVariante = async (producto, variante) => {
     try { await gestorApi.cambiarVariante(producto.id, variante.id, variante.activo === false); await cargar(); }
     catch (err) { setError(err.message); }
@@ -406,10 +423,11 @@ export default function GestorCatalogo() {
         <header className="mb-8 flex flex-wrap items-end justify-between gap-5"><div><p className="text-sm uppercase tracking-[0.22em] text-[#DCCDA4]">Estación Verano</p><h1 className="text-4xl font-light">Gestor local de catálogo</h1><p className="mt-2 text-slate-400">Disponible únicamente durante el desarrollo local.</p></div><button onClick={() => { descartarPosicionLista(); setSeleccion({ nuevo: true, producto: nuevoProducto() }); }} className="rounded-full bg-[#DCCDA4] px-6 py-3 font-medium text-slate-950">+ Nuevo producto</button></header>
         <input type="search" value={busqueda} onChange={(e) => setBusqueda(e.target.value)} placeholder="Buscar producto…" className="mb-6 w-full rounded-2xl border border-slate-700 bg-slate-900 px-5 py-4" />
         {error && <p role="alert" className="mb-5 rounded-xl border border-red-500/60 p-4 text-red-200">{error}</p>}
+        {aviso && <p role="status" className="mb-5 rounded-xl border border-emerald-500/60 p-4 text-emerald-200">{aviso}</p>}
         <div className="space-y-3">
           {visibles.map((producto) => (
             <article key={producto.id} data-gestor-producto-id={producto.id} className="rounded-2xl border border-slate-700 bg-[#102A2A] p-5">
-              <div className="flex flex-wrap items-center gap-4"><img src={producto.variantes[0]?.imagenes[0]} alt="" className="h-20 w-20 rounded-xl bg-slate-800 object-cover" /><div className="min-w-48 flex-1"><h2 className="text-xl">{producto.nombre}</h2><p className="text-sm text-slate-400">{producto.id} · {producto.categoria} · {producto.variantes.length} color(es)</p><span className={`mt-2 inline-block rounded-full px-3 py-1 text-xs ${producto.activo ? "bg-emerald-900 text-emerald-200" : "bg-slate-800 text-slate-400"}`}>{producto.activo ? "Activo" : "Inactivo"}</span></div><button onClick={(evento) => editarProducto(producto, evento)} className="rounded-full border border-[#DCCDA4] px-5 py-2 text-[#DCCDA4]">Editar</button><button onClick={() => cambiarEstado(producto)} className="rounded-full border border-slate-600 px-5 py-2">{producto.activo ? "Desactivar" : "Activar"}</button></div>
+              <div className="flex flex-wrap items-center gap-4"><img src={producto.variantes[0]?.imagenes[0]} alt="" className="h-20 w-20 rounded-xl bg-slate-800 object-cover" /><div className="min-w-48 flex-1"><h2 className="text-xl">{producto.nombre}</h2><p className="text-sm text-slate-400">{producto.id} · {producto.categoria} · {producto.variantes.length} color(es)</p><span className={`mt-2 inline-block rounded-full px-3 py-1 text-xs ${producto.activo ? "bg-emerald-900 text-emerald-200" : "bg-slate-800 text-slate-400"}`}>{producto.activo ? "Activo" : "Inactivo"}</span></div><button disabled={Boolean(eliminando)} onClick={(evento) => editarProducto(producto, evento)} className="rounded-full border border-[#DCCDA4] px-5 py-2 text-[#DCCDA4]">Editar</button><button disabled={Boolean(eliminando)} onClick={() => cambiarEstado(producto)} className="rounded-full border border-slate-600 px-5 py-2">{producto.activo ? "Desactivar" : "Activar"}</button><button disabled={Boolean(eliminando)} onClick={() => eliminarProducto(producto)} className="rounded-full border border-red-400/70 px-5 py-2 text-red-200 hover:bg-red-950/60 disabled:opacity-50">{eliminando === producto.id ? "Eliminando..." : "Eliminar"}</button></div>
               {producto.variantes.length > 1 && <div className="mt-4 flex flex-wrap gap-2 border-t border-slate-700 pt-4">{producto.variantes.map((variante) => <button key={variante.id} onClick={() => cambiarVariante(producto, variante)} className="flex items-center gap-2 rounded-full border border-slate-700 px-3 py-1.5 text-xs"><span className="h-3 w-3 rounded-full border border-white/30" style={{ background: variante.codigo || "transparent" }} />{variante.nombre}: {variante.activo === false ? "inactiva" : "activa"}</button>)}</div>}
             </article>
           ))}

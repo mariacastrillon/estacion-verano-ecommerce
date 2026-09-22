@@ -61,7 +61,7 @@ test("la lista espera al montaje, conserva búsqueda y solo marca el retorno de 
   assert.match(fuente, /useLayoutEffect\(\(\) => \{/);
   assert.match(fuente, /if \(seleccion \|\| !regresoDesdeEdicion\.current\) return/);
   assert.match(fuente, /guardarPosicionLista\(producto\.id/);
-  assert.match(fuente, /onCancelar=\{volverALista\}/);
+  assert.match(fuente, /onCancelar=\{async \(\) => \{ await cargar\(\); volverALista\(\); \}\}/);
   assert.match(fuente, /onGuardado=\{async \(\) => \{ await cargar\(\); volverALista\(\); \}\}/);
   assert.match(fuente, /const \[busqueda, setBusqueda\]/);
 });

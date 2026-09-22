@@ -10,6 +10,9 @@ async function solicitar(ruta, opciones = {}) {
 
 export const gestorApi = {
   listar: () => solicitar("/catalogo"),
+  eliminarProducto: (id) => solicitar(`/productos/${encodeURIComponent(id)}`, {
+    method: "DELETE", body: JSON.stringify({ confirmar: id }),
+  }),
   crear: (producto, imagenesNuevas = []) =>
     solicitar("/productos", { method: "POST", body: JSON.stringify({ producto, imagenesNuevas }) }),
   guardar: (producto, imagenesNuevas = []) =>

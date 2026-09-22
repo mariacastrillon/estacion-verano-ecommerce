@@ -1,5 +1,500 @@
 [
   {
+    "id": "aretes-cangrejo-corsal",
+    "activo": true,
+    "favorito": false,
+    "categoria": "accesorios",
+    "nombre": "Aretes Cangrejo Corsal",
+    "precio": "10.000",
+    "palabrasClave": [],
+    "etiquetas": [],
+    "descripcion": "Aretes en forma de cangrejo rojo, con detalles dorados, piedras rojas y ojos negros. Un accesorio llamativo para looks de playa o verano.",
+    "variantes": [
+      {
+        "id": "rojo",
+        "activo": true,
+        "nombre": "Rojo",
+        "codigo": "#DD0808",
+        "miniatura": "/productos/aretes-cangrejo-corsal-rojo-01.webp",
+        "imagenes": [
+          "/productos/aretes-cangrejo-corsal-rojo-01.webp"
+        ],
+        "tallas": []
+      }
+    ]
+  },
+  {
+    "id": "pareo-azul-degradado",
+    "activo": true,
+    "favorito": false,
+    "categoria": "salidas",
+    "nombre": "Pareo Azul Degradado",
+    "precio": "15.000",
+    "palabrasClave": [],
+    "etiquetas": [],
+    "descripcion": "Pareo corto en tela ligera y semitransparente, con efecto degradado en tonos azules y amarre lateral. Ideal para usar sobre el bikini o enterizo.",
+    "variantes": [
+      {
+        "id": "azul",
+        "activo": true,
+        "nombre": "Azul",
+        "codigo": "#367FDD",
+        "miniatura": "/productos/pareo-azul-degradado-azul-01.webp",
+        "imagenes": [
+          "/productos/pareo-azul-degradado-azul-01.webp"
+        ],
+        "tallas": [
+          "M"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "pareo-basico",
+    "activo": true,
+    "favorito": false,
+    "categoria": "salidas",
+    "nombre": "Pareo Básico",
+    "precio": "15.000",
+    "palabrasClave": [],
+    "etiquetas": [],
+    "descripcion": "Disponible en blanco, negro, café y camel. Pareo corto en tela ligera y semitransparente, con amarre lateral ajustable. Fácil de combinar con diferentes trajes de baño.",
+    "variantes": [
+      {
+        "id": "surtidos",
+        "activo": true,
+        "nombre": "surtidos",
+        "codigo": "#111111",
+        "miniatura": "/productos/pareo-basico-surtidos-01.webp",
+        "imagenes": [
+          "/productos/pareo-basico-surtidos-01.webp"
+        ],
+        "tallas": [
+          "M"
+        ]
+      },
+      {
+        "id": "blanco",
+        "activo": true,
+        "nombre": "Blanco",
+        "codigo": "#FFFFFF",
+        "miniatura": "/productos/pareo-basico-blanco-01.webp",
+        "imagenes": [
+          "/productos/pareo-basico-blanco-01.webp"
+        ],
+        "tallas": [
+          "M"
+        ]
+      },
+      {
+        "id": "negro",
+        "activo": true,
+        "nombre": "Negro",
+        "codigo": "#000000",
+        "miniatura": "/productos/pareo-basico-negro-01.webp",
+        "imagenes": [
+          "/productos/pareo-basico-negro-01.webp"
+        ],
+        "tallas": [
+          "M"
+        ]
+      },
+      {
+        "id": "camel",
+        "activo": true,
+        "nombre": "Camel",
+        "codigo": "#9F642D",
+        "miniatura": "/productos/pareo-basico-camel-01.webp",
+        "imagenes": [
+          "/productos/pareo-basico-camel-01.webp"
+        ],
+        "tallas": [
+          "M"
+        ]
+      },
+      {
+        "id": "cafe-2",
+        "activo": true,
+        "nombre": "Cafe",
+        "codigo": "#361717",
+        "miniatura": "/productos/pareo-basico-cafe-2-01.webp",
+        "imagenes": [
+          "/productos/pareo-basico-cafe-2-01.webp"
+        ],
+        "tallas": [
+          "M"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "set-costa-negra",
+    "activo": true,
+    "favorito": false,
+    "categoria": "salidas",
+    "nombre": "Set Costa Negra.",
+    "precio": "40.000",
+    "palabrasClave": [],
+    "etiquetas": [],
+    "descripcion": "Set de salida de baño de dos piezas con estampado floral abstracto en negro y beige. Incluye blusa amplia y falda tipo pareo corta con amarre lateral.",
+    "variantes": [
+      {
+        "id": "negro",
+        "activo": true,
+        "nombre": "Negro",
+        "codigo": "#000000",
+        "miniatura": "/productos/set-costa-negra-negro-01.webp",
+        "imagenes": [
+          "/productos/set-costa-negra-negro-01.webp",
+          "/productos/set-costa-negra-negro-02.webp"
+        ],
+        "tallas": []
+      }
+    ]
+  },
+  {
+    "id": "bikini-oliva-duo",
+    "activo": true,
+    "favorito": false,
+    "categoria": "trajes",
+    "nombre": "Bikini Oliva Dúo",
+    "precio": "40.000",
+    "palabrasClave": [],
+    "etiquetas": [],
+    "descripcion": "Bikini de dos piezas en tonos verde oliva y verde claro. Top tipo bandeau con nudo central y panty de tiro alto en cadera con doble tira lateral.",
+    "variantes": [
+      {
+        "id": "verde-oliva",
+        "activo": true,
+        "nombre": "verde oliva",
+        "codigo": "#437554",
+        "miniatura": "/productos/bikini-oliva-duo-verde-oliva-01.webp",
+        "imagenes": [
+          "/productos/bikini-oliva-duo-verde-oliva-01.webp",
+          "/productos/bikini-oliva-duo-verde-oliva-02.webp"
+        ],
+        "tallas": [
+          "XS"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "bikini-pink-flamingo",
+    "activo": true,
+    "favorito": false,
+    "categoria": "trajes",
+    "nombre": "Bikini Pink Flamingo",
+    "precio": "40.000",
+    "palabrasClave": [],
+    "etiquetas": [],
+    "descripcion": "Bikini de dos piezas reversible: un lado rosa liso y el otro con estampado de flamencos sobre fondo azul. Top triangular y panty con tiras trenzadas para amarrar.",
+    "variantes": [
+      {
+        "id": "rosa",
+        "activo": true,
+        "nombre": "rosa",
+        "codigo": "#E267E4",
+        "miniatura": "/productos/bikini-pink-flamingo-rosa-01.webp",
+        "imagenes": [
+          "/productos/bikini-pink-flamingo-rosa-01.webp",
+          "/productos/bikini-pink-flamingo-rosa-02.webp"
+        ],
+        "tallas": [
+          "XS"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "brazalete-flora-dorado",
+    "activo": true,
+    "favorito": false,
+    "categoria": "accesorios",
+    "nombre": "Brazalete Flora Dorado",
+    "precio": "15.000",
+    "palabrasClave": [],
+    "etiquetas": [],
+    "descripcion": "Brazalete abierto para la parte superior del brazo, en tono dorado, con detalles de flores, hojas y mariposas. Diseño ajustable y decorativo.",
+    "variantes": [
+      {
+        "id": "dorado",
+        "activo": true,
+        "nombre": "Dorado",
+        "codigo": "#111111",
+        "miniatura": "/productos/brazalete-flora-dorado-dorado-01.webp",
+        "imagenes": [
+          "/productos/brazalete-flora-dorado-dorado-01.webp"
+        ],
+        "tallas": []
+      }
+    ]
+  },
+  {
+    "id": "body-chain-estrella",
+    "activo": true,
+    "favorito": false,
+    "categoria": "accesorios",
+    "nombre": "Body Chain Estrella",
+    "precio": "15.000",
+    "palabrasClave": [],
+    "etiquetas": [],
+    "descripcion": "Cadena corporal dorada con dijes de estrella de mar, concha y perlas. Se engancha al bikini y cae alrededor de la cintura como accesorio decorativo.",
+    "variantes": [
+      {
+        "id": "dorado",
+        "activo": true,
+        "nombre": "Dorado",
+        "codigo": "#111111",
+        "miniatura": "/productos/body-chain-estrella-dorado-01.webp",
+        "imagenes": [
+          "/productos/body-chain-estrella-dorado-01.webp"
+        ],
+        "tallas": []
+      }
+    ]
+  },
+  {
+    "id": "set-collar-aretes-coral-rojo",
+    "activo": true,
+    "favorito": false,
+    "categoria": "accesorios",
+    "nombre": "Set Collar + Aretes Coral Rojo",
+    "precio": "17.000",
+    "palabrasClave": [
+      "17.000"
+    ],
+    "etiquetas": [],
+    "descripcion": "Set compuesto por collar y aretes en tono rojo, con detalles tipo coral, perlas blancas y figuras de estrella de mar. Llamativo, ligero y fácil de combinar con looks de playa.",
+    "variantes": [
+      {
+        "id": "rojo",
+        "activo": true,
+        "nombre": "Rojo",
+        "codigo": "#E21212",
+        "miniatura": "/productos/set-collar-aretes-coral-rojo-rojo-01.webp",
+        "imagenes": [
+          "/productos/set-collar-aretes-coral-rojo-rojo-01.webp"
+        ],
+        "tallas": []
+      }
+    ]
+  },
+  {
+    "id": "bolso-transparente-tornasol",
+    "activo": true,
+    "favorito": false,
+    "categoria": "bolsos",
+    "nombre": "Bolso transparente tornasol",
+    "precio": "15.000",
+    "palabrasClave": [],
+    "etiquetas": [],
+    "descripcion": "Bolso amplio de material transparente con acabado tornasol y asas negras. Práctico para llevar traje de baño, toalla y accesorios a la playa o piscina.",
+    "variantes": [
+      {
+        "id": "tornasol",
+        "activo": true,
+        "nombre": "Tornasol",
+        "codigo": "#9679B9",
+        "miniatura": "/productos/bolso-transparente-tornasol-tornasol-01.webp",
+        "imagenes": [
+          "/productos/bolso-transparente-tornasol-tornasol-01.webp"
+        ],
+        "tallas": []
+      }
+    ]
+  },
+  {
+    "id": "ear-cuff-estrella-de-mar",
+    "activo": true,
+    "favorito": false,
+    "categoria": "accesorios",
+    "nombre": "Ear Cuff Estrella de Mar",
+    "precio": "7.000",
+    "palabrasClave": [],
+    "etiquetas": [],
+    "descripcion": "Accesorio dorado en forma de estrella de mar que se ajusta al borde de la oreja. No requiere perforación y tiene textura en relieve.",
+    "variantes": [
+      {
+        "id": "dorado",
+        "activo": true,
+        "nombre": "Dorado",
+        "codigo": "#D7C75B",
+        "miniatura": "/productos/ear-cuff-estrella-de-mar-dorado-01.webp",
+        "imagenes": [
+          "/productos/ear-cuff-estrella-de-mar-dorado-01.webp"
+        ],
+        "tallas": []
+      }
+    ]
+  },
+  {
+    "id": "marina-anillos",
+    "activo": true,
+    "favorito": false,
+    "categoria": "accesorios",
+    "nombre": "Marina - Anillos",
+    "precio": "5.000",
+    "palabrasClave": [],
+    "etiquetas": [],
+    "descripcion": "Anillos dorados con diseños inspirados en el mar: conchas, estrellas, flores y formas orgánicas. Puedes elegir uno, varios o combinarlos como prefieras.",
+    "variantes": [
+      {
+        "id": "dorados",
+        "activo": true,
+        "nombre": "Dorados",
+        "codigo": "#B8B561",
+        "miniatura": "/productos/marina-anillos-dorados-01.webp",
+        "imagenes": [
+          "/productos/marina-anillos-dorados-01.webp"
+        ],
+        "tallas": []
+      }
+    ]
+  },
+  {
+    "id": "bolso-cacao",
+    "activo": true,
+    "favorito": false,
+    "categoria": "bolsos",
+    "nombre": "Bolso Cacao",
+    "precio": "60.000",
+    "palabrasClave": [],
+    "etiquetas": [],
+    "descripcion": "Bolso tejido en tonos beige y café, con diseño calado y asa decorada con cuentas tipo madera. Amplio y fácil de combinar para playa o uso diario.",
+    "variantes": [
+      {
+        "id": "cafe",
+        "activo": true,
+        "nombre": "Cafe",
+        "codigo": "#111111",
+        "miniatura": "/productos/bolso-cacao-cafe-01.webp",
+        "imagenes": [
+          "/productos/bolso-cacao-cafe-01.webp"
+        ],
+        "tallas": []
+      },
+      {
+        "id": "color-principal",
+        "activo": false,
+        "nombre": "Color principal",
+        "codigo": "#111111",
+        "miniatura": "",
+        "imagenes": [],
+        "tallas": []
+      }
+    ]
+  },
+  {
+    "id": "sombrero-oeste",
+    "activo": true,
+    "favorito": false,
+    "categoria": "accesorios",
+    "nombre": "Sombrero Oeste",
+    "precio": "50.000",
+    "palabrasClave": [
+      "sombrero"
+    ],
+    "etiquetas": [],
+    "descripcion": "Sombrero estilo vaquero en tejido marrón, ala desflecada y banda decorativa con hebilla metálica.",
+    "variantes": [
+      {
+        "id": "castano",
+        "activo": true,
+        "nombre": "Castaño",
+        "codigo": "#5E3A1C",
+        "miniatura": "/productos/sombrero-oeste-castano-01.webp",
+        "imagenes": [
+          "/productos/sombrero-oeste-castano-01.webp"
+        ],
+        "tallas": []
+      }
+    ]
+  },
+  {
+    "id": "gafas-orbita",
+    "activo": true,
+    "favorito": false,
+    "categoria": "accesorios",
+    "nombre": "Gafas órbita",
+    "precio": "20.000",
+    "palabrasClave": [
+      "lentes"
+    ],
+    "etiquetas": [],
+    "descripcion": "Gafas de sol redondas con montura metálica dorada, lentes oscuros y detalles grabados en marco y laterales.",
+    "variantes": [
+      {
+        "id": "negro",
+        "activo": true,
+        "nombre": "Negro",
+        "codigo": "#000000",
+        "miniatura": "/productos/gafas-orbita-negro-01.webp",
+        "imagenes": [
+          "/productos/gafas-orbita-negro-01.webp"
+        ],
+        "tallas": []
+      }
+    ]
+  },
+  {
+    "id": "set-negro-drapeado",
+    "activo": true,
+    "favorito": false,
+    "categoria": "trajes",
+    "nombre": "Set Negro Drapeado",
+    "precio": "50.000",
+    "palabrasClave": [
+      "salida"
+    ],
+    "etiquetas": [],
+    "descripcion": "Set de 3 piezas con top ajustable, panty y falda corta semitransparente con fruncido lateral. Color negro y tiras regulables.",
+    "variantes": [
+      {
+        "id": "negro",
+        "activo": true,
+        "nombre": "Negro",
+        "codigo": "#000000",
+        "miniatura": "/productos/set-negro-drapeado-negro-01.webp",
+        "imagenes": [
+          "/productos/set-negro-drapeado-negro-01.webp"
+        ],
+        "tallas": [
+          "S"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "set-orquidea-rpsa",
+    "activo": true,
+    "favorito": false,
+    "categoria": "trajes",
+    "nombre": "Set Orquidea Rpsa",
+    "precio": "80.000",
+    "palabrasClave": [
+      "pareo"
+    ],
+    "etiquetas": [],
+    "descripcion": "Set de 3 piezas con top tipo halter, panty y falda larga estampada. Diseño rosado con flores grandes y caída ligera.",
+    "variantes": [
+      {
+        "id": "rosado",
+        "activo": true,
+        "nombre": "Rosado",
+        "codigo": "#D08AC1",
+        "miniatura": "/productos/set-orquidea-rpsa-rosado-01.webp",
+        "imagenes": [
+          "/productos/set-orquidea-rpsa-rosado-01.webp"
+        ],
+        "tallas": [
+          "L",
+          "XL"
+        ]
+      }
+    ]
+  },
+  {
     "id": "doble-cielo",
     "activo": true,
     "favorito": false,
@@ -111,7 +606,7 @@
   },
   {
     "id": "set-atardecer",
-    "activo": true,
+    "activo": false,
     "favorito": false,
     "categoria": "trajes",
     "nombre": "Set atardecer",
@@ -167,7 +662,7 @@
   },
   {
     "id": "set-lima",
-    "activo": true,
+    "activo": false,
     "favorito": false,
     "categoria": "trajes",
     "nombre": "Set Lima",
@@ -527,40 +1022,6 @@
     ]
   },
   {
-    "id": "set-brisa-blanca",
-    "activo": false,
-    "favorito": false,
-    "categoria": "salidas",
-    "nombre": "Set Brisa Blanca",
-    "precio": "45.000",
-    "palabrasClave": [
-      "salida",
-      "pantalon",
-      "pareo"
-    ],
-    "etiquetas": [
-      "Nuevo"
-    ],
-    "descripcion": "Conjunto de dos piezas en tela ligera y translúcida, con top corto de manga amplia y pantalón ancho con ajuste en cintura.",
-    "variantes": [
-      {
-        "id": "blanco",
-        "activo": true,
-        "nombre": "Blanco",
-        "codigo": "#EEE7E7",
-        "miniatura": "/productos/set-brisa-blanca-blanco-01.webp",
-        "imagenes": [
-          "/productos/set-brisa-blanca-blanco-01.webp",
-          "/productos/set-brisa-blanca-blanco-02.webp"
-        ],
-        "tallas": [
-          "M",
-          "S"
-        ]
-      }
-    ]
-  },
-  {
     "id": "vestido-noche-marina",
     "activo": true,
     "favorito": false,
@@ -592,76 +1053,6 @@
           "L",
           "XL",
           "XS"
-        ]
-      }
-    ]
-  },
-  {
-    "id": "vestido-marfil-froral",
-    "activo": true,
-    "favorito": false,
-    "categoria": "salidas",
-    "nombre": "Vestido Marfil Froral",
-    "precio": "50.000",
-    "palabrasClave": [
-      "salida",
-      "vestido",
-      "malla",
-      "tejido"
-    ],
-    "etiquetas": [
-      "Nuevo"
-    ],
-    "descripcion": "Vestido largo de malla en tono marfil, con corte ajustado, espalda y laterales abiertos, y flores aplicadas como detalle principal.",
-    "variantes": [
-      {
-        "id": "marfil",
-        "activo": true,
-        "nombre": "Marfil",
-        "codigo": "#F3E2E2",
-        "miniatura": "/productos/vestido-marfil-froral-marfil-01.webp",
-        "imagenes": [
-          "/productos/vestido-marfil-froral-marfil-01.webp"
-        ],
-        "tallas": [
-          "S",
-          "M",
-          "L"
-        ]
-      }
-    ]
-  },
-  {
-    "id": "salida-flor-caribe",
-    "activo": false,
-    "favorito": false,
-    "categoria": "salidas",
-    "nombre": "Salida Flor Caribe",
-    "precio": "45.000",
-    "palabrasClave": [
-      "vestido",
-      "ropa",
-      "salida",
-      "tejido"
-    ],
-    "etiquetas": [
-      "Nuevo"
-    ],
-    "descripcion": "Vestido corto tejido en fucsia, con aberturas laterales, aplicaciones florales en contraste y detalle decorativo en la cintura.",
-    "variantes": [
-      {
-        "id": "fuccia",
-        "activo": true,
-        "nombre": "Fuccia",
-        "codigo": "#821248",
-        "miniatura": "/productos/salida-flor-caribe-fuccia-01.webp",
-        "imagenes": [
-          "/productos/salida-flor-caribe-fuccia-01.webp"
-        ],
-        "tallas": [
-          "S",
-          "M",
-          "L"
         ]
       }
     ]
@@ -1110,7 +1501,7 @@
   },
   {
     "id": "clutch-nautilo-dorado",
-    "activo": true,
+    "activo": false,
     "favorito": false,
     "categoria": "bolsos",
     "nombre": "Clutch Náutilo Dorado",
@@ -1348,7 +1739,7 @@
   },
   {
     "id": "lentes-solea",
-    "activo": true,
+    "activo": false,
     "favorito": false,
     "categoria": "accesorios",
     "nombre": "Lentes Solea",
@@ -1618,7 +2009,7 @@
   },
   {
     "id": "fuccia-sol",
-    "activo": true,
+    "activo": false,
     "favorito": false,
     "categoria": "trajes",
     "nombre": "Fuccia Sol",
@@ -1754,7 +2145,7 @@
   },
   {
     "id": "set-maretta",
-    "activo": true,
+    "activo": false,
     "favorito": false,
     "categoria": "trajes",
     "nombre": "Set Maretta",
@@ -2120,7 +2511,7 @@
   },
   {
     "id": "marea-marina",
-    "activo": true,
+    "activo": false,
     "favorito": false,
     "categoria": "trajes",
     "nombre": "Marea Marina",
@@ -2458,7 +2849,7 @@
   },
   {
     "id": "brisa-orquidea",
-    "activo": true,
+    "activo": false,
     "favorito": true,
     "categoria": "trajes",
     "nombre": "Set Brisa de Orquídea",
@@ -2567,7 +2958,7 @@
   },
   {
     "id": "marina",
-    "activo": true,
+    "activo": false,
     "favorito": false,
     "categoria": "trajes",
     "nombre": "Brisa Marina",
@@ -2857,50 +3248,6 @@
     ]
   },
   {
-    "id": "flamenco",
-    "activo": false,
-    "favorito": false,
-    "categoria": "trajes",
-    "nombre": "Flamenco",
-    "precio": "40.000",
-    "tallas": [
-      "L"
-    ],
-    "color": [
-      "rosado"
-    ],
-    "palabrasClave": [
-      "alto",
-      "estampado",
-      "boleros"
-    ],
-    "etiquetas": [
-      "nuevo"
-    ],
-    "descripcion": "Un diseño vibrante con volantes delicados y cintura alta que combina frescura, comodidad y elegancia para brillar bajo el sol.",
-    "imagenes": [
-      "/productos/flamenco-frontal.webp",
-      "/productos/flamenco-trasera.webp",
-      "/productos/flamenco-detalle.webp"
-    ],
-    "variantes": [
-      {
-        "id": "flamenco",
-        "nombre": "Flamenco",
-        "codigo": "",
-        "miniatura": "/productos/flamenco-frontal.webp",
-        "imagenes": [
-          "/productos/flamenco-frontal.webp",
-          "/productos/flamenco-trasera.webp",
-          "/productos/flamenco-detalle.webp"
-        ],
-        "tallas": [
-          "L"
-        ]
-      }
-    ]
-  },
-  {
     "id": "cielo",
     "activo": true,
     "favorito": false,
@@ -2940,102 +3287,6 @@
         "tallas": [
           "S",
           "XS"
-        ]
-      }
-    ]
-  },
-  {
-    "id": "mar-celeste",
-    "activo": false,
-    "favorito": false,
-    "categoria": "trajes",
-    "nombre": "Mar Celeste",
-    "precio": "60.000",
-    "tallas": [
-      "XS",
-      "S"
-    ],
-    "color": [
-      "azul"
-    ],
-    "palabrasClave": [
-      "almeja",
-      "concha",
-      "perlas"
-    ],
-    "etiquetas": [
-      "nuevo"
-    ],
-    "descripcion": "Bikini en tono azul celeste con delicados detalles de perlas, inspirado en la calma y belleza del mar.",
-    "imagenes": [
-      "/productos/mar-celeste-frontal.webp",
-      "/productos/mar-celeste-trasera.webp",
-      "/productos/mar-celeste-producto.webp",
-      "/productos/mar-celeste-detalle.webp"
-    ],
-    "variantes": [
-      {
-        "id": "mar-celeste",
-        "nombre": "Mar Celeste",
-        "codigo": "",
-        "miniatura": "/productos/mar-celeste-frontal.webp",
-        "imagenes": [
-          "/productos/mar-celeste-frontal.webp",
-          "/productos/mar-celeste-trasera.webp",
-          "/productos/mar-celeste-producto.webp",
-          "/productos/mar-celeste-detalle.webp"
-        ],
-        "tallas": [
-          "XS",
-          "S"
-        ]
-      }
-    ]
-  },
-  {
-    "id": "mar-de-cristal",
-    "activo": false,
-    "favorito": false,
-    "categoria": "trajes",
-    "nombre": "Mar de Cristal",
-    "precio": "40.000",
-    "tallas": [
-      "XS",
-      "S"
-    ],
-    "color": [
-      "azul"
-    ],
-    "palabrasClave": [
-      "brillos",
-      "tornazol",
-      "trenzado"
-    ],
-    "etiquetas": [
-      "nuevo"
-    ],
-    "descripcion": "Bikini con acabado brillante y cordones trenzados, inspirado en el brillo del mar cristalino. ",
-    "imagenes": [
-      "/productos/mar-de-cristal-frontal.webp",
-      "/productos/mar-de-cristal-trasera.webp",
-      "/productos/mar-de-cristal-producto.webp",
-      "/productos/mar-de-cristal-detalle.webp"
-    ],
-    "variantes": [
-      {
-        "id": "mar-de-cristal",
-        "nombre": "Mar de Cristal",
-        "codigo": "",
-        "miniatura": "/productos/mar-de-cristal-frontal.webp",
-        "imagenes": [
-          "/productos/mar-de-cristal-frontal.webp",
-          "/productos/mar-de-cristal-trasera.webp",
-          "/productos/mar-de-cristal-producto.webp",
-          "/productos/mar-de-cristal-detalle.webp"
-        ],
-        "tallas": [
-          "XS",
-          "S"
         ]
       }
     ]
@@ -3326,55 +3577,6 @@
     ]
   },
   {
-    "id": "Amazona",
-    "activo": true,
-    "favorito": false,
-    "categoria": "trajes",
-    "nombre": "Set Amazona 🌿",
-    "precio": "60.000",
-    "tallas": [
-      "L"
-    ],
-    "color": [
-      "verde con blanco"
-    ],
-    "palabrasClave": [
-      "estampado",
-      "combinado",
-      "rayas",
-      "detlles dorados",
-      "entero",
-      "enterizo"
-    ],
-    "etiquetas": [
-      "nuevo"
-    ],
-    "descripcion": "Inspirado en la fuerza y belleza de la naturaleza. Un diseño exclusivo que combina elegancia y frescura. ",
-    "imagenes": [
-      "/productos/amazona-frontal.webp",
-      "/productos/amazona-top.webp",
-      "/productos/amazona-pantye.webp",
-      "/productos/amazona-trasera.webp"
-    ],
-    "variantes": [
-      {
-        "id": "amazona",
-        "nombre": "Set Amazona 🌿",
-        "codigo": "#0D3608",
-        "miniatura": "/productos/amazona-frontal.webp",
-        "imagenes": [
-          "/productos/amazona-frontal.webp",
-          "/productos/amazona-top.webp",
-          "/productos/amazona-pantye.webp",
-          "/productos/amazona-trasera.webp"
-        ],
-        "tallas": [
-          "L"
-        ]
-      }
-    ]
-  },
-  {
     "id": "jade",
     "activo": true,
     "favorito": false,
@@ -3461,8 +3663,6 @@
           "/productos/marfil-trasera.webp"
         ],
         "tallas": [
-          "L",
-          "XL",
           "XS"
         ]
       }
@@ -3601,7 +3801,7 @@
   },
   {
     "id": "noche-de-verano",
-    "activo": false,
+    "activo": true,
     "favorito": false,
     "categoria": "trajes",
     "nombre": "Noche de Verano",
@@ -3620,11 +3820,12 @@
         "tallas": [
           "L",
           "XL"
-        ]
+        ],
+        "activo": false
       },
       {
         "id": "azul",
-        "activo": false,
+        "activo": true,
         "nombre": "Azul",
         "codigo": "#1E5EFF",
         "miniatura": "/productos/nochedv-azul-frontal.webp",
@@ -3637,6 +3838,19 @@
         "tallas": [
           "L",
           "XL"
+        ]
+      },
+      {
+        "id": "naranja",
+        "activo": true,
+        "nombre": "Naranja",
+        "codigo": "#E08300",
+        "miniatura": "/productos/noche-de-verano-naranja-01.webp",
+        "imagenes": [
+          "/productos/noche-de-verano-naranja-01.webp"
+        ],
+        "tallas": [
+          "S"
         ]
       }
     ],
@@ -3909,50 +4123,6 @@
     ]
   },
   {
-    "id": "Fiera-dorada",
-    "activo": true,
-    "favorito": false,
-    "categoria": "trajes",
-    "nombre": "🐆 Fiera Dorada",
-    "precio": "50.000",
-    "tallas": [
-      "M"
-    ],
-    "color": [
-      "café"
-    ],
-    "palabrasClave": [
-      "lentejuela",
-      "3 piezas",
-      "tres piezas"
-    ],
-    "etiquetas": [
-      "nuevo"
-    ],
-    "descripcion": "Set de 3 piezas con bikini de lentejuelas, pareo estampado animal print y detalles dorados. Un diseño sofisticado que combina el espíritu salvaje de la selva con el lujo del verano.",
-    "imagenes": [
-      "/productos/fiera-frontal.webp",
-      "/productos/fiera-trasera.webp",
-      "/productos/fiera-detalle.webp"
-    ],
-    "variantes": [
-      {
-        "id": "Fiera-dorada",
-        "nombre": "🐆 Fiera Dorada",
-        "codigo": "",
-        "miniatura": "/productos/fiera-frontal.webp",
-        "imagenes": [
-          "/productos/fiera-frontal.webp",
-          "/productos/fiera-trasera.webp",
-          "/productos/fiera-detalle.webp"
-        ],
-        "tallas": [
-          "M"
-        ]
-      }
-    ]
-  },
-  {
     "id": "isla-blanca",
     "activo": true,
     "favorito": false,
@@ -3996,7 +4166,7 @@
   },
   {
     "id": "brisa-de-coco",
-    "activo": true,
+    "activo": false,
     "favorito": false,
     "categoria": "trajes",
     "nombre": "🥥 Brisa de Coco",
@@ -4516,7 +4686,7 @@
   },
   {
     "id": "isla-fuego",
-    "activo": true,
+    "activo": false,
     "favorito": false,
     "categoria": "trajes",
     "nombre": "Isla Fuego",
@@ -4554,7 +4724,8 @@
         "tallas": [
           "L",
           "XL"
-        ]
+        ],
+        "activo": false
       }
     ]
   },
@@ -4738,8 +4909,7 @@
           "/productos/amatista-detalle.webp"
         ],
         "tallas": [
-          "M",
-          "XL"
+          "M"
         ]
       }
     ]

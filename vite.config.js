@@ -2,6 +2,8 @@ import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import tailwindcss from '@tailwindcss/vite'
 import { verificarSupabaseEnBundle } from './herramientas/verificar-entorno-build.mjs'
+import { pedidosDevPlugin } from './herramientas/pedidos/vite-plugin.mjs'
+import { cspNetlifyBuild } from './herramientas/netlify/csp.mjs'
 
 export default defineConfig({
   server: {
@@ -23,5 +25,7 @@ export default defineConfig({
     react(),
     tailwindcss(),
     verificarSupabaseEnBundle(),
+    pedidosDevPlugin(),
+    cspNetlifyBuild(),
   ],
 })

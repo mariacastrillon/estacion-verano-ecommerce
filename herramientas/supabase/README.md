@@ -1,5 +1,16 @@
 # Migración administrativa del catálogo a Supabase
 
+## Pedidos y reservas
+
+El diseño, riesgos, contrato RPC y pasos de revisión manual están en
+[PEDIDOS-RESERVAS.md](./PEDIDOS-RESERVAS.md). La migración nueva es
+`2026-09-21-orders-reservations.sql`, posterior a la del 15 de septiembre.
+El usuario ya validó manualmente el ciclo de reserva/cancelación en Supabase.
+La integración de backend, worker y checkout exclusivo de desarrollo está en
+[la guía de pedidos](../pedidos/README.md). No requiere SQL adicional ni cambios
+de RLS. No reaplique migraciones históricas: podrían reemplazar la protección
+del gestor.
+
 El catálogo local `src/data/catalogo.json` continúa siendo la fuente de verdad. Este
 script no lo modifica y no cambia el frontend.
 
